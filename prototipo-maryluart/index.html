@@ -203,7 +203,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;
 .pl{border:1px solid #2b3768;border-radius:6px;padding:3px 9px;font-size:12px;font-weight:600;color:#fff}
 
 /* ===== modales, carrito, pago ===== */
-.scrim{position:fixed;inset:0;background:rgba(10,19,54,.6);z-index:40;display:none;backdrop-filter:blur(3px)}
+.scrim{position:fixed;inset:0;background:rgba(10,19,54,.72);z-index:40;display:none}
 .scrim.open{display:block}
 .modal{position:fixed;z-index:50;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1240px,94vw);max-height:92vh;overflow:auto;background:var(--papel);border-radius:22px;display:none;box-shadow:0 30px 80px rgba(0,0,0,.35)}
 .modal.open{display:block}
@@ -827,8 +827,8 @@ $('#tabs').addEventListener('click', e => {
 
 /* ---------- ventanas ---------- */
 const scrim = $('#scrim');
-function closeAll(){ document.querySelectorAll('.modal.open,.drawer.open').forEach(m => m.classList.remove('open')); scrim.classList.remove('open'); }
-function open(el){ closeAll(); el.classList.add('open'); scrim.classList.add('open'); const f = el.querySelector('.close'); f && f.focus(); }
+function closeAll(){ document.querySelectorAll('.modal.open,.drawer.open').forEach(m => m.classList.remove('open')); scrim.classList.remove('open'); document.body.classList.remove('overlay'); }
+function open(el){ closeAll(); el.classList.add('open'); scrim.classList.add('open'); document.body.classList.add('overlay'); const f = el.querySelector('.close'); f && f.focus(); }
 scrim.addEventListener('click', closeAll);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
 document.addEventListener('click', e => {
@@ -983,14 +983,17 @@ $('#notesBtn').addEventListener('click', e => {
 
 /* ---------- cielo en espiral (pinceladas que giran, como sus cuadros) ---------- */
 function swirlSky(canvas, opts){
-  /* Ligero: resolución 1x, máx. ~700 pinceladas, ~30 fps, sin "pre-pintado" que bloquee,
-     y solo se anima cuando está a la vista. */
+  /* Fondo de espirales, versión ligera:
+     - resolución interna máx. 1100 px de ancho (se estira con CSS: queda "pintado")
+     - pinceladas agrupadas por color: ~10 trazos por imagen en vez de cientos
+     - ~30 fps, se para fuera de pantalla y con ventanas abiertas
+     - si el ordenador va justo, reduce pinceladas; si aun así va lento, se queda quieto */
   const ctx = canvas.getContext('2d', {alpha:false});
-  const COLORS = opts.colors;
-  let W, H, parts = [], vort = [], running = false, raf, ready = false, odd = false;
+  const GROUPS = opts.colors.map((c,i) => ({c, w: 1.5 + ((i*7)%5)/4*opts.width}));
+  let W, H, k, parts = [], vort = [], running = false, raf, ready = false, odd = false, ema = 0, frames = 0, stopped = false;
   function size(){
-    W = canvas.clientWidth; H = canvas.clientHeight;
-    canvas.width = W; canvas.height = H;
+    W = canvas.clientWidth; H = canvas.clientHeight; k = Math.min(1, 1100 / W);
+    canvas.width = Math.round(W*k); canvas.height = Math.round(H*k); ctx.setTransform(k,0,0,k,0,0);
     vort = opts.vortices.map(v => ({x:v[0]*W, y:v[1]*H, s:v[2], r:v[3]*Math.min(W,H)}));
     const g = ctx.createRadialGradient(W*.7, H*.3, 0, W*.7, H*.3, Math.max(W,H)*.8);
     g.addColorStop(0, opts.glow); g.addColorStop(1, opts.bg);
@@ -998,34 +1001,46 @@ function swirlSky(canvas, opts){
     parts = Array.from({length: Math.min(opts.max, Math.round(W*H/opts.density))}, newPart);
     ready = true;
   }
-  function newPart(){ return {x:Math.random()*W, y:Math.random()*H, life:40+Math.random()*120, c:COLORS[Math.random()*COLORS.length|0], w:1.5+Math.random()*opts.width}; }
+  function newPart(){ return {x:Math.random()*W, y:Math.random()*H, life:40+Math.random()*120, g:Math.random()*GROUPS.length|0}; }
   function field(x,y){
     let vx = .55, vy = Math.sin(x*.006 + y*.004)*.25;
     for (const v of vort){
       const dx = x-v.x, dy = y-v.y, d2 = dx*dx+dy*dy, dd = Math.sqrt(d2+1), f = v.s*v.r*v.r/(d2+v.r*v.r);
-      const ring = Math.exp(-Math.pow(dd-v.r,2)/(v.r*v.r*.08))*1.4*Math.sign(v.s);
-      vx += -dy/dd*(f*2.2+ring); vy += dx/dd*(f*2.2+ring);
+      const ring = Math.exp(-(dd-v.r)*(dd-v.r)/(v.r*v.r*.08))*1.4*(v.s>0?1:-1);
+      const t = f*2.2+ring; vx -= dy/dd*t; vy += dx/dd*t;
     }
     const m = Math.hypot(vx,vy)||1; return [vx/m, vy/m];
   }
   function step(){
     ctx.globalAlpha = 1; ctx.fillStyle = opts.fade; ctx.fillRect(0,0,W,H);
     ctx.lineCap = 'round'; ctx.globalAlpha = opts.alpha;
-    for (const p of parts){
-      const [vx,vy] = field(p.x,p.y);
-      const nx = p.x + vx*opts.speed, ny = p.y + vy*opts.speed;
-      ctx.strokeStyle = p.c; ctx.lineWidth = p.w;
-      ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(nx,ny); ctx.stroke();
-      p.x = nx; p.y = ny; p.life--;
-      if (p.life<0 || p.x<-10 || p.x>W+10 || p.y<-10 || p.y>H+10) Object.assign(p, newPart());
+    for (let gi = 0; gi < GROUPS.length; gi++){
+      const G = GROUPS[gi]; ctx.strokeStyle = G.c; ctx.lineWidth = G.w; ctx.beginPath();
+      for (const p of parts){
+        if (p.g !== gi) continue;
+        const [vx,vy] = field(p.x,p.y);
+        ctx.moveTo(p.x,p.y); p.x += vx*opts.speed; p.y += vy*opts.speed; ctx.lineTo(p.x,p.y);
+        if (--p.life<0 || p.x<-10 || p.x>W+10 || p.y<-10 || p.y>H+10) Object.assign(p, newPart());
+      }
+      ctx.stroke();
     }
   }
-  function loop(){ odd = !odd; if (odd) step(); raf = requestAnimationFrame(loop); }
-  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (!ready) return; cancelAnimationFrame(raf); size(); if (running) loop(); }, 200); });
+  function loop(){
+    raf = requestAnimationFrame(loop);
+    if (document.body.classList.contains('overlay')) return;
+    odd = !odd; if (!odd) return;
+    const t0 = performance.now(); step(); const dt = performance.now() - t0;
+    ema = frames++ ? ema*.9 + dt*.1 : dt;
+    if (frames > 40 && ema > 7){
+      if (parts.length > 220){ parts.length = Math.round(parts.length/2); frames = 0; }
+      else { stopped = true; running = false; cancelAnimationFrame(raf); }
+    }
+  }
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (!ready) return; cancelAnimationFrame(raf); size(); if (running) loop(); }, 250); });
   new IntersectionObserver(es => {
     const vis = es[0].isIntersecting;
     if (vis && !ready) { size(); if (reduce) { for (let i=0;i<50;i++) step(); } }
-    running = vis && !reduce; cancelAnimationFrame(raf); if (running) loop();
+    running = vis && !reduce && !stopped; cancelAnimationFrame(raf); if (running) loop();
   }).observe(canvas);
 }
 swirlSky($('#sky'), {
