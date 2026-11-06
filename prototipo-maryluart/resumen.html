@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu nueva web, prima</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&display=swap" rel="stylesheet">
+<style>
+/* Una carta corta: cabecera azul noche como su web, cuerpo en papel, un solo botón amarillo. */
+:root{
+  color-scheme: light;
+  --noche:#101c4b; --sol:#f4b63f; --fuego:#e8692c; --cobalto:#1f5fbf;
+  --papel:#f6f2ea; --tinta:#18172b; --gris:#5d5b6e; --linea:#e2dccf;
+  --display:'Fraunces', Georgia, serif; --body:'Figtree', system-ui, sans-serif; --mano:'Caveat', cursive;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px}
+h1,h2{font-family:var(--display);font-weight:500;text-wrap:balance;font-variation-settings:'SOFT' 100,'WONK' 1;margin:0}
+header{background:var(--noche);color:#fff;padding:48px 0 56px;background-image:radial-gradient(circle at 85% 20%,rgba(244,182,63,.25),transparent 40%),radial-gradient(circle at 10% 90%,rgba(31,95,191,.5),transparent 45%)}
+.mano{font-family:var(--mano);font-size:30px;color:var(--sol);display:inline-block;transform:rotate(-2deg)}
+header h1{font-size:clamp(38px,6vw,58px);line-height:1.05;margin-top:6px}
+header h1 em{font-style:italic;font-weight:300;color:var(--sol)}
+header p{opacity:.88;margin:16px 0 0;max-width:34em}
+.go{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:var(--sol);color:var(--tinta);text-decoration:none;font-weight:700;padding:15px 26px;border-radius:99px;font-size:17px}
+.go:hover{transform:translateY(-2px)}
+.go:focus-visible,a:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
+.warn{background:#fff8e1;border:1.5px dashed #d9a520;border-radius:12px;padding:12px 16px;font-size:15px;margin-top:-28px;position:relative;color:#4d3800}
+section{padding:36px 0 8px}
+h2{font-size:30px;margin-bottom:14px}
+ul{padding-left:20px;margin:0}
+li{margin:4px 0}
+.steps{display:grid;gap:14px}
+.step{background:#fff;border:1.5px solid var(--linea);border-radius:16px;padding:18px 20px}
+.step b.t{font-family:var(--display);font-size:22px;font-weight:500;display:block;margin-bottom:6px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:15px}
+.flow span{background:var(--papel);border-radius:99px;padding:4px 12px;font-weight:600}
+.flow i{color:var(--fuego);font-style:normal;font-weight:700}
+.money{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.money div{background:var(--noche);color:#fff;border-radius:16px;padding:16px 18px}
+.money small{opacity:.75;display:block}
+.money b{font-family:var(--display);font-size:28px;font-weight:500;color:var(--sol);font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto;margin-top:6px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;font-size:15px;min-width:520px}
+th,td{padding:12px 14px;text-align:left;border-bottom:1.5px solid var(--linea);vertical-align:top}
+thead th{background:var(--tinta);color:#fff;font-weight:600}
+thead th.rec{background:var(--fuego)}
+td:first-child{font-weight:700;width:26%}
+td.rec{background:#fff6ec}
+.reco{background:var(--sol);border-radius:20px;padding:22px 24px;margin-top:8px}
+.reco h2{font-size:28px}
+.reco p{margin:8px 0 0}
+footer{padding:40px 0 60px;text-align:center}
+footer .mano{color:var(--fuego);font-size:34px}
+@media (max-width:560px){.money{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="mano">¡Hola prima! ♡</span>
+    <h1>Así podría ser <em>tu nueva web</em>, con tienda incluida</h1>
+    <p>Te he preparado un prototipo con tu web rediseñada a tu estilo. Ábrelo, juega con él y haz una compra de prueba. Aquí abajo te explico cómo funcionaría, en corto.</p>
+    <a class="go" href="./">Ver el prototipo →</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="warn"><b>Ojo, es una prueba:</b> los pagos son de mentira y los precios los puse yo de ejemplo. Las notas amarillas son explicaciones para ti. Con el botón de arriba del todo se ocultan y la ves como un cliente.</p>
+
+  <section>
+    <h2>Qué tiene</h2>
+    <ul>
+      <li>Tu web <b>rediseñada con tu estilo</b>: tus cielos en espiral, tus cuadros y tu foto en el taller.</li>
+      <li>En <b>español e inglés</b>: el cliente elige el idioma.</li>
+      <li>Todas tus obras, las 19 ilustraciones y el libro de <i>Lucas y Martín</i>.</li>
+      <li>Una <b>tienda</b>: cuadros originales, láminas y prints digitales.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cómo compra un cliente</h2>
+    <div class="steps">
+      <div class="step">
+        <b class="t">1 · Print digital (se descarga solo)</b>
+        <div class="flow"><span>Elige la obra</span><i>→</i><span>Paga</span><i>→</i><span>Descarga al momento</span></div>
+        <p style="margin:10px 0 0">Además le llega el enlace por email. <b>Tú no tienes que hacer nada.</b></p>
+      </div>
+      <div class="step">
+        <b class="t">2 · Cuadro o lámina física (se envía)</b>
+        <div class="flow"><span>Elige</span><i>→</i><span>Rellena su dirección</span><i>→</i><span>Paga</span></div>
+        <p style="margin:10px 0 0"><b>A ti te llega un email</b> con el pedido y la dirección. Solo tienes que empaquetarlo y enviarlo.</p>
+      </div>
+    </div>
+    <p>Puede pagar con <b>tarjeta, Apple Pay, Google Pay, PayPal o Bizum</b>. Los emails al cliente y a ti salen solos.</p>
+  </section>
+
+  <section>
+    <h2>¿Y quién cobra? Stripe</h2>
+    <p style="margin:0">Stripe es como el <b>datáfono de internet</b>: cobra la tarjeta y te manda el dinero al banco. <b>No tiene cuota mensual</b>, solo se queda una comisión por venta: unos <b>1,5% + 0,25 €</b> con tarjetas europeas (un poco más con tarjetas de fuera de Europa).</p>
+    <div class="money">
+      <div><small>Vendes un print de 12 €</small>te llegan <b>11,57 €</b></div>
+      <div><small>Vendes un cuadro de 480 €</small>te llegan <b>472,55 €</b></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Dos caminos</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th></th><th>A) Seguir con WordPress</th><th class="rec">B) Web propia (el prototipo) ★</th></tr></thead>
+        <tbody>
+          <tr><td>Coste al mes</td><td>Tu plan de WordPress</td><td class="rec">Casi 0 €: solo el dominio (unos 15 € al año)</td></tr>
+          <tr><td>Diseño</td><td>Limitado por la plantilla</td><td class="rec">Totalmente a tu estilo</td></tr>
+          <tr><td>Descarga automática y emails</td><td>Sí, configurando el plugin que ya tienes (Easy Digital Downloads)</td><td class="rec">Sí</td></tr>
+          <tr><td>Subir una obra nueva</td><td>Tú sola, desde el panel</td><td class="rec">Se lo pides a Claude (foto, nombre y precio) o me lo pides a mí</td></tr>
+          <tr><td>Mantenimiento</td><td>Actualizar plugins y plantilla</td><td class="rec">Ninguno</td></tr>
+          <tr><td>Velocidad</td><td>Normal</td><td class="rec">Muy rápida</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="reco">
+      <h2>Mi recomendación: la B</h2>
+      <p>Queda más bonita, más barata y no tienes que pelearte con plugins. Los cambios se hacen pidiéndoselos a Claude (unos 20 $ al mes, y solo si quieres hacerlos tú). Te enseño a usarlo, es muy fácil.</p>
+      <p><b>Para cobrar de verdad solo hace falta:</b> que crees tu cuenta de Stripe (gratis, unos 15 minutos, con tu DNI/NIE y tu cuenta del banco) y que pongas tus precios.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="go" href="./">Ver el prototipo →</a>
+    <p class="mano">Míralo con calma y me dices 💛</p>
+  </div>
+</footer>
+
+</body>
+</html>
