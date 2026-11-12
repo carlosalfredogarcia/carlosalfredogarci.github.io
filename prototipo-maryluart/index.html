@@ -311,6 +311,21 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
 @media (max-width:820px){.bookpics{grid-template-columns:1fr 1fr}}
 .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .skills span{border:1px solid var(--linea);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600}
+
+/* cabecera fija y páginas */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.2)}
+.menu a[aria-current="page"]{color:var(--tinta);border-color:var(--tinta)}
+.view[hidden]{display:none}
+.view > section:first-child{border-top:0}
+@media (max-width:820px){
+  .nav{flex-wrap:wrap;row-gap:10px;padding-block:14px}
+  .menu{display:flex;order:3;width:100%;overflow-x:auto;gap:20px;font-size:14px;white-space:nowrap;scrollbar-width:none}
+}
+.buybox{display:flex;gap:18px;align-items:center;margin-top:28px;border:1px solid var(--linea);border-radius:4px;padding:16px;max-width:520px}
+.buybox img{width:96px;height:96px;object-fit:cover;border-radius:2px}
+.buybox b{display:block;font-family:var(--display);font-size:22px;font-weight:500}
+.buybox span{display:block;font-size:14px;color:var(--gris);margin-bottom:10px}
+.buybox .btn{padding:10px 18px;font-size:15px}
 </style>
 </head>
 <body class="notes">
@@ -320,15 +335,14 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
   <button id="notesBtn" aria-pressed="true">Notas para Mary Lu: visibles</button>
 </div>
 
-<header class="hero" id="inicio">
+<header class="top">
   <div class="wrap nav">
     <a class="brand" href="#inicio"><img src="img/logo.png" alt=""><span>MARY LU ART</span></a>
     <nav class="menu" aria-label="Menu">
-      <a href="#tienda" data-en="Shop">Tienda</a>
-      <a href="#prints" data-en="Digital prints">Prints digitales</a>
-      <a href="#ilustracion" data-en="Illustration">Ilustración</a>
-      <a href="#libro" data-en="Book">Libro</a>
-      <a href="#sobre-mi" data-en="About">Sobre mí</a>
+      <a href="#arte" data-nav="arte" data-en="Art &amp; Prints">Arte y láminas</a>
+      <a href="#ilustracion" data-nav="ilustracion" data-en="Illustration">Ilustración</a>
+      <a href="#libros" data-nav="libros" data-en="Books">Libros</a>
+      <a href="#sobre-mi" data-nav="sobre-mi" data-en="About &amp; contact">Sobre mí y contacto</a>
     </nav>
     <div class="nav-r">
       <div class="lang" role="group" aria-label="Idioma / Language">
@@ -338,16 +352,21 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
       <button class="cart-btn" id="cartBtn"><span data-en="Cart">Carrito</span> <span class="n" id="cartCount">0</span></button>
     </div>
   </div>
+</header>
+
+<main>
+<div class="view" data-view="inicio">
+<section class="hero">
   <div class="wrap hero-in">
     <div>
       <span class="hola" data-en="Hi, I'm Mary Lu! ♡">¡Hola, soy Mary Lu! ♡</span>
       <h1 id="h1"></h1>
       <p class="sub" data-en="Painter, illustrator and designer. From Valencia, Venezuela, to Fuerteventura. I paint swirling skies, animals with character and the places that stay in our memory.">Pintora, ilustradora y diseñadora. De Valencia, Venezuela, a Fuerteventura. Pinto cielos que giran, animales con carácter y los lugares que se quedan en la memoria.</p>
       <div class="cta">
-        <a class="btn sol" href="#tienda" data-en="See paintings &amp; prints">Ver cuadros y prints</a>
-        <a class="btn line" href="#encargos" data-en="Commission a piece">Encargar una obra</a>
+        <a class="btn sol" href="#arte" data-en="See paintings &amp; prints">Ver cuadros y prints</a>
+        <a class="btn line" href="#contacto" data-en="Commission a piece">Encargar una obra</a>
       </div>
-      <div class="note">Fondo blanco y minimalista, como una galería: el color lo ponen solo sus cuadros, para que resalten. Arriba a la derecha, el cliente elige idioma: español o inglés. La primera vez, la web lo detecta según el idioma de su navegador.</div>
+      <div class="note">La web está organizada como su web original: <b>Arte y láminas</b>, <b>Ilustración</b>, <b>Libros</b> y <b>Sobre mí y contacto</b>, cada una en su página. Fondo blanco y minimalista, como una galería: el color lo ponen solo sus cuadros, para que resalten. Arriba a la derecha, el cliente elige idioma: español o inglés. La primera vez, la web lo detecta según el idioma de su navegador.</div>
     </div>
     <div class="wall">
       <figure class="canvas c1"><img width="884" height="1100" src="img/cabra.webp" srcset="img/sm/cabra.webp 600w, img/cabra.webp 1100w" sizes="(max-width:900px) 45vw, 20vw" decoding="async" loading="eager" alt="" data-alt-es="Cuadro de la cabra majorera" data-alt-en="Painting of a Majorero goat"></figure>
@@ -355,12 +374,11 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
       <figure class="polaroid"><span class="tape"></span><img width="1100" height="825" src="img/hero.webp" srcset="img/sm/hero.webp 600w, img/hero.webp 1100w" sizes="(max-width:900px) 86vw, 40vw" decoding="async" fetchpriority="high" alt="" data-alt-es="María Luisa en su taller, con el cuadro del pulpo detrás" data-alt-en="María Luisa in her studio, with the octopus painting behind her"><figcaption data-en="in my studio, La Oliva ♡">en mi taller, La Oliva ♡</figcaption></figure>
     </div>
   </div>
-</header>
+</section>
 
 <div class="palette" id="palette" aria-hidden="true"></div>
 <div class="wrap palette-cap"><span class="mano" data-en="↑ the palette of her studio">↑ la paleta de su taller</span><span data-en="Every colour comes from one of her paintings.">Cada color está sacado de uno de sus cuadros.</span></div>
 
-<main>
   <section id="mundos" style="padding-bottom:20px">
     <div class="wrap">
       <div class="head">
@@ -371,9 +389,9 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
         </div>
       </div>
       <div class="doors">
-        <a class="door" href="#tienda"><div class="pic"><img width="1100" height="1100" src="img/pulpo-taller.webp" srcset="img/sm/pulpo-taller.webp 600w, img/pulpo-taller.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""></div><h3 data-en="Original art &amp; prints">Arte original y láminas</h3><p data-en="Colourful artworks inspired by the natural world, everyday moments and the places I call home.">Obras llenas de color inspiradas en la naturaleza, los momentos cotidianos y los lugares que llamo hogar.</p><span class="go" data-en="see the shop →">ver la tienda →</span></a>
+        <a class="door" href="#arte"><div class="pic"><img width="1100" height="1100" src="img/pulpo-taller.webp" srcset="img/sm/pulpo-taller.webp 600w, img/pulpo-taller.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""></div><h3 data-en="Original art &amp; prints">Arte original y láminas</h3><p data-en="Colourful artworks inspired by the natural world, everyday moments and the places I call home.">Obras llenas de color inspiradas en la naturaleza, los momentos cotidianos y los lugares que llamo hogar.</p><span class="go" data-en="see the shop →">ver la tienda →</span></a>
         <a class="door" href="#ilustracion"><div class="pic"><img width="1100" height="1100" src="img/campanita.webp" srcset="img/sm/campanita.webp 600w, img/campanita.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""></div><h3 data-en="Children's &amp; young adult illustration">Ilustración infantil y juvenil</h3><p data-en="Whimsical characters, imaginative worlds and illustrations created to bring stories to life.">Personajes entrañables, mundos imaginarios e ilustraciones creadas para dar vida a las historias.</p><span class="go" data-en="see illustrations →">ver ilustraciones →</span></a>
-        <a class="door" href="#libro"><div class="pic"><img width="1100" height="1100" src="img/img3563.webp" srcset="img/sm/img3563.webp 600w, img/img3563.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""></div><h3 data-en="Books &amp; stories">Libros e historias</h3><p data-en="Illustrated adventures full of imagination, curiosity and a little bit of magic.">Aventuras ilustradas llenas de imaginación, curiosidad y un poquito de magia.</p><span class="go" data-en="see the book →">ver el libro →</span></a>
+        <a class="door" href="#libros"><div class="pic"><img width="1100" height="1100" src="img/img3563.webp" srcset="img/sm/img3563.webp 600w, img/img3563.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""></div><h3 data-en="Books &amp; stories">Libros e historias</h3><p data-en="Illustrated adventures full of imagination, curiosity and a little bit of magic.">Aventuras ilustradas llenas de imaginación, curiosidad y un poquito de magia.</p><span class="go" data-en="see the book →">ver el libro →</span></a>
       </div>
       <div class="welcome">
         <img width="825" height="1100" class="sf" src="img/home4.webp" srcset="img/sm/home4.webp 600w, img/home4.webp 1100w" sizes="96px" decoding="async" loading="lazy" alt="">
@@ -383,13 +401,16 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
     </div>
   </section>
 
+</div>
+
+<div class="view" data-view="arte" hidden>
   <section id="tienda">
     <div class="wrap">
       <div class="head">
         <div>
-          <span class="kicker" data-en="Shop">Tienda</span>
-          <h2 data-en="Paintings, prints <em>&amp; downloads</em>">Cuadros, láminas <em>y prints</em></h2>
-          <p data-en="Take home a hand-painted original, order a printed art print delivered to your door, or download a digital print and print it yourself.">Llévate un original pintado a mano, pide una lámina impresa que te llega a casa o descarga un print digital e imprímelo tú.</p>
+          <span class="kicker" data-en="Art &amp; Prints">Arte y láminas</span>
+          <h2 data-en="Take a look <em>at my work!</em>">Echa un vistazo <em>a mi obra</em></h2>
+          <p data-en="See, buy and download my work: take home a hand-painted original, order an art print delivered to your door, or download a digital print and print it yourself.">Mira, compra y descarga mis obras: llévate un original pintado a mano, pide una lámina impresa que te llega a casa o descarga un print digital e imprímelo tú.</p>
         </div>
         <div class="tabs" role="tablist" id="tabs">
           <button class="tab" role="tab" aria-selected="true" data-f="all" data-en="All">Todo</button>
@@ -422,15 +443,18 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
     </div>
   </section>
 
+</div>
+
+<div class="view" data-view="ilustracion" hidden>
   <section id="ilustracion" class="ilus">
     <div class="wrap">
       <div class="head">
         <div>
-          <span class="kicker" data-en="Illustration">Ilustración</span>
+          <span class="kicker" data-en="Digital illustration portfolio">Portafolio de ilustración digital</span>
           <h2 data-en="Worlds for <em>telling stories</em>">Mundos para <em>contar historias</em></h2>
           <p data-en="Children's and young adult illustration, character design and picture books. From the pencil sketch to the final colour.">Ilustración infantil y juvenil, diseño de personajes y álbumes ilustrados. Del boceto a lápiz al color final.</p>
         </div>
-        <a class="btn dark" href="#encargos" data-en="Commission an illustration">Encargar ilustración</a>
+        <a class="btn dark" href="#contacto" data-en="Commission an illustration">Encargar ilustración</a>
       </div>
       <div class="group-t"><h3 data-en="Children's book illustration">Ilustración infantil</h3><span data-en="swipe →">desliza →</span></div>
       <div class="reel" id="reelKids" tabindex="0"></div>
@@ -440,6 +464,9 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
     </div>
   </section>
 
+</div>
+
+<div class="view" data-view="libros" hidden>
   <section id="libro" class="libro">
     <div class="wrap">
       <div class="head">
@@ -447,7 +474,7 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
           <span class="kicker" data-en="Illustrated book · 2024">Libro ilustrado · 2024</span>
           <h2 data-en="Lucas &amp; Martín: <em>un deseo en Fuerteventura</em>">Lucas y Martín: <em>un deseo en Fuerteventura</em></h2>
         </div>
-        <button class="btn fire" data-open="libro" id="bookBtn"></button>
+        <a class="btn fire amazon" href="https://www.amazon.es/s?k=Lucas+y+Mart%C3%ADn+un+deseo+en+Fuerteventura" target="_blank" rel="noopener" data-en="Buy on Amazon ↗">Comprar en Amazon ↗</a>
       </div>
       <div class="banner"><img width="1024" height="512" src="img/lucas2.webp" srcset="img/sm/lucas2.webp 600w, img/lucas2.webp 1100w" sizes="100vw" decoding="async" loading="lazy" alt="" data-alt-es="Ilustración de Fuerteventura del libro" data-alt-en="Illustration of Fuerteventura from the book"></div>
       <div class="info">
@@ -455,6 +482,15 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
           <blockquote data-en="“I wanted to create something beautiful and precious for my children, filled with magic, adventure and joy.”">“Quería crear algo bonito y especial para mis hijos, lleno de magia, aventura y alegría.”</blockquote>
           <p class="small" style="margin-top:18px" data-en="Written and illustrated by María Luisa. It also holds a subtle message about wishes and the people who leave this world, but still live among the stars, watching and listening to us from above.">Escrito e ilustrado por María Luisa. Guarda también un mensaje sutil sobre los deseos y sobre las personas que se van, pero siguen viviendo entre las estrellas, mirándonos y escuchándonos desde arriba.</p>
           <p class="mano" style="font-size:26px;color:var(--gris);margin:8px 0 0" data-en="Lucas and Martín are getting ready for their next adventure… stay tuned!">Lucas y Martín preparan su próxima aventura… ¡atentos!</p>
+          <div class="buybox">
+            <img width="1100" height="1100" src="img/sm/img3563.webp" alt="" loading="lazy">
+            <div>
+              <b data-en="Available on Amazon">Disponible en Amazon</b>
+              <span data-en="Hardcover · in Spanish">Tapa dura · en español</span>
+              <a class="btn fire amazon" href="https://www.amazon.es/s?k=Lucas+y+Mart%C3%ADn+un+deseo+en+Fuerteventura" target="_blank" rel="noopener" data-en="Buy on Amazon ↗">Comprar en Amazon ↗</a>
+            </div>
+          </div>
+          <div class="note"><b>Falta el enlace real:</b> el botón de Amazon de momento abre una búsqueda del libro en Amazon.es. Cuando Mary Lu pase el enlace exacto de su libro, se pone aquí y en el botón de arriba.</div>
           <span class="soon" data-en="More books coming soon!!!">¡Pronto, más libros!</span>
         </div>
         <img width="1100" height="1096" class="foto" src="img/libro3.webp" srcset="img/sm/libro3.webp 600w, img/libro3.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa con sus hijos y el libro" data-alt-en="María Luisa with her children and the book">
@@ -469,6 +505,9 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
     </div>
   </section>
 
+</div>
+
+<div class="view" data-view="sobre-mi" hidden>
   <section id="sobre-mi" class="about">
     <div class="wrap in">
       <div class="blob">
@@ -492,9 +531,9 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
     </div>
   </section>
 
-  <section id="encargos" class="contact">
+  <section id="contacto" class="contact">
     <div class="wrap">
-      <span class="kicker" data-en="Commissions &amp; contact">Encargos y contacto</span>
+      <span class="kicker" data-en="Contact">Contacto</span>
       <h2 data-en="Let's create something <em>together.</em>">Creemos algo <em>juntos.</em></h2>
       <p data-en="Have a project in mind, looking for an illustrator, or fallen in love with a painting? I'd love to hear from you.">¿Tienes un proyecto en mente, buscas ilustradora o te ha enamorado un cuadro? Me encantará saber de ti.</p>
       <a class="mail" href="mailto:marylujr.art@gmail.com">marylujr.art@gmail.com</a>
@@ -502,6 +541,7 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
       <div class="note" style="max-width:640px;margin-inline:auto">Ojo: el enlace a LinkedIn de su web actual lleva a una página de "notificaciones" de LinkedIn, no a su perfil. Hay que cambiarlo por la dirección de su perfil (linkedin.com/in/...).</div>
     </div>
   </section>
+</div>
 </main>
 
 <footer>
@@ -798,12 +838,12 @@ function applyLang(){
   document.querySelectorAll('[data-alt-es]').forEach(el => el.alt = lang === 'en' ? el.dataset.altEn : el.dataset.altEs);
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   $('#h1').innerHTML = t().h1;
-  $('#bookBtn').textContent = t().bookBtn + ' · ' + eur(PRICE.book);
   $('#mocks').innerHTML = PRODUCTS.filter(p => p.kind === 'digital').map(p =>
     `<article class="mock"><img loading="lazy" ${ss(p.img,'(max-width:820px) 92vw, 33vw')} alt="${esc(L(p.title))}"><div><h3>${L(p.title)}</h3><button class="btn dark" data-open="${p.id}">${t().download} · ${eur(PRICE.dl)}</button></div></article>`).join('');
   renderReel($('#reelKids'), KIDS); renderReel($('#reelYA'), YA);
   renderGrid();
   if ($('#coModal').classList.contains('open')) renderCheckout();
+  if (typeof VIEW_TITLE !== 'undefined') document.title = currentView === 'inicio' ? 'Mary Lu Art' : L(VIEW_TITLE[currentView]) + ' · Mary Lu Art';
 }
 document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => {
   lang = b.dataset.lang; try { localStorage.setItem('mla-lang', lang); } catch(e) {}
@@ -971,7 +1011,26 @@ $('#notesBtn').addEventListener('click', e => {
   e.target.textContent = 'Notas para Mary Lu: ' + (on ? 'visibles' : 'ocultas');
 });
 
-applyLang(); updateCount();
+
+/* ---------- páginas (como la web original) ---------- */
+const VIEW_OF = {inicio:'inicio', mundos:'inicio', arte:'arte', tienda:'arte', prints:'arte', ilustracion:'ilustracion', libros:'libros', libro:'libros', 'sobre-mi':'sobre-mi', contacto:'sobre-mi', encargos:'sobre-mi'};
+const VIEW_TITLE = {inicio:{es:'Mary Lu Art',en:'Mary Lu Art'}, arte:{es:'Arte y láminas',en:'Art & Prints'}, ilustracion:{es:'Ilustración',en:'Illustration'}, libros:{es:'Libros',en:'Books'}, 'sobre-mi':{es:'Sobre mí y contacto',en:'About & contact'}};
+let currentView = 'inicio';
+function route(){
+  const h = decodeURIComponent(location.hash.slice(1)) || 'inicio';
+  const v = VIEW_OF[h] || 'inicio';
+  if (v !== currentView || !document.querySelector('.view:not([hidden])')) {
+    document.querySelectorAll('.view').forEach(el => el.hidden = el.dataset.view !== v);
+    currentView = v;
+  }
+  document.querySelectorAll('[data-nav]').forEach(a => a.dataset.nav === v ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+  document.title = v === 'inicio' ? 'Mary Lu Art' : L(VIEW_TITLE[v]) + ' · Mary Lu Art';
+  closeAll();
+  const target = h !== v && document.getElementById(h);
+  if (target) target.scrollIntoView(); else scrollTo(0,0);
+}
+addEventListener('hashchange', route);
+applyLang(); updateCount(); route();
 </script>
 </body>
 </html>
