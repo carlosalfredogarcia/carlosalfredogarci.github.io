@@ -9,52 +9,51 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..500&display=swap" rel="stylesheet">
 <style>
-/* Una carta corta: cabecera azul noche como su web, cuerpo en papel, un solo botón amarillo. */
+/* Una carta corta, en blanco y negro como la web: el único color es el de sus obras. */
 :root{
   color-scheme: light;
-  --noche:#101c4b; --sol:#f4b63f; --fuego:#e8692c; --cobalto:#1f5fbf;
-  --papel:#f6f2ea; --tinta:#18172b; --gris:#5d5b6e; --linea:#e2dccf;
+  --papel:#ffffff; --tinta:#141414; --gris:#6e6e6e; --linea:#e9e9e9; --suave:#f6f6f6;
   --display:'Fraunces', Georgia, serif; --body:'Figtree', system-ui, sans-serif; --mano:'Caveat', cursive;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--body);font-size:17px;line-height:1.6}
 .wrap{max-width:760px;margin:0 auto;padding-inline:20px}
 h1,h2{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0}
-header{background:var(--noche);color:#fff;padding:48px 0 56px;background-image:radial-gradient(circle at 85% 20%,rgba(244,182,63,.25),transparent 40%),radial-gradient(circle at 10% 90%,rgba(31,95,191,.5),transparent 45%)}
-.mano{font-family:var(--mano);font-size:30px;color:var(--sol);display:inline-block;transform:rotate(-2deg)}
+header{background:var(--papel);padding:56px 0 48px;border-bottom:1px solid var(--linea)}
+.mano{font-family:var(--mano);font-size:30px;color:var(--gris);display:inline-block;transform:rotate(-2deg)}
 header h1{font-size:clamp(38px,6vw,58px);line-height:1.05;margin-top:6px}
-header h1 em{font-style:italic;font-weight:300;color:var(--sol)}
-header p{opacity:.88;margin:16px 0 0;max-width:34em}
-.go{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:var(--sol);color:var(--tinta);text-decoration:none;font-weight:700;padding:15px 26px;border-radius:99px;font-size:17px}
+header h1 em{font-style:italic;font-weight:300}
+header p{color:var(--gris);margin:16px 0 0;max-width:34em}
+.go{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:var(--tinta);color:#fff;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:99px;font-size:17px}
 .go:hover{transform:translateY(-2px)}
-.go:focus-visible,a:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
-.warn{background:#fff8e1;border:1.5px dashed #d9a520;border-radius:12px;padding:12px 16px;font-size:15px;margin-top:-28px;position:relative;color:#4d3800}
-section{padding:36px 0 8px}
+.go:focus-visible,a:focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
+.warn{background:#fff8e1;border:1.5px dashed #d9a520;border-radius:6px;padding:12px 16px;font-size:15px;margin-top:28px;color:#4d3800}
+section{padding:40px 0 8px}
 h2{font-size:30px;margin-bottom:14px}
 ul{padding-left:20px;margin:0}
 li{margin:4px 0}
 .steps{display:grid;gap:14px}
-.step{background:#fff;border:1.5px solid var(--linea);border-radius:16px;padding:18px 20px}
+.step{background:#fff;border:1px solid var(--linea);border-radius:4px;padding:18px 20px}
 .step b.t{font-family:var(--display);font-size:22px;font-weight:500;display:block;margin-bottom:6px}
 .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:15px}
-.flow span{background:var(--papel);border-radius:99px;padding:4px 12px;font-weight:600}
-.flow i{color:var(--fuego);font-style:normal;font-weight:700}
+.flow span{background:var(--suave);border-radius:99px;padding:4px 12px;font-weight:600}
+.flow i{color:var(--gris);font-style:normal;font-weight:700}
 .money{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.money div{background:var(--noche);color:#fff;border-radius:16px;padding:16px 18px}
-.money small{opacity:.75;display:block}
-.money b{font-family:var(--display);font-size:28px;font-weight:500;color:var(--sol);font-variant-numeric:tabular-nums}
+.money div{background:var(--suave);border-radius:4px;padding:16px 18px}
+.money small{color:var(--gris);display:block}
+.money b{font-family:var(--display);font-size:28px;font-weight:500;font-variant-numeric:tabular-nums}
 .tbl{overflow-x:auto;margin-top:6px}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;font-size:15px;min-width:520px}
-th,td{padding:12px 14px;text-align:left;border-bottom:1.5px solid var(--linea);vertical-align:top}
-thead th{background:var(--tinta);color:#fff;font-weight:600}
-thead th.rec{background:var(--fuego)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:15px;min-width:520px;border:1px solid var(--linea)}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--linea);vertical-align:top}
+thead th{background:var(--suave);font-weight:600}
+thead th.rec{background:var(--tinta);color:#fff}
 td:first-child{font-weight:700;width:26%}
-td.rec{background:#fff6ec}
-.reco{background:var(--sol);border-radius:20px;padding:22px 24px;margin-top:8px}
+td.rec{background:#fafafa}
+.reco{border:1.5px solid var(--tinta);border-radius:4px;padding:22px 24px;margin-top:8px}
 .reco h2{font-size:28px}
 .reco p{margin:8px 0 0}
 footer{padding:40px 0 60px;text-align:center}
-footer .mano{color:var(--fuego);font-size:34px}
+footer .mano{color:var(--gris);font-size:34px}
 @media (max-width:560px){.money{grid-template-columns:1fr}}
 </style>
 </head>
@@ -75,7 +74,7 @@ footer .mano{color:var(--fuego);font-size:34px}
   <section>
     <h2>Qué tiene</h2>
     <ul>
-      <li>Tu web <b>rediseñada con tu estilo</b>: tus cielos en espiral, tus cuadros y tu foto en el taller.</li>
+      <li>Tu web <b>rediseñada</b>: fondo blanco y minimalista, como una galería, para que <b>tus cuadros e ilustraciones sean los protagonistas</b>. Con tu foto en el taller en la portada.</li>
       <li>En <b>español e inglés</b>: el cliente elige el idioma.</li>
       <li>Todas tus obras, las 19 ilustraciones y el libro de <i>Lucas y Martín</i>.</li>
       <li>Una <b>tienda</b>: cuadros originales, láminas y prints digitales.</li>
