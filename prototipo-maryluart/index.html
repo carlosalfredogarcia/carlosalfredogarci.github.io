@@ -355,6 +355,16 @@ section.hero{padding-block:0 24px;border-top:0}
 .hero > .wrap:last-child .note{margin:-24px 0 40px}
 @media (max-width:900px){.pano img{height:62vw;min-height:260px}.hero-in{grid-template-columns:1fr;padding-block:32px 48px}}
 .door.book .pic img{object-position:50% 30%}
+
+/* colecciones */
+.coll{margin:8px 0 24px}
+.coll h4{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.4vw,32px);margin:0}
+.coll p{margin:4px 0 0;color:var(--gris)}
+.venezuela{margin-top:72px;background:var(--suave);padding:40px clamp(16px,3vw,40px) 48px;border-radius:4px}
+.venezuela .card .ph{background:#fff}
+.grid-ve{grid-template-columns:1fr 1fr !important;gap:48px !important}
+.grid-ve .card .ph{aspect-ratio:5/4}
+@media (max-width:760px){.grid-ve{grid-template-columns:1fr !important}}
 </style>
 </head>
 <body class="notes">
@@ -462,7 +472,8 @@ section.hero{padding-block:0 24px;border-top:0}
           <p data-en="See, buy and download my work: take home a hand-painted original, order an art print delivered to your door, or download a digital print and print it yourself.">Mira, compra y descarga mis obras: llévate un original pintado a mano, pide una lámina impresa que te llega a casa o descarga un print digital e imprímelo tú.</p>
         </div>
         <nav class="subnav" aria-label="Arte y láminas">
-          <a href="#cuadros"><b>01</b> <span data-en="Original paintings">Cuadros originales</span></a>
+          <a href="#cuadros"><b>01</b> <span>Fuerteventura</span></a>
+          <a href="#venezuela"><b>01</b> <span>Venezuela</span></a>
           <a href="#prints"><b>02</b> <span data-en="Prints">Prints</span></a>
         </nav>
       </div>
@@ -471,8 +482,19 @@ section.hero{padding-block:0 24px;border-top:0}
         <h3 data-en="Original paintings">Cuadros originales</h3>
         <p data-en="Hand-painted in acrylic on canvas. Each one is unique, and most are also available as art prints.">Pintados a mano en acrílico sobre lienzo. Cada uno es único, y de casi todos hay también láminas impresas.</p>
       </div>
-      <div class="note" style="margin-bottom:28px"><b>Cómo funciona por detrás:</b> la página está dividida en dos partes: primero los <b>cuadros</b> y después los <b>prints</b>. Cada cuadro se puede comprar como original (precios reales de Mary Lu) o como lámina A3 (40 €), 50 × 70 cm (60 €) o 60 × 90 cm (80 €). Chichiriviche no aparece en su lista de originales disponibles, así que de ese cuadro solo se venden láminas. Los puntos de colores bajo cada obra son su paleta real. Ella ya tiene instalado en WordPress el plugin <i>Easy Digital Downloads</i>, pero todavía sin productos.</div>
+      <div class="note" style="margin-bottom:28px"><b>Cómo funciona por detrás:</b> la página está dividida en dos partes: primero los <b>cuadros</b> y después los <b>prints</b>. Cada cuadro se puede comprar como original (precios reales de Mary Lu) o como lámina A3 (40 €), 50 × 70 cm (60 €) o 60 × 90 cm (80 €). Los cuadros están en dos colecciones: <b>Fuerteventura en colores</b> y <b>Venezuela</b> (Chichiriviche y Guacamayas). Los puntos de colores bajo cada obra son su paleta real. Ella ya tiene instalado en WordPress el plugin <i>Easy Digital Downloads</i>, pero todavía sin productos.</div>
+      <div class="coll" id="fuerteventura">
+        <h4 data-en="Fuerteventura in colour">Fuerteventura en colores</h4>
+        <p data-en="Colour, nature and corners of the island that inspire me.">Color, naturaleza y rincones de la isla que me inspiran.</p>
+      </div>
       <div class="grid" id="grid"></div>
+      <div class="venezuela" id="venezuela">
+        <div class="coll">
+          <h4>Venezuela</h4>
+          <p data-en="Memories of where I come from: the Caribbean coast and the rainforest.">Recuerdos de mi tierra: la costa caribeña y la selva.</p>
+        </div>
+        <div class="grid grid-ve" id="gridVe"></div>
+      </div>
     </div>
   </section>
 
@@ -774,7 +796,10 @@ const PRODUCTS = [
    pal:['#799172','#a66497','#bec69d','#f4b63f','#85c1ab'], opts:['dl','a3p']},
   {id:'chichiriviche', img:'img/chichiriviche.webp', kind:'original', title:'Chichiriviche', place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
    desc:{es:'Un recuerdo de la costa venezolana, con barcas y palmeras.', en:'A memory of the Venezuelan coast, with boats and palm trees.'},
-   pal:['#0b6499','#a4bbbf','#08386d','#cfcfcd','#6c2429'], opts:['sold','a3','l50','l60']},
+   pal:['#0b6499','#a4bbbf','#08386d','#cfcfcd','#6c2429'], opts:['orig:500','a3','l50','l60'], col:'ve'},
+  {id:'guacamayas', img:'img/guacamayas.webp', kind:'original', col:'ve', title:{es:'Guacamayas', en:'Macaws'}, place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+   desc:{es:'Dos guacamayas en la selva venezolana, entre flores tropicales y una cascada.', en:'Two macaws in the Venezuelan rainforest, among tropical flowers and a waterfall.'},
+   pal:['#c0262d','#f2c230','#1f6fd1','#5bb544','#d9609b'], opts:['orig:1400','a3','l50','l60']},
   {id:'corralejo-print', img:'img/mockup-dresser.webp', kind:'digital', title:'Corralejo', place:{es:'Ilustración digital · Corralejo', en:'Digital illustration · Corralejo'},
    desc:{es:'Las dunas y el agua turquesa de Corralejo.', en:'The dunes and turquoise water of Corralejo.'},
    pal:['#45a1c6','#4f809b','#4c6572','#83c4d0','#79aeb8'], opts:['dl','a3p']},
@@ -830,7 +855,7 @@ const $ = s => document.querySelector(s);
 const byId = id => PRODUCTS.find(p => p.id === id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const ss = (path, sizes) => `${wh(path)} src="${path}" srcset="${path.replace('img/','img/sm/')} 600w, ${path} 1100w" sizes="${sizes}" decoding="async"`;
-const DIM = {"schoolofgame":[1100,1100],"juvenil":[880,1100],"personajes":[1100,628],"lucas5":[1100,550],"dtiys3":[1100,1100],"cactus":[724,1100],"lagarto":[783,1100],"dtiys2":[1100,1100],"lucas3":[1024,512],"racoon":[1024,1024],"vera":[1100,1100],"peach":[1100,1100],"libro":[886,741],"jirafas":[740,1100],"victoria":[1100,628],"dtiys1":[1100,1100],"bocetos":[1024,1024],"hero":[1100,825],"diaynoche":[1100,690],"corralejo":[1100,701],"img3563":[1100,1100],"envy":[1100,1100],"mockup-wall3":[1100,825],"chichiriviche":[1100,892],"mockup-wall2":[1100,825],"lucas2":[1024,512],"home4":[825,1100],"mockup-dresser":[1100,825],"libro3":[1100,1096],"mockup-wall":[1100,825],"pulpo-taller":[1100,1100],"libro2":[1100,733],"cabra":[884,1100],"campanita":[1100,1100],"wednesday":[880,1100],"pulpo":[852,1100],"marylu":[1100,1100],"selva":[1024,512],"calima":[1100,786]};
+const DIM = {"guacamayas":[1100,897],"schoolofgame":[1100,1100],"juvenil":[880,1100],"personajes":[1100,628],"lucas5":[1100,550],"dtiys3":[1100,1100],"cactus":[724,1100],"lagarto":[783,1100],"dtiys2":[1100,1100],"lucas3":[1024,512],"racoon":[1024,1024],"vera":[1100,1100],"peach":[1100,1100],"libro":[886,741],"jirafas":[740,1100],"victoria":[1100,628],"dtiys1":[1100,1100],"bocetos":[1024,1024],"hero":[1100,825],"diaynoche":[1100,690],"corralejo":[1100,701],"img3563":[1100,1100],"envy":[1100,1100],"mockup-wall3":[1100,825],"chichiriviche":[1100,892],"mockup-wall2":[1100,825],"lucas2":[1024,512],"home4":[825,1100],"mockup-dresser":[1100,825],"libro3":[1100,1096],"mockup-wall":[1100,825],"pulpo-taller":[1100,1100],"libro2":[1100,733],"cabra":[884,1100],"campanita":[1100,1100],"wednesday":[880,1100],"pulpo":[852,1100],"marylu":[1100,1100],"selva":[1024,512],"calima":[1100,786]};
 const wh = path => { const d = DIM[path.split('/').pop().replace('.webp','')]; return d ? `width="${d[0]}" height="${d[1]}"` : ''; };
 const sm = path => path.replace('img/','img/sm/');
 const dots = pal => pal.map(c => `<i style="background:${c}"></i>`).join('');
@@ -860,7 +885,7 @@ $('#palette').innerHTML = [...new Set(PRODUCTS.filter(p=>!p.hidden).flatMap(p =>
 /* ---------- pintar textos según idioma ---------- */
 let filter = 'all';
 function renderGrid(){
-  const g = $('#grid'); g.innerHTML = ''; const x = t();
+  const g = $('#grid'), gv = $('#gridVe'); g.innerHTML = ''; gv.innerHTML = ''; const x = t();
   PRODUCTS.filter(p => !p.hidden && p.kind === 'original').filter(p => {
     if (filter === 'all') return true;
     if (filter === 'digital') return p.opts.includes('dl');
@@ -870,10 +895,10 @@ function renderGrid(){
     const sold = p.opts.includes('sold');
     const badge = p.kind === 'digital' ? `<span class="badge dig">${x.dlBadge}</span>` : sold ? `<span class="badge sold">${x.soldBadge}</span>` : `<span class="badge orig">${x.origBadge}</span>`;
     const el = document.createElement('article'); el.className = 'card';
-    el.innerHTML = `<button class="ph" data-open="${p.id}" aria-label="${x.see} ${esc(L(p.title))}"><img loading="lazy" ${ss(p.img,'(max-width:820px) 92vw, 30vw')} alt="${esc(L(p.title))}">${badge}</button>
+    el.innerHTML = `<button class="ph" data-open="${p.id}" aria-label="${x.see} ${esc(L(p.title))}"><img loading="lazy" ${ss(p.img, p.col === 've' ? '(max-width:820px) 92vw, 48vw' : '(max-width:820px) 92vw, 30vw')} alt="${esc(L(p.title))}">${badge}</button>
       <div><h3>${L(p.title)}</h3><div class="meta">${L(p.place)}</div><div class="meta">${x.printsFrom} ${eur(printFrom(p))}</div><div class="dots" aria-hidden="true">${dots(p.pal)}</div></div>
       <div class="row"><span class="price">${origOf(p) ? eur(origOf(p)) : '<small>' + x.from + '</small> ' + eur(fromPrice(p))}</span><button class="btn dark" data-open="${p.id}">${x.view}</button></div>`;
-    g.appendChild(el);
+    (p.col === 've' ? gv : g).appendChild(el);
   });
 }
 function renderReel(el, items){
@@ -1063,7 +1088,7 @@ $('#notesBtn').addEventListener('click', e => {
 
 
 /* ---------- páginas (como la web original) ---------- */
-const VIEW_OF = {cuadros:'arte', inicio:'inicio', mundos:'inicio', arte:'arte', tienda:'arte', prints:'arte', ilustracion:'ilustracion', libros:'libros', libro:'libros', 'sobre-mi':'sobre-mi', contacto:'sobre-mi', encargos:'sobre-mi'};
+const VIEW_OF = {cuadros:'arte', fuerteventura:'arte', venezuela:'arte', inicio:'inicio', mundos:'inicio', arte:'arte', tienda:'arte', prints:'arte', ilustracion:'ilustracion', libros:'libros', libro:'libros', 'sobre-mi':'sobre-mi', contacto:'sobre-mi', encargos:'sobre-mi'};
 const VIEW_TITLE = {inicio:{es:'Mary Lu Art',en:'Mary Lu Art'}, arte:{es:'Arte y láminas',en:'Art & Prints'}, ilustracion:{es:'Ilustración',en:'Illustration'}, libros:{es:'Libros',en:'Books'}, 'sobre-mi':{es:'Sobre mí y contacto',en:'About & contact'}};
 let currentView = 'inicio';
 function route(){
