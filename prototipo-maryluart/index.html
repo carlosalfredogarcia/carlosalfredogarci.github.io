@@ -365,6 +365,9 @@ section.hero{padding-block:0 24px;border-top:0}
 .grid-ve{grid-template-columns:1fr 1fr !important;gap:48px !important}
 .grid-ve .card .ph{aspect-ratio:5/4}
 @media (max-width:760px){.grid-ve{grid-template-columns:1fr !important}}
+
+.shipinfo{list-style:none;margin:-8px 0 36px;padding:14px 18px;border:1px solid var(--linea);border-radius:4px;display:grid;gap:6px;font-size:14px;color:var(--gris)}
+.shipinfo b{color:var(--tinta)}
 </style>
 </head>
 <body class="notes">
@@ -477,6 +480,14 @@ section.hero{padding-block:0 24px;border-top:0}
           <a href="#prints"><b>02</b> <span data-en="Prints">Prints</span></a>
         </nav>
       </div>
+      <ul class="shipinfo">
+        <li data-en="<b>Prints &amp; art prints:</b> free shipping to the Canary Islands and mainland Spain.">
+          <b>Prints y láminas:</b> envío gratis a Canarias y Península.</li>
+        <li data-en="<b>Original paintings:</b> shipping is quoted separately, depending on size and destination.">
+          <b>Cuadros originales:</b> el envío se presupuesta aparte, según la medida y el destino.</li>
+        <li data-en="Paintings and prints larger than 50 × 50 cm are shipped <b>rolled in a tube</b>.">
+          Los cuadros y láminas de más de 50 × 50 cm se envían <b>enrollados en tubo</b>.</li>
+      </ul>
       <div class="part" id="cuadros">
         <span class="kicker" data-en="01 · Art">01 · Arte</span>
         <h3 data-en="Original paintings">Cuadros originales</h3>
@@ -731,11 +742,11 @@ const T = {
     h1:'El <span class="color-word" aria-label="color"><span>c</span><span>o</span><span>l</span><span>o</span><span>r</span></span> es el corazón de <em>mi obra.</em>',
     from:'desde', view:'Ver opciones', see:'Ver', dlBadge:'⬇ Descarga al momento', origBadge:'Original', soldBadge:'Solo láminas',
     download:'Descargar', printsFrom:'Láminas desde', sold:'No disponible', kinds:{digital:'ilustración digital', original:'cuadro original', book:'libro ilustrado'},
-    orig:'Cuadro original', origSub:'Pieza única · firmada · certificado de autenticidad', soldSub:'No disponible · sí hay láminas',
+    orig:'Cuadro original', origSub:'Pieza única · firmada · certificado de autenticidad · se envía enrollado en tubo · envío aparte', soldSub:'No disponible · sí hay láminas',
     dl:'Descarga digital', dlSub:'JPG 300 ppp + PDF (A4, A3, 4:5) · al momento · uso personal',
-    a3:'Lámina A3', l50:'Lámina 50 × 70 cm', l60:'Lámina 60 × 90 cm', printSub:'Papel mate de 300 g · se envía en 3–5 días', book:'Libro', bookSub:'Se envía en 2–4 días',
+    a3:'Lámina A3', l50:'Lámina 50 × 70 cm', l60:'Lámina 60 × 90 cm', printSub:'Papel mate de 300 g · envío gratis a Canarias y Península', printSubTube:'Papel mate de 300 g · enrollada en tubo · envío gratis a Canarias y Península', book:'Libro', bookSub:'Se envía en 2–4 días',
     bookBtn:'Comprar el libro', empty:'Tu carrito está vacío', remove:'Quitar',
-    freeShip:'Envío gratis a Canarias y Península en este pedido 🎉', shipLater:n=>`El envío se calcula al pagar · gratis a partir de ${n}`, digOnly:'Solo digital: sin envío, descarga al momento',
+    freeShip:'Envío gratis a Canarias y Península 🎉', origShip:'El envío de los cuadros originales se presupuesta aparte: te escribimos con el precio antes de enviarlo.', origShipShort:'Original: aparte', origShipMail:'El envío del cuadro original se presupuesta aparte: te escribiremos con el precio antes de enviarlo.', shipLater:n=>`El envío se calcula al pagar · gratis a partir de ${n}`, digOnly:'Solo digital: sin envío, descarga al momento',
     introPhys:'Tu pedido incluye productos físicos, así que necesitamos una dirección de envío.', introDig:'Pedido digital: solo necesitamos tu email. Los enlaces de descarga aparecen nada más pagar.',
     free:'Gratis', taxIn:'Impuestos (IGIC) incluidos.', taxOut:'Se envía desde Canarias: el comprador puede tener que pagar IVA de importación o gastos de aduana.',
     pay:'Pagar', missing:'Falta rellenar: ', pays:{card:'Tarjeta (Stripe)', wallet:'Apple Pay / Google Pay (Stripe)', paypal:'PayPal', bizum:'Bizum', transfer:'Transferencia bancaria'},
@@ -751,11 +762,11 @@ const T = {
     h1:'<span class="color-word" aria-label="Colour"><span>C</span><span>o</span><span>l</span><span>o</span><span>u</span><span>r</span></span> is the heart of <em>my work.</em>',
     from:'from', view:'See options', see:'See', dlBadge:'⬇ Instant download', origBadge:'Original', soldBadge:'Prints only',
     download:'Download', printsFrom:'Prints from', sold:'Not available', kinds:{digital:'digital illustration', original:'original painting', book:'illustrated book'},
-    orig:'Original painting', origSub:'One of a kind · signed · certificate of authenticity', soldSub:'Not available · prints available',
+    orig:'Original painting', origSub:'One of a kind · signed · certificate of authenticity · shipped rolled in a tube · shipping quoted separately', soldSub:'Not available · prints available',
     dl:'Digital download', dlSub:'300 dpi JPG + PDF (A4, A3, 4:5) · instant · personal use',
-    a3:'A3 art print', l50:'Art print 50 × 70 cm', l60:'Art print 60 × 90 cm', printSub:'300 g matte paper · ships in 3–5 days', book:'Book', bookSub:'Ships in 2–4 days',
+    a3:'A3 art print', l50:'Art print 50 × 70 cm', l60:'Art print 60 × 90 cm', printSub:'300 g matte paper · free shipping to the Canaries and mainland Spain', printSubTube:'300 g matte paper · rolled in a tube · free shipping to the Canaries and mainland Spain', book:'Book', bookSub:'Ships in 2–4 days',
     bookBtn:'Buy the book', empty:'Your cart is empty', remove:'Remove',
-    freeShip:'Free shipping to the Canaries and mainland Spain 🎉', shipLater:n=>`Shipping calculated at checkout · free over ${n}`, digOnly:'Digital only: no shipping, instant download',
+    freeShip:'Free shipping to the Canaries and mainland Spain 🎉', origShip:'Shipping for original paintings is quoted separately: we will email you the price before shipping.', origShipShort:'Original: quoted separately', origShipMail:'Shipping for the original painting is quoted separately: we will email you the price before shipping.', shipLater:n=>`Shipping calculated at checkout · free over ${n}`, digOnly:'Digital only: no shipping, instant download',
     introPhys:'Your order includes physical items, so we need a shipping address.', introDig:'Digital order: we only need your email. Download links appear right after payment.',
     free:'Free', taxIn:'Taxes (IGIC) included.', taxOut:'Ships from the Canary Islands: the buyer may have to pay import VAT or customs fees.',
     pay:'Pay', missing:'Please fill in: ', pays:{card:'Card (Stripe)', wallet:'Apple Pay / Google Pay (Stripe)', paypal:'PayPal', bizum:'Bizum', transfer:'Bank transfer'},
@@ -794,10 +805,10 @@ const PRODUCTS = [
   {id:'invierno', img:'img/mockup-wall2.webp', kind:'digital', title:{es:'Invierno', en:'Winter'}, place:{es:'Ilustración digital · Fuerteventura', en:'Digital illustration · Fuerteventura'},
    desc:{es:'El invierno majorero: la isla se pone verde y se llena de flores moradas.', en:'Winter in Fuerteventura, when the island turns green and fills with purple flowers.'},
    pal:['#799172','#a66497','#bec69d','#f4b63f','#85c1ab'], opts:['dl','a3p']},
-  {id:'chichiriviche', img:'img/chichiriviche.webp', kind:'original', title:'Chichiriviche', place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+  {id:'chichiriviche', img:'img/chichiriviche.webp', kind:'original', title:'Chichiriviche', place:{es:'Acrílico sobre lienzo · 80 × 100 cm', en:'Acrylic on canvas · 80 × 100 cm'},
    desc:{es:'Un recuerdo de la costa venezolana, con barcas y palmeras.', en:'A memory of the Venezuelan coast, with boats and palm trees.'},
    pal:['#0b6499','#a4bbbf','#08386d','#cfcfcd','#6c2429'], opts:['orig:500','a3','l50','l60'], col:'ve'},
-  {id:'guacamayas', img:'img/guacamayas.webp', kind:'original', col:'ve', title:{es:'Guacamayas', en:'Macaws'}, place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+  {id:'guacamayas', img:'img/guacamayas.webp', kind:'original', col:'ve', title:{es:'Guacamayas', en:'Macaws'}, place:{es:'Acrílico sobre lienzo · 130 × 162 cm', en:'Acrylic on canvas · 130 × 162 cm'},
    desc:{es:'Dos guacamayas en la selva venezolana, entre flores tropicales y una cascada.', en:'Two macaws in the Venezuelan rainforest, among tropical flowers and a waterfall.'},
    pal:['#c0262d','#f2c230','#1f6fd1','#5bb544','#d9609b'], opts:['orig:1400','a3','l50','l60']},
   {id:'corralejo-print', img:'img/mockup-dresser.webp', kind:'digital', title:'Corralejo', place:{es:'Ilustración digital · Corralejo', en:'Digital illustration · Corralejo'},
@@ -844,7 +855,6 @@ const YA = [
 ];
 const PRICE = {dl:12, a3:40, l50:60, l60:80, a3p:20, book:18};
 const SHIP = {canarias:4.95, spain:9.95, pickup:0};
-const FREE_SHIP = 80;
 
 /* ---------- utilidades ---------- */
 let cart = [];
@@ -867,8 +877,8 @@ function optInfo(code){
   if (code === 'sold') return {label:x.orig, sub:x.soldSub, price:0, sold:true};
   if (code === 'dl') return {label:x.dl, sub:x.dlSub, price:PRICE.dl, digital:true};
   if (code === 'a3') return {label:x.a3, sub:x.printSub, price:PRICE.a3};
-  if (code === 'l50') return {label:x.l50, sub:x.printSub, price:PRICE.l50};
-  if (code === 'l60') return {label:x.l60, sub:x.printSub, price:PRICE.l60};
+  if (code === 'l50') return {label:x.l50, sub:x.printSubTube, price:PRICE.l50};
+  if (code === 'l60') return {label:x.l60, sub:x.printSubTube, price:PRICE.l60};
   if (code === 'a3p') return {label:x.a3, sub:x.printSub, price:PRICE.a3p};
   if (code === 'book') return {label:x.book, sub:x.bookSub, price:PRICE.book};
 }
@@ -992,7 +1002,7 @@ function openCart(){
     box.appendChild(d);
   });
   $('#sub').textContent = eur(subtotal());
-  $('#shipHint').textContent = !cart.length ? '' : hasPhysical() ? (subtotal() >= FREE_SHIP ? x.freeShip : x.shipLater(eur(FREE_SHIP))) : x.digOnly;
+  $('#shipHint').textContent = !cart.length ? '' : hasOriginal() ? x.origShip : hasPhysical() ? x.freeShip : x.digOnly;
   $('#toCheckout').disabled = !cart.length;
   open($('#drawer'));
 }
@@ -1003,13 +1013,9 @@ $('#items').addEventListener('click', e => {
 });
 
 /* ---------- pago ---------- */
-function shipping(){
-  if (!hasPhysical()) return 0;
-  const z = $('#zone').value;
-  if (z === 'pickup') return 0;
-  if (subtotal() >= FREE_SHIP && (z === 'canarias' || z === 'spain')) return 0;
-  return SHIP[z];
-}
+/* Láminas y prints: envío gratis a Canarias y Península. Originales: el envío se presupuesta aparte. */
+const hasOriginal = () => lines().some(l => l.o.original);
+function shipping(){ return 0; }
 function renderCheckout(){
   const phys = hasPhysical(), x = t();
   $('#shipBlock').style.display = phys ? '' : 'none';
@@ -1017,11 +1023,11 @@ function renderCheckout(){
   $('#optTransfer').style.display = phys ? '' : 'none';
   if (!phys && $('#pay-transfer').checked) $('#pay-card').checked = true;
   $('#cardFields').classList.toggle('show', $('input[name=pay]:checked').value === 'card');
-  $('#coIntro').textContent = phys ? x.introPhys : x.introDig;
+  $('#coIntro').textContent = (phys ? x.introPhys : x.introDig) + (hasOriginal() && $('#zone').value !== 'pickup' ? ' ' + x.origShip : '');
   $('#coItems').innerHTML = lines().map(l => `<div class="tot"><span>${L(l.p.title)} · ${l.o.label}${l.qty>1?' × '+l.qty:''}</span><span>${eur(l.o.price*l.qty)}</span></div>`).join('');
   const s = shipping(), z = $('#zone').value;
   $('#coSub').textContent = eur(subtotal());
-  $('#coShip').textContent = phys ? (s ? eur(s) : x.free) : '—';
+  $('#coShip').textContent = !phys ? '—' : hasOriginal() && $('#zone').value !== 'pickup' ? x.origShipShort : x.free;
   $('#coTot').textContent = eur(subtotal() + s);
   $('#coTax').textContent = phys && z === 'spain' ? x.taxOut : x.taxIn;
   $('#payBtn').textContent = x.pay + ' ' + eur(subtotal() + s);
@@ -1043,6 +1049,7 @@ $('#coForm').addEventListener('submit', e => {
   const zoneTxt = $('#zone').selectedOptions[0].text;
   const digital = ls.filter(l => l.o.digital), phys = ls.filter(l => !l.o.digital);
   const pending = d.pay === 'transfer';
+  const origPending = hasOriginal() && d.zone !== 'pickup';
 
   let h = `<div class="tick">${x.thanks}</div><h3 id="okTitle">${x.order}${order}</h3>
     <p class="small">${pending ? x.reserved : x.paid(eur(tot), pay, esc(d.email))}</p>`;
@@ -1058,11 +1065,13 @@ $('#coForm').addEventListener('submit', e => {
   cm += `\nTotal: ${eur(tot)}\n`;
   if (digital.length) cm += `\n${c.dl}\n${digital.map(l => '[' + c.dlb + ' ' + L(l.p.title) + ']').join(' ')}\n${c.valid}\n`;
   if (pending) cm += `\n${c.iban}\nIBAN ES00 0000 0000 0000 0000\n${c.ref}: ${order}\n`;
+  if (origPending) cm += `\n${x.origShipMail}\n`;
   cm += `\n${c.bye}\nMary Lu`;
 
   let am = `Nuevo pedido n.º ${order}  ${pending ? '(ESPERANDO TRANSFERENCIA)' : '(PAGADO)'}\nIdioma del cliente: ${lang === 'en' ? 'inglés' : 'español'}\n\n`;
   ls.forEach(l => am += `• ${L(l.p.title)}, ${optLabelEs(l.opt)}${l.o.digital ? '  → enviado automáticamente' : '  → PENDIENTE DE ENVÍO'}\n`);
-  am += `\nTotal: ${eur(tot)} (envío ${eur(s)})\nPago: ${T.es.pays[d.pay]}\nEmail: ${d.email}\n`;
+  am += `\nTotal: ${eur(tot)}${origPending ? ' (SIN el envío del original)' : ' (envío gratis)'}\nPago: ${T.es.pays[d.pay]}\nEmail: ${d.email}\n`;
+  if (origPending) am += `\n⚠ ENVÍO DEL ORIGINAL: pendiente de presupuesto. Escribir al cliente con el precio.\n`;
   if (phys.length) { am += `\nENVIAR A:\n${d.fname} ${d.lname}\n${d.addr}\n${d.zip} ${d.city}\n${zoneTxt}\nTeléfono: ${d.phone}\n`; if (d.notes) am += `Notas: ${d.notes}\n`; }
 
   h += `<div class="note" style="margin-top:22px"><b>Lo que pasa por detrás:</b> esto es lo que ven el cliente y Mary Lu después de pagar. Los dos emails salen solos. El del cliente sale en su idioma, y el de Mary Lu siempre en español.</div>
