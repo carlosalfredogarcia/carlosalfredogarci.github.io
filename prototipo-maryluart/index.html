@@ -471,7 +471,7 @@ section.hero{padding-block:0 24px;border-top:0}
         <h3 data-en="Original paintings">Cuadros originales</h3>
         <p data-en="Hand-painted in acrylic on canvas. Each one is unique, and most are also available as art prints.">Pintados a mano en acrílico sobre lienzo. Cada uno es único, y de casi todos hay también láminas impresas.</p>
       </div>
-      <div class="note" style="margin-bottom:28px"><b>Cómo funciona por detrás:</b> la página está dividida en dos partes: primero los <b>cuadros</b> y después los <b>prints</b>. Cada cuadro se puede comprar como original o como lámina A4/A3. Los puntos de colores bajo cada obra son su paleta real. Ella ya tiene instalado en WordPress el plugin <i>Easy Digital Downloads</i>, pero todavía sin productos.</div>
+      <div class="note" style="margin-bottom:28px"><b>Cómo funciona por detrás:</b> la página está dividida en dos partes: primero los <b>cuadros</b> y después los <b>prints</b>. Cada cuadro se puede comprar como original (precios reales de Mary Lu) o como lámina A3 (40 €), 50 × 70 cm (60 €) o 60 × 90 cm (80 €). Chichiriviche no aparece en su lista de originales disponibles, así que de ese cuadro solo se venden láminas. Los puntos de colores bajo cada obra son su paleta real. Ella ya tiene instalado en WordPress el plugin <i>Easy Digital Downloads</i>, pero todavía sin productos.</div>
       <div class="grid" id="grid"></div>
     </div>
   </section>
@@ -654,9 +654,7 @@ section.hero{padding-block:0 24px;border-top:0}
           <label class="f" for="zone"><span data-en="Country / region">País / zona</span>
             <select name="zone" id="zone">
               <option value="canarias" data-en="Canary Islands">Islas Canarias</option>
-              <option value="spain" data-en="Spain (mainland &amp; Balearics)">España (Península y Baleares)</option>
-              <option value="eu" data-en="European Union">Unión Europea</option>
-              <option value="world" data-en="Rest of the world">Resto del mundo</option>
+              <option value="spain" data-en="Mainland Spain">Península</option>
               <option value="pickup" data-en="Pickup in La Oliva (free)">Recogida en La Oliva (gratis)</option>
             </select>
           </label>
@@ -709,11 +707,11 @@ try { lang = localStorage.getItem('mla-lang') || ((navigator.language || 'es').t
 const T = {
   es:{
     h1:'El <span class="color-word" aria-label="color"><span>c</span><span>o</span><span>l</span><span>o</span><span>r</span></span> es el corazón de <em>mi obra.</em>',
-    from:'desde', view:'Ver opciones', see:'Ver', dlBadge:'⬇ Descarga al momento', origBadge:'Original', soldBadge:'Original vendido · láminas',
-    download:'Descargar', sold:'Vendido', kinds:{digital:'ilustración digital', original:'cuadro original', book:'libro ilustrado'},
-    orig:'Cuadro original', origSub:'Pieza única · firmada · certificado de autenticidad', soldSub:'Vendido · siguen disponibles las láminas',
+    from:'desde', view:'Ver opciones', see:'Ver', dlBadge:'⬇ Descarga al momento', origBadge:'Original', soldBadge:'Solo láminas',
+    download:'Descargar', printsFrom:'Láminas desde', sold:'No disponible', kinds:{digital:'ilustración digital', original:'cuadro original', book:'libro ilustrado'},
+    orig:'Cuadro original', origSub:'Pieza única · firmada · certificado de autenticidad', soldSub:'No disponible · sí hay láminas',
     dl:'Descarga digital', dlSub:'JPG 300 ppp + PDF (A4, A3, 4:5) · al momento · uso personal',
-    a4:'Lámina impresa A4', a3:'Lámina impresa A3', printSub:'Papel mate de 300 g · se envía en 3–5 días', book:'Libro', bookSub:'Se envía en 2–4 días',
+    a3:'Lámina A3', l50:'Lámina 50 × 70 cm', l60:'Lámina 60 × 90 cm', printSub:'Papel mate de 300 g · se envía en 3–5 días', book:'Libro', bookSub:'Se envía en 2–4 días',
     bookBtn:'Comprar el libro', empty:'Tu carrito está vacío', remove:'Quitar',
     freeShip:'Envío gratis a Canarias y Península en este pedido 🎉', shipLater:n=>`El envío se calcula al pagar · gratis a partir de ${n}`, digOnly:'Solo digital: sin envío, descarga al momento',
     introPhys:'Tu pedido incluye productos físicos, así que necesitamos una dirección de envío.', introDig:'Pedido digital: solo necesitamos tu email. Los enlaces de descarga aparecen nada más pagar.',
@@ -729,11 +727,11 @@ const T = {
   },
   en:{
     h1:'<span class="color-word" aria-label="Colour"><span>C</span><span>o</span><span>l</span><span>o</span><span>u</span><span>r</span></span> is the heart of <em>my work.</em>',
-    from:'from', view:'See options', see:'See', dlBadge:'⬇ Instant download', origBadge:'Original', soldBadge:'Original sold · prints',
-    download:'Download', sold:'Sold', kinds:{digital:'digital illustration', original:'original painting', book:'illustrated book'},
-    orig:'Original painting', origSub:'One of a kind · signed · certificate of authenticity', soldSub:'Sold · prints still available',
+    from:'from', view:'See options', see:'See', dlBadge:'⬇ Instant download', origBadge:'Original', soldBadge:'Prints only',
+    download:'Download', printsFrom:'Prints from', sold:'Not available', kinds:{digital:'digital illustration', original:'original painting', book:'illustrated book'},
+    orig:'Original painting', origSub:'One of a kind · signed · certificate of authenticity', soldSub:'Not available · prints available',
     dl:'Digital download', dlSub:'300 dpi JPG + PDF (A4, A3, 4:5) · instant · personal use',
-    a4:'A4 art print', a3:'A3 art print', printSub:'300 g matte paper · ships in 3–5 days', book:'Book', bookSub:'Ships in 2–4 days',
+    a3:'A3 art print', l50:'Art print 50 × 70 cm', l60:'Art print 60 × 90 cm', printSub:'300 g matte paper · ships in 3–5 days', book:'Book', bookSub:'Ships in 2–4 days',
     bookBtn:'Buy the book', empty:'Your cart is empty', remove:'Remove',
     freeShip:'Free shipping to the Canaries and mainland Spain 🎉', shipLater:n=>`Shipping calculated at checkout · free over ${n}`, digOnly:'Digital only: no shipping, instant download',
     introPhys:'Your order includes physical items, so we need a shipping address.', introDig:'Digital order: we only need your email. Download links appear right after payment.',
@@ -753,45 +751,45 @@ const L = v => (v && typeof v === 'object' && !Array.isArray(v)) ? (v[lang] ?? v
 
 /* ---------- datos ---------- */
 const PRODUCTS = [
-  {id:'pulpo', img:'img/pulpo.webp', kind:'original', title:{es:'Pulpo con estilo', en:'Cool Octopus'}, place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+  {id:'pulpo', img:'img/pulpo.webp', kind:'original', title:{es:'Pulpo’s Happy Hour', en:'Pulpo’s Happy Hour'}, place:{es:'Acrílico sobre lienzo · 114 × 146 cm', en:'Acrylic on canvas · 114 × 146 cm'},
    desc:{es:'Un pulpo con gafas de sol, pintado con pinceladas gruesas y vibrantes.', en:'An octopus in sunglasses, painted with thick, vibrant brushstrokes.'},
-   pal:['#26729d','#104b83','#edbf61','#132543','#e8692c'], opts:['orig:480','a4','a3']},
+   pal:['#26729d','#104b83','#edbf61','#132543','#e8692c'], opts:['orig:1200','a3','l50','l60']},
   {id:'calima', img:'img/calima.webp', kind:'digital', title:'Calima', place:{es:'Ilustración digital · El Cotillo', en:'Digital illustration · El Cotillo'},
    desc:{es:'La calima sobre los acantilados de El Cotillo.', en:'Saharan dust haze over the cliffs of El Cotillo.'},
-   pal:['#e38747','#e4ccad','#4f3628','#a2522b','#7fb3c8'], opts:['dl','a4','a3']},
-  {id:'cabra', img:'img/cabra.webp', kind:'original', title:{es:'Cabra majorera', en:'Majorero Goat'}, place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+   pal:['#e38747','#e4ccad','#4f3628','#a2522b','#7fb3c8'], opts:['dl','a3p']},
+  {id:'cabra', img:'img/cabra.webp', kind:'original', title:{es:'Cabra majorera', en:'Majorero Goat'}, place:{es:'Acrílico sobre lienzo · 81 × 100 cm', en:'Acrylic on canvas · 81 × 100 cm'},
    desc:{es:'Un homenaje a la famosa cabra de Fuerteventura.', en:'A tribute to Fuerteventura’s famous goat.'},
-   pal:['#1e7bbc','#f1decd','#19101d','#1b406f','#3e2c40'], opts:['orig:450','a4','a3']},
-  {id:'corralejo', img:'img/corralejo.webp', kind:'original', title:{es:'Playa de Corralejo', en:'Corralejo Beach'}, place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+   pal:['#1e7bbc','#f1decd','#19101d','#1b406f','#3e2c40'], opts:['orig:1000','a3','l50','l60']},
+  {id:'corralejo', img:'img/corralejo.webp', kind:'original', title:{es:'Corralejo azul', en:'Blue Corralejo'}, place:{es:'Acrílico sobre lienzo · 90 × 130 cm', en:'Acrylic on canvas · 90 × 130 cm'},
    desc:{es:'Cielos en espiral sobre la playa y la isla de Lobos.', en:'Swirling skies over the beach and the island of Lobos.'},
-   pal:['#b5c7c3','#2075a6','#2b95bd','#e3e6cd','#d6cdba'], opts:['orig:620','a4','a3']},
+   pal:['#b5c7c3','#2075a6','#2b95bd','#e3e6cd','#d6cdba'], opts:['orig:600','a3','l50','l60']},
   {id:'surf', img:'img/mockup-wall.webp', kind:'digital', title:'Surf is Life', place:{es:'Ilustración digital · Fuerteventura', en:'Digital illustration · Fuerteventura'},
    desc:{es:'Surf al atardecer con los colores intensos de la isla.', en:'A sunset surf session in the island’s bold colours.'},
-   pal:['#7bc1d6','#525f8d','#c09578','#639dbb','#946382'], opts:['dl','a4','a3']},
-  {id:'lagarto', img:'img/lagarto.webp', kind:'original', title:{es:'Lagarto', en:'Lizard'}, place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+   pal:['#7bc1d6','#525f8d','#c09578','#639dbb','#946382'], opts:['dl','a3p']},
+  {id:'lagarto', img:'img/lagarto.webp', kind:'original', title:{es:'Lagarto canario', en:'Canary Lizard'}, place:{es:'Acrílico sobre lienzo · 120 × 90 cm', en:'Acrylic on canvas · 120 × 90 cm'},
    desc:{es:'Uno de los pequeños habitantes de la isla, lleno de color.', en:'One of the island’s little inhabitants, full of colour.'},
-   pal:['#c99760','#0f3f63','#44212f','#e6ddb3','#161428'], opts:['sold','a4','a3']},
+   pal:['#c99760','#0f3f63','#44212f','#e6ddb3','#161428'], opts:['orig:700','a3','l50','l60']},
   {id:'invierno', img:'img/mockup-wall2.webp', kind:'digital', title:{es:'Invierno', en:'Winter'}, place:{es:'Ilustración digital · Fuerteventura', en:'Digital illustration · Fuerteventura'},
    desc:{es:'El invierno majorero: la isla se pone verde y se llena de flores moradas.', en:'Winter in Fuerteventura, when the island turns green and fills with purple flowers.'},
-   pal:['#799172','#a66497','#bec69d','#f4b63f','#85c1ab'], opts:['dl','a4','a3']},
+   pal:['#799172','#a66497','#bec69d','#f4b63f','#85c1ab'], opts:['dl','a3p']},
   {id:'chichiriviche', img:'img/chichiriviche.webp', kind:'original', title:'Chichiriviche', place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
    desc:{es:'Un recuerdo de la costa venezolana, con barcas y palmeras.', en:'A memory of the Venezuelan coast, with boats and palm trees.'},
-   pal:['#0b6499','#a4bbbf','#08386d','#cfcfcd','#6c2429'], opts:['orig:560','a4','a3']},
+   pal:['#0b6499','#a4bbbf','#08386d','#cfcfcd','#6c2429'], opts:['sold','a3','l50','l60']},
   {id:'corralejo-print', img:'img/mockup-dresser.webp', kind:'digital', title:'Corralejo', place:{es:'Ilustración digital · Corralejo', en:'Digital illustration · Corralejo'},
    desc:{es:'Las dunas y el agua turquesa de Corralejo.', en:'The dunes and turquoise water of Corralejo.'},
-   pal:['#45a1c6','#4f809b','#4c6572','#83c4d0','#79aeb8'], opts:['dl','a4','a3']},
-  {id:'jirafas', img:'img/jirafas.webp', kind:'original', title:{es:'Jirafas', en:'Giraffes'}, place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+   pal:['#45a1c6','#4f809b','#4c6572','#83c4d0','#79aeb8'], opts:['dl','a3p']},
+  {id:'jirafas', img:'img/jirafas.webp', kind:'original', title:{es:'Jirafas del oasis', en:'Oasis Giraffes'}, place:{es:'Acrílico sobre lienzo · 81 × 116 cm', en:'Acrylic on canvas · 81 × 116 cm'},
    desc:{es:'Una pareja alta y alegre, pintada con mucha textura.', en:'A tall, joyful pair painted with lots of texture.'},
-   pal:['#2664a0','#0b1435','#153a7c','#d7a871','#92333c'], opts:['orig:420','a4','a3']},
+   pal:['#2664a0','#0b1435','#153a7c','#d7a871','#92333c'], opts:['orig:800','a3','l50','l60']},
   {id:'fuerteventura', img:'img/mockup-wall3.webp', kind:'digital', title:'Fuerteventura', place:{es:'Ilustración digital', en:'Digital illustration'},
    desc:{es:'Montañas, palmeras y cactus bajo un cielo rosa en espiral.', en:'Mountains, palm trees and cacti under a swirling pink sky.'},
-   pal:['#d5608a','#e9b995','#855059','#f4b63f','#d3b7a6'], opts:['dl','a4','a3']},
-  {id:'diaynoche', img:'img/diaynoche.webp', kind:'original', title:{es:'Día y noche', en:'Day and Night'}, place:{es:'Díptico · acrílico sobre lienzo', en:'Diptych · acrylic on canvas'},
+   pal:['#d5608a','#e9b995','#855059','#f4b63f','#d3b7a6'], opts:['dl','a3p']},
+  {id:'diaynoche', img:'img/diaynoche.webp', kind:'original', title:{es:'Día y noche', en:'Day and Night'}, place:{es:'Díptico · 2 lienzos de 90 × 70 cm', en:'Diptych · 2 canvases, 90 × 70 cm'},
    desc:{es:'La misma montaña bajo las estrellas y bajo el sol. Dos lienzos que se cuelgan juntos.', en:'The same mountain under the stars and under the sun. Two canvases that hang together.'},
-   pal:['#132f63','#decdaf','#8a2423','#9bbdc5','#f4b63f'], opts:['orig:780','a3']},
-  {id:'cactus', img:'img/cactus.webp', kind:'original', title:'Cactus', place:{es:'Acrílico sobre lienzo', en:'Acrylic on canvas'},
+   pal:['#132f63','#decdaf','#8a2423','#9bbdc5','#f4b63f'], opts:['orig:700','a3','l50','l60']},
+  {id:'cactus', img:'img/cactus.webp', kind:'original', title:{es:'Cactus vibrante', en:'Vibrant Cactus'}, place:{es:'Acrílico sobre lienzo · 90 × 60 cm', en:'Acrylic on canvas · 90 × 60 cm'},
    desc:{es:'Luz del desierto y espinas en verdes intensos.', en:'Desert light and spines in vivid greens.'},
-   pal:['#061f3f','#7c9564','#477f6e','#17505f','#d6e2a1'], opts:['orig:390','a4','a3']},
+   pal:['#061f3f','#7c9564','#477f6e','#17505f','#d6e2a1'], opts:['orig:300','a3','l50','l60']},
   {id:'libro', img:'img/img3563.webp', kind:'book', title:{es:'Lucas y Martín (libro)', en:'Lucas y Martín (book)'}, place:{es:'Tapa dura · en español', en:'Hardcover · in Spanish'},
    desc:{es:'Libro infantil escrito e ilustrado por María Luisa.', en:'Children’s book written and illustrated by María Luisa.'},
    pal:['#3cb8c4','#f4b63f','#e8692c','#1f5fbf','#8fd16a'], opts:['book'], hidden:true}
@@ -819,8 +817,8 @@ const YA = [
   ['peach',{es:'Princesa Peach · fan art',en:'Princess Peach · fan art'}],
   ['wednesday',{es:'Miércoles · fan art',en:'Wednesday · fan art'}]
 ];
-const PRICE = {dl:12, a4:25, a3:38, book:18};
-const SHIP = {canarias:4.95, spain:9.95, eu:14.95, world:24.95, pickup:0};
+const PRICE = {dl:12, a3:40, l50:60, l60:80, a3p:20, book:18};
+const SHIP = {canarias:4.95, spain:9.95, pickup:0};
 const FREE_SHIP = 80;
 
 /* ---------- utilidades ---------- */
@@ -843,10 +841,14 @@ function optInfo(code){
   if (code.startsWith('orig:')) return {label:x.orig, sub:x.origSub, price:+code.split(':')[1], original:true};
   if (code === 'sold') return {label:x.orig, sub:x.soldSub, price:0, sold:true};
   if (code === 'dl') return {label:x.dl, sub:x.dlSub, price:PRICE.dl, digital:true};
-  if (code === 'a4') return {label:x.a4, sub:x.printSub, price:PRICE.a4};
   if (code === 'a3') return {label:x.a3, sub:x.printSub, price:PRICE.a3};
+  if (code === 'l50') return {label:x.l50, sub:x.printSub, price:PRICE.l50};
+  if (code === 'l60') return {label:x.l60, sub:x.printSub, price:PRICE.l60};
+  if (code === 'a3p') return {label:x.a3, sub:x.printSub, price:PRICE.a3p};
   if (code === 'book') return {label:x.book, sub:x.bookSub, price:PRICE.book};
 }
+const origOf = p => { const o = p.opts.find(c => c.startsWith('orig:')); return o ? +o.split(':')[1] : 0; };
+const printFrom = p => Math.min(...p.opts.filter(c => !c.startsWith('orig') && c !== 'sold' && c !== 'dl').map(c => optInfo(c).price));
 const fromPrice = p => Math.min(...p.opts.map(optInfo).filter(o => !o.sold).map(o => o.price));
 
 /* ---------- paleta del taller ---------- */
@@ -862,15 +864,15 @@ function renderGrid(){
   PRODUCTS.filter(p => !p.hidden && p.kind === 'original').filter(p => {
     if (filter === 'all') return true;
     if (filter === 'digital') return p.opts.includes('dl');
-    if (filter === 'print') return p.opts.includes('a4') || p.opts.includes('a3');
+    if (filter === 'print') return p.opts.some(o => ['a3','l50','l60','a3p'].includes(o));
     if (filter === 'original') return p.opts.some(o => o.startsWith('orig') || o === 'sold');
   }).forEach(p => {
     const sold = p.opts.includes('sold');
     const badge = p.kind === 'digital' ? `<span class="badge dig">${x.dlBadge}</span>` : sold ? `<span class="badge sold">${x.soldBadge}</span>` : `<span class="badge orig">${x.origBadge}</span>`;
     const el = document.createElement('article'); el.className = 'card';
     el.innerHTML = `<button class="ph" data-open="${p.id}" aria-label="${x.see} ${esc(L(p.title))}"><img loading="lazy" ${ss(p.img,'(max-width:820px) 92vw, 30vw')} alt="${esc(L(p.title))}">${badge}</button>
-      <div><h3>${L(p.title)}</h3><div class="meta">${L(p.place)}</div><div class="dots" aria-hidden="true">${dots(p.pal)}</div></div>
-      <div class="row"><span class="price"><small>${x.from}</small> ${eur(fromPrice(p))}</span><button class="btn dark" data-open="${p.id}">${x.view}</button></div>`;
+      <div><h3>${L(p.title)}</h3><div class="meta">${L(p.place)}</div><div class="meta">${x.printsFrom} ${eur(printFrom(p))}</div><div class="dots" aria-hidden="true">${dots(p.pal)}</div></div>
+      <div class="row"><span class="price">${origOf(p) ? eur(origOf(p)) : '<small>' + x.from + '</small> ' + eur(fromPrice(p))}</span><button class="btn dark" data-open="${p.id}">${x.view}</button></div>`;
     g.appendChild(el);
   });
 }
@@ -996,7 +998,7 @@ function renderCheckout(){
   $('#coSub').textContent = eur(subtotal());
   $('#coShip').textContent = phys ? (s ? eur(s) : x.free) : '—';
   $('#coTot').textContent = eur(subtotal() + s);
-  $('#coTax').textContent = phys && (z === 'spain' || z === 'eu' || z === 'world') ? x.taxOut : x.taxIn;
+  $('#coTax').textContent = phys && z === 'spain' ? x.taxOut : x.taxIn;
   $('#payBtn').textContent = x.pay + ' ' + eur(subtotal() + s);
   $('#coErr').textContent = '';
 }
