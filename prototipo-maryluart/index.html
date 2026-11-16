@@ -368,23 +368,6 @@ section.hero{padding-block:0 24px;border-top:0}
 
 .shipinfo{list-style:none;margin:-8px 0 36px;padding:14px 18px;border:1px solid var(--linea);border-radius:4px;display:grid;gap:6px;font-size:14px;color:var(--gris)}
 .shipinfo b{color:var(--tinta)}
-
-/* alfabeto */
-.poke{margin-top:72px;border-top:1px solid var(--tinta);padding-top:24px}
-.poke-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.pk{display:flex;flex-direction:column;gap:6px}
-.pkimg{border:1px solid var(--linea);background:#fff;padding:0;aspect-ratio:5/7;overflow:hidden}
-.pkimg img{width:100%;height:100%;object-fit:contain;transition:transform .4s}
-.pk:hover .pkimg img{transform:scale(1.03)}
-.pk h3{font-size:22px;margin-top:8px}
-.pk .row{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--linea);padding-top:10px;margin-top:4px}
-.pk .row .btn{padding:8px 14px;font-size:14px}
-@media (max-width:900px){.poke-grid{grid-template-columns:1fr 1fr}}
-.chips{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.chip input{position:absolute;opacity:0;pointer-events:none}
-.chip span{display:grid;place-items:center;height:40px;border:1px solid var(--linea);border-radius:4px;font-weight:700;cursor:pointer;background:#fff}
-.chip input:checked + span{background:var(--tinta);color:#fff;border-color:var(--tinta)}
-.chip input:focus-visible + span{outline:2px solid var(--tinta);outline-offset:2px}
 </style>
 </head>
 <body class="notes">
@@ -495,7 +478,6 @@ section.hero{padding-block:0 24px;border-top:0}
           <a href="#cuadros"><b>01</b> <span>Fuerteventura</span></a>
           <a href="#venezuela"><b>01</b> <span>Venezuela</span></a>
           <a href="#prints"><b>02</b> <span data-en="Prints">Prints</span></a>
-          <a href="#alfabeto"><b>02</b> <span data-en="Pokémon alphabet">Alfabeto Pokémon</span></a>
         </nav>
       </div>
       <ul class="shipinfo">
@@ -542,15 +524,6 @@ section.hero{padding-block:0 24px;border-top:0}
         <div class="step"><b>3</b><h3 data-en="Download">Descarga</h3><p data-en="The link appears instantly and also arrives by email. 300 dpi JPG and PDF in A4, A3 and 4:5.">El enlace aparece al momento y te llega también por email. JPG a 300 ppp y PDF en A4, A3 y 4:5.</p></div>
       </div>
       <div class="mocks" id="mocks"></div>
-      <div class="poke" id="alfabeto">
-        <div class="coll">
-          <span class="kicker" data-en="Digital download only">Solo descarga digital</span>
-          <h4 data-en="Pokémon alphabet">Alfabeto Pokémon</h4>
-          <p data-en="All 26 letters, each one drawn with a Pokémon. Buy the full poster, the two sheets, or just the letters you want (perfect for a name).">Las 26 letras, cada una dibujada con un Pokémon. Cómpralo completo en un afiche, en dos láminas o solo las letras que quieras (ideal para formar un nombre).</p>
-        </div>
-        <div class="poke-grid" id="pokeGrid"></div>
-        <div class="note"><b>Ojo con los derechos:</b> Pokémon es una marca registrada de Nintendo / The Pokémon Company. Vender fan art de sus personajes puede traer reclamaciones (retirada de la página, de la tienda o de la cuenta de pago). Antes de venderlo de verdad, conviene consultarlo; una opción más segura es venderlo sin usar la palabra "Pokémon".</div>
-      </div>
       <div class="note"><b>Botón 1, compra + descarga automática:</b> el archivo bueno no está en la web. Solo lo entrega el "portero" cuando el pago se confirma. Las imágenes que se ven aquí son de baja resolución. He añadido "Invierno" y "Fuerteventura", los dos prints que faltaban de su página.</div>
     </div>
   </section>
@@ -768,7 +741,7 @@ const T = {
   es:{
     h1:'El <span class="color-word" aria-label="color"><span>c</span><span>o</span><span>l</span><span>o</span><span>r</span></span> es el corazón de <em>mi obra.</em>',
     from:'desde', view:'Ver opciones', see:'Ver', dlBadge:'⬇ Descarga al momento', origBadge:'Original', soldBadge:'Solo láminas',
-    download:'Descargar', dlPoster:'Afiche 60 × 90 cm · descarga', dlSheet:'Lámina 30 × 40 cm · descarga', letter:'Letra', dlSub2:'Solo descarga digital · alta resolución · uso personal', pickLetters:'Elige tus letras (5 € cada una)', addLetters:n => n ? `Añadir ${n} ${n>1?'letras':'letra'} al carrito` : 'Elige al menos una letra', printsFrom:'Láminas desde', sold:'No disponible', kinds:{digital:'ilustración digital', original:'cuadro original', book:'libro ilustrado'},
+    download:'Descargar', printsFrom:'Láminas desde', sold:'No disponible', kinds:{digital:'ilustración digital', original:'cuadro original', book:'libro ilustrado'},
     orig:'Cuadro original', origSub:'Pieza única · firmada · certificado de autenticidad · se envía enrollado en tubo · envío aparte', soldSub:'No disponible · sí hay láminas',
     dl:'Descarga digital', dlSub:'JPG 300 ppp + PDF (A4, A3, 4:5) · al momento · uso personal',
     a3:'Lámina A3', l50:'Lámina 50 × 70 cm', l60:'Lámina 60 × 90 cm', printSub:'Papel mate de 300 g · envío gratis a Canarias y Península', printSubTube:'Papel mate de 300 g · enrollada en tubo · envío gratis a Canarias y Península', book:'Libro', bookSub:'Se envía en 2–4 días',
@@ -788,7 +761,7 @@ const T = {
   en:{
     h1:'<span class="color-word" aria-label="Colour"><span>C</span><span>o</span><span>l</span><span>o</span><span>u</span><span>r</span></span> is the heart of <em>my work.</em>',
     from:'from', view:'See options', see:'See', dlBadge:'⬇ Instant download', origBadge:'Original', soldBadge:'Prints only',
-    download:'Download', dlPoster:'Poster 60 × 90 cm · download', dlSheet:'Sheet 30 × 40 cm · download', letter:'Letter', dlSub2:'Digital download only · high resolution · personal use', pickLetters:'Pick your letters (€5 each)', addLetters:n => n ? `Add ${n} ${n>1?'letters':'letter'} to cart` : 'Pick at least one letter', printsFrom:'Prints from', sold:'Not available', kinds:{digital:'digital illustration', original:'original painting', book:'illustrated book'},
+    download:'Download', printsFrom:'Prints from', sold:'Not available', kinds:{digital:'digital illustration', original:'original painting', book:'illustrated book'},
     orig:'Original painting', origSub:'One of a kind · signed · certificate of authenticity · shipped rolled in a tube · shipping quoted separately', soldSub:'Not available · prints available',
     dl:'Digital download', dlSub:'300 dpi JPG + PDF (A4, A3, 4:5) · instant · personal use',
     a3:'A3 art print', l50:'Art print 50 × 70 cm', l60:'Art print 60 × 90 cm', printSub:'300 g matte paper · free shipping to the Canaries and mainland Spain', printSubTube:'300 g matte paper · rolled in a tube · free shipping to the Canaries and mainland Spain', book:'Book', bookSub:'Ships in 2–4 days',
@@ -853,18 +826,6 @@ const PRODUCTS = [
   {id:'cactus', img:'img/cactus.webp', kind:'original', title:{es:'Cactus vibrante', en:'Vibrant Cactus'}, place:{es:'Acrílico sobre lienzo · 90 × 60 cm', en:'Acrylic on canvas · 90 × 60 cm'},
    desc:{es:'Luz del desierto y espinas en verdes intensos.', en:'Desert light and spines in vivid greens.'},
    pal:['#061f3f','#7c9564','#477f6e','#17505f','#d6e2a1'], opts:['orig:300','a3','l50','l60']},
-  {id:'poke-poster', img:'img/poke-poster.webp', kind:'digital', col:'poke', title:{es:'Afiche completo A–Z', en:'Full A–Z poster'}, place:{es:'Las 26 letras en un afiche · 60 × 90 cm', en:'All 26 letters on one poster · 60 × 90 cm'},
-   desc:{es:'El alfabeto completo en un solo afiche, listo para imprimir.', en:'The full alphabet on a single poster, ready to print.'},
-   pal:['#3a86c8','#5bb544','#f08a24','#f4d23a','#d9609b'], opts:['dlposter']},
-  {id:'poke-am', img:'img/poke-am.webp', kind:'digital', col:'poke', title:{es:'Lámina 1 · A–M', en:'Sheet 1 · A–M'}, place:{es:'13 letras · 30 × 40 cm', en:'13 letters · 30 × 40 cm'},
-   desc:{es:'La primera mitad del alfabeto, de la A a la M.', en:'The first half of the alphabet, A to M.'},
-   pal:['#3a86c8','#5bb544','#f08a24','#e55b3c','#f4d23a'], opts:['dlsheet']},
-  {id:'poke-nz', img:'img/poke-nz.webp', kind:'digital', col:'poke', title:{es:'Lámina 2 · N–Z', en:'Sheet 2 · N–Z'}, place:{es:'13 letras · 30 × 40 cm', en:'13 letters · 30 × 40 cm'},
-   desc:{es:'La segunda mitad del alfabeto, de la N a la Z.', en:'The second half of the alphabet, N to Z.'},
-   pal:['#f4d23a','#3a86c8','#5bb544','#f08a24','#333333'], opts:['dlsheet']},
-  {id:'poke-letra', img:'img/poke-b.webp', kind:'digital', col:'poke', letters:true, title:{es:'Letras sueltas', en:'Single letters'}, place:{es:'De la A a la Z, 5 € cada una', en:'A to Z, €5 each'},
-   desc:{es:'Cada letra por separado, en alta resolución. Elige una o varias.', en:'Each letter on its own, in high resolution. Pick one or several.'},
-   pal:['#5bb544','#f08a24','#3a86c8','#f4d23a','#d9609b'], opts:[]},
   {id:'libro', img:'img/img3563.webp', kind:'book', title:{es:'Lucas y Martín (libro)', en:'Lucas y Martín (book)'}, place:{es:'Tapa dura · en español', en:'Hardcover · in Spanish'},
    desc:{es:'Libro infantil escrito e ilustrado por María Luisa.', en:'Children’s book written and illustrated by María Luisa.'},
    pal:['#3cb8c4','#f4b63f','#e8692c','#1f5fbf','#8fd16a'], opts:['book'], hidden:true}
@@ -892,7 +853,7 @@ const YA = [
   ['peach',{es:'Princesa Peach · fan art',en:'Princess Peach · fan art'}],
   ['wednesday',{es:'Miércoles · fan art',en:'Wednesday · fan art'}]
 ];
-const PRICE = {dlposter:20, dlsheet:12, letter:5, dl:12, a3:40, l50:60, l60:80, a3p:20, book:18};
+const PRICE = {dl:12, a3:40, l50:60, l60:80, a3p:20, book:18};
 const SHIP = {canarias:4.95, spain:9.95, pickup:0};
 
 /* ---------- utilidades ---------- */
@@ -904,7 +865,7 @@ const $ = s => document.querySelector(s);
 const byId = id => PRODUCTS.find(p => p.id === id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const ss = (path, sizes) => `${wh(path)} src="${path}" srcset="${path.replace('img/','img/sm/')} 600w, ${path} 1100w" sizes="${sizes}" decoding="async"`;
-const DIM = {"poke-poster":[780,1100],"poke-am":[789,1100],"poke-nz":[789,1100],"poke-b":[880,1100],"poke-c":[880,1100],"guacamayas":[1100,897],"schoolofgame":[1100,1100],"juvenil":[880,1100],"personajes":[1100,628],"lucas5":[1100,550],"dtiys3":[1100,1100],"cactus":[724,1100],"lagarto":[783,1100],"dtiys2":[1100,1100],"lucas3":[1024,512],"racoon":[1024,1024],"vera":[1100,1100],"peach":[1100,1100],"libro":[886,741],"jirafas":[740,1100],"victoria":[1100,628],"dtiys1":[1100,1100],"bocetos":[1024,1024],"hero":[1100,825],"diaynoche":[1100,690],"corralejo":[1100,701],"img3563":[1100,1100],"envy":[1100,1100],"mockup-wall3":[1100,825],"chichiriviche":[1100,892],"mockup-wall2":[1100,825],"lucas2":[1024,512],"home4":[825,1100],"mockup-dresser":[1100,825],"libro3":[1100,1096],"mockup-wall":[1100,825],"pulpo-taller":[1100,1100],"libro2":[1100,733],"cabra":[884,1100],"campanita":[1100,1100],"wednesday":[880,1100],"pulpo":[852,1100],"marylu":[1100,1100],"selva":[1024,512],"calima":[1100,786]};
+const DIM = {"guacamayas":[1100,897],"schoolofgame":[1100,1100],"juvenil":[880,1100],"personajes":[1100,628],"lucas5":[1100,550],"dtiys3":[1100,1100],"cactus":[724,1100],"lagarto":[783,1100],"dtiys2":[1100,1100],"lucas3":[1024,512],"racoon":[1024,1024],"vera":[1100,1100],"peach":[1100,1100],"libro":[886,741],"jirafas":[945,1330],"victoria":[1100,628],"dtiys1":[1100,1100],"bocetos":[1024,1024],"hero":[1100,825],"diaynoche":[1100,690],"corralejo":[1400,885],"img3563":[1100,1100],"envy":[1100,1100],"mockup-wall3":[1100,825],"chichiriviche":[1273,1000],"mockup-wall2":[1100,825],"lucas2":[1024,512],"home4":[825,1100],"mockup-dresser":[1100,825],"libro3":[1100,1096],"mockup-wall":[1100,825],"pulpo-taller":[1100,1100],"libro2":[1100,733],"cabra":[884,1100],"campanita":[1100,1100],"wednesday":[880,1100],"pulpo":[852,1100],"marylu":[1100,1100],"selva":[1024,512],"calima":[1100,786]};
 const wh = path => { const d = DIM[path.split('/').pop().replace('.webp','')]; return d ? `width="${d[0]}" height="${d[1]}"` : ''; };
 const sm = path => path.replace('img/','img/sm/');
 const dots = pal => pal.map(c => `<i style="background:${c}"></i>`).join('');
@@ -916,9 +877,6 @@ function optInfo(code){
   if (code === 'sold') return {label:x.orig, sub:x.soldSub, price:0, sold:true};
   if (code === 'dl') return {label:x.dl, sub:x.dlSub, price:PRICE.dl, digital:true};
   if (code === 'a3') return {label:x.a3, sub:x.printSub, price:PRICE.a3};
-  if (code === 'dlposter') return {label:x.dlPoster, sub:x.dlSub2, price:PRICE.dlposter, digital:true};
-  if (code === 'dlsheet') return {label:x.dlSheet, sub:x.dlSub2, price:PRICE.dlsheet, digital:true};
-  if (code.startsWith('L:')) return {label:x.letter + ' ' + code.slice(2), sub:x.dlSub2, price:PRICE.letter, digital:true};
   if (code === 'l50') return {label:x.l50, sub:x.printSubTube, price:PRICE.l50};
   if (code === 'l60') return {label:x.l60, sub:x.printSubTube, price:PRICE.l60};
   if (code === 'a3p') return {label:x.a3, sub:x.printSub, price:PRICE.a3p};
@@ -970,8 +928,7 @@ function applyLang(){
   document.querySelectorAll('[data-alt-es]').forEach(el => el.alt = lang === 'en' ? el.dataset.altEn : el.dataset.altEs);
   document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   $('#h1').innerHTML = t().h1;
-  $('#pokeGrid').innerHTML = PRODUCTS.filter(p => p.col === 'poke').map(p => `<article class="pk"><button class="pkimg" data-open="${p.id}" aria-label="${esc(L(p.title))}"><img loading="lazy" ${ss(p.img,'(max-width:820px) 46vw, 23vw')} alt="${esc(L(p.title))}"></button><h3>${L(p.title)}</h3><div class="meta">${L(p.place)}</div><div class="row"><span class="price">${p.letters ? '<small>' + t().from + '</small> ' + eur(PRICE.letter) : eur(optInfo(p.opts[0]).price)}</span><button class="btn dark" data-open="${p.id}">${t().view}</button></div></article>`).join('');
-  $('#mocks').innerHTML = PRODUCTS.filter(p => p.kind === 'digital' && p.col !== 'poke').map(p =>
+  $('#mocks').innerHTML = PRODUCTS.filter(p => p.kind === 'digital').map(p =>
     `<article class="mock"><img loading="lazy" ${ss(p.img,'(max-width:820px) 92vw, 33vw')} alt="${esc(L(p.title))}"><div><h3>${L(p.title)}</h3><span class="price"><small>${t().from}</small> ${eur(PRICE.dl)}</span><button class="btn dark" data-open="${p.id}">${t().view}</button></div></article>`).join('');
   renderReel($('#reelKids'), KIDS); renderReel($('#reelYA'), YA);
   renderGrid();
@@ -997,9 +954,6 @@ document.addEventListener('click', e => {
 });
 
 /* ---------- ficha ---------- */
-const addBtn = () => $('#pForm button[type=submit]');
-function updLetterBtn(){ const n = document.querySelectorAll('#pOpts input[name=letter]:checked').length; addBtn().textContent = t().addLetters(n); addBtn().disabled = !n; }
-$('#pOpts').addEventListener('change', e => { if (e.target.name === 'letter') updLetterBtn(); });
 let current = null;
 function openProduct(id){
   const p = byId(id), x = t(); current = p;
@@ -1011,11 +965,6 @@ function openProduct(id){
   $('#pDesc').textContent = L(p.desc) + ' ' + L(p.place) + '.';
   const box = $('#pOpts'); box.innerHTML = '';
   let first = true;
-  $('#pForm').classList.toggle('letters', !!p.letters);
-  if (p.letters) {
-    box.innerHTML = `<p class="small" style="margin:0 0 8px">${x.pickLetters}</p><div class="chips">` + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(c => `<label class="chip"><input type="checkbox" name="letter" value="${c}"><span>${c}</span></label>`).join('') + '</div>';
-    updLetterBtn();
-  }
   p.opts.forEach((code, i) => {
     const o = optInfo(code);
     const l = document.createElement('label');
@@ -1025,21 +974,13 @@ function openProduct(id){
     if (!o.sold) first = false;
     box.appendChild(l);
   });
-  $('#pNote').innerHTML = p.col === 'poke'
-    ? '<b>Solo descarga:</b> no hay envío. Al pagar, el cliente descarga el archivo al momento. Las letras sueltas se eligen aquí y cada una va como un archivo aparte.'
-    : p.opts.includes('dl')
+  $('#pNote').innerHTML = p.opts.includes('dl')
     ? '<b>Botón 1, compra + descarga automática:</b> la opción "Descarga digital" no lleva envío. En cuanto el cliente paga, recibe el enlace al archivo en alta resolución. La imagen de la web lleva marca de agua.'
     : '<b>Botón 2, compra con datos de envío:</b> el original y las láminas son físicos. Al pagar, el cliente rellena su dirección y a Mary Lu le llega un email con todo para enviarlo. Al venderse el original, se marca como vendido (solo hay uno).';
-  if (!p.letters) { addBtn().disabled = false; addBtn().textContent = lang === 'en' ? 'Add to cart' : 'Añadir al carrito'; }
   open($('#pModal'));
 }
 $('#pForm').addEventListener('submit', e => {
   e.preventDefault();
-  if (current.letters) {
-    const ls = new FormData(e.target).getAll('letter'); if (!ls.length) return;
-    ls.forEach(c => { const code = 'L:' + c; if (!cart.find(i => i.id === current.id && i.opt === code)) cart.push({id:current.id, opt:code, qty:1}); });
-    save(); updateCount(); openCart(); return;
-  }
   const code = new FormData(e.target).get('opt'); if (!code) return;
   const o = optInfo(code);
   const ex = cart.find(i => i.id === current.id && i.opt === code);
@@ -1157,7 +1098,7 @@ $('#notesBtn').addEventListener('click', e => {
 
 
 /* ---------- páginas (como la web original) ---------- */
-const VIEW_OF = {alfabeto:'arte', cuadros:'arte', fuerteventura:'arte', venezuela:'arte', inicio:'inicio', mundos:'inicio', arte:'arte', tienda:'arte', prints:'arte', ilustracion:'ilustracion', libros:'libros', libro:'libros', 'sobre-mi':'sobre-mi', contacto:'sobre-mi', encargos:'sobre-mi'};
+const VIEW_OF = {cuadros:'arte', fuerteventura:'arte', venezuela:'arte', inicio:'inicio', mundos:'inicio', arte:'arte', tienda:'arte', prints:'arte', ilustracion:'ilustracion', libros:'libros', libro:'libros', 'sobre-mi':'sobre-mi', contacto:'sobre-mi', encargos:'sobre-mi'};
 const VIEW_TITLE = {inicio:{es:'Mary Lu Art',en:'Mary Lu Art'}, arte:{es:'Arte y láminas',en:'Art & Prints'}, ilustracion:{es:'Ilustración',en:'Illustration'}, libros:{es:'Libros',en:'Books'}, 'sobre-mi':{es:'Sobre mí y contacto',en:'About & contact'}};
 let currentView = 'inicio';
 function route(){
