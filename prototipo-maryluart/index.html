@@ -302,6 +302,7 @@ label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;bor
 .soon{display:inline-block;margin-top:26px;background:var(--tinta);color:#fff;font-family:var(--mano);font-size:28px;padding:6px 18px;border-radius:99px;transform:rotate(-2deg)}
 @media (max-width:820px){.bookpics{grid-template-columns:1fr 1fr}}
 .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.skills a.sk-link{border:1px solid var(--tinta);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600;text-decoration:none}
 .skills span{border:1px solid var(--linea);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600}
 
 /* cabecera fija y páginas */
@@ -397,6 +398,14 @@ section.hero{padding-block:0 24px;border-top:0}
 .links-me{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .links-me a{border:1px solid var(--tinta);border-radius:99px;padding:8px 16px;text-decoration:none;font-weight:600;font-size:14px}
 .links-me a:hover{background:var(--tinta);color:#fff}
+
+.retratos{margin-top:64px;border-top:1px solid var(--tinta);padding-top:24px}
+.ret-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.ret-grid figure{margin:0}.ret-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:2px}
+.ret-grid figcaption{font-size:14px;color:var(--gris);margin-top:8px}
+.ret-steps{list-style:none;padding:0;margin:28px 0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;font-size:15px;color:var(--gris)}
+.ret-steps li{border:1px solid var(--linea);border-radius:4px;padding:14px 16px}.ret-steps b{color:var(--tinta)}
+@media (max-width:820px){.ret-grid{grid-template-columns:1fr 1fr}.ret-steps{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="notes">
@@ -574,6 +583,24 @@ section.hero{padding-block:0 24px;border-top:0}
       <div class="reel" id="reelKids" tabindex="0"></div>
       <div class="group-t"><h3 data-en="Young adult illustration">Ilustración juvenil</h3><span data-en="swipe →">desliza →</span></div>
       <div class="reel" id="reelYA" tabindex="0"></div>
+      <div class="retratos" id="retratos">
+        <div class="coll">
+          <span class="kicker" data-en="Commissions">Por encargo</span>
+          <h4 data-en="Black &amp; white digital portraits">Retratos digitales en blanco y negro</h4>
+          <p data-en="Send me your favourite photo and I'll turn it into a hand-drawn line portrait: your family, your partner, your pet or that special moment. You can add a name, a date or a phrase.">Envíame tu foto favorita y la convierto en un retrato dibujado a línea: tu familia, tu pareja, tu mascota o ese momento especial. Puedes añadir un nombre, una fecha o una frase.</p>
+        </div>
+        <div class="ret-grid"><figure><img width="1200" height="1200" src="img/ret-bulldog.webp" srcset="img/sm/ret-bulldog.webp 700w, img/ret-bulldog.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: tu mascota" data-alt-en="Commissioned portrait: your pet"><figcaption data-en="Your pet">Tu mascota</figcaption></figure><figure><img width="1200" height="1200" src="img/ret-familia.webp" srcset="img/sm/ret-familia.webp 700w, img/ret-familia.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: en familia" data-alt-en="Commissioned portrait: family"><figcaption data-en="Family">En familia</figcaption></figure><figure><img width="1200" height="1200" src="img/ret-yoga.webp" srcset="img/sm/ret-yoga.webp 700w, img/ret-yoga.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: retrato individual" data-alt-en="Commissioned portrait: individual portrait"><figcaption data-en="Individual portrait">Retrato individual</figcaption></figure><figure><img width="1200" height="1200" src="img/ret-pareja.webp" srcset="img/sm/ret-pareja.webp 700w, img/ret-pareja.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: en pareja" data-alt-en="Commissioned portrait: couples"><figcaption data-en="Couples">En pareja</figcaption></figure><figure><img width="1200" height="1200" src="img/ret-mama.webp" srcset="img/sm/ret-mama.webp 700w, img/ret-mama.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: mamá" data-alt-en="Commissioned portrait: mum"><figcaption data-en="Mum">Mamá</figcaption></figure></div>
+        <ol class="ret-steps">
+          <li data-en="<b>1. Write to me</b> with your photo and what you'd like.">
+            <b>1. Escríbeme</b> con tu foto y lo que te gustaría.</li>
+          <li data-en="<b>2. I draw it</b> and send you a preview to adjust.">
+            <b>2. Lo dibujo</b> y te envío una prueba para ajustarlo.</li>
+          <li data-en="<b>3. You receive it</b> as a high-resolution digital file, ready to print and frame.">
+            <b>3. Lo recibes</b> en digital en alta resolución, listo para imprimir y enmarcar.</li>
+        </ol>
+        <a class="btn dark" href="#contacto" data-en="Order my portrait">Pedir mi retrato</a>
+        <div class="note">Sustituye a su tienda de Etsy. De momento se piden por email; si quiere, se puede añadir un botón de pago con precio fijo (por ejemplo, según el número de personas o mascotas).</div>
+      </div>
       <div class="note">Aquí están ya las 19 ilustraciones de su página, separadas en "infantil" y "juvenil", igual que en su web. Algunas son fan art de personajes conocidos (Campanilla, Princesa Peach, Miércoles). En un portafolio está bien, pero no conviene venderlas como prints.</div>
     </div>
   </section>
@@ -622,8 +649,8 @@ section.hero{padding-block:0 24px;border-top:0}
       <div class="pres">
         <div class="pres-head">
           <span class="kicker" data-en="Book launch">Presentación del libro</span>
-          <h3 data-en="Lucas and Martín, <em>in real life</em>">Lucas y Martín, <em>en la vida real</em></h3>
-          <p data-en="The real Lucas and Martín, my children, who inspired the story, at the book launch in Fuerteventura.">Los Lucas y Martín de verdad, mis hijos, que inspiraron la historia, en la presentación del libro en Fuerteventura.</p>
+          <h3 data-en="Behind <em>the story</em>">Detrás de <em>la historia</em></h3>
+          <p data-en="My children, who inspired the story, at the book launch in Fuerteventura.">Mis hijos, que inspiraron la historia, en la presentación del libro en Fuerteventura.</p>
         </div>
         <figure class="p1"><img width="1600" height="1066" src="img/pres-escenario.webp" srcset="img/sm/pres-escenario.webp 800w, img/pres-escenario.webp 1600w" sizes="(max-width:820px) 92vw, 95vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa con Lucas y Martín en el escenario de la presentación" data-alt-en="María Luisa with Lucas and Martín on stage at the launch"><figcaption data-en="On stage at the launch">En el escenario de la presentación</figcaption></figure>
         <figure class="p2"><img width="1600" height="1224" src="img/pres-firma.webp" srcset="img/sm/pres-firma.webp 800w, img/pres-firma.webp 1600w" sizes="(max-width:820px) 92vw, 38vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa firmando libros con sus hijos" data-alt-en="María Luisa signing books with her children"><figcaption data-en="Signing books">Firmando libros</figcaption></figure>
@@ -650,7 +677,7 @@ section.hero{padding-block:0 24px;border-top:0}
         <p class="lead-q" data-en="“Colour is feeling: it is joy, nostalgia, anger, exaltation. It is life.”">“El color es sentimiento: es alegría, es nostalgia, es ira, es exaltación. Es vida.”</p>
         <p data-en="I'm a Venezuelan illustrator and artist. I've loved telling stories since I was little. For me, art is a way to communicate, to let go, to be free: painting is that magical moment when you lose track of time and simply enjoy being.">Soy ilustradora y artista venezolana. Desde pequeña me ha encantado contar historias. Para mí, el arte es una manera de comunicar, de soltar, de libertad: pintar es ese momento mágico en el que pierdes la noción del tiempo y simplemente disfrutas el ser y estar.</p>
         <p data-en="Living from art has always been my dream. I love reading, comics, manga and cartoons, and it shows in my illustration. Today I paint in Fuerteventura, amazed by the island’s wild landscapes, and I keep drawing my family’s adventures.">Vivir del arte siempre ha sido mi sueño. Me apasionan la lectura, el cómic, el manga y los dibujos animados, y eso se nota en mi ilustración. Hoy pinto en Fuerteventura, maravillada por los paisajes salvajes de la isla, y sigo documentando con mis dibujos las aventuras de mi familia.</p>
-        <div class="skills"><span data-en="Acrylic painting">Pintura acrílica</span><span data-en="Digital illustration">Ilustración digital</span><span data-en="Children’s books">Libro infantil</span><span data-en="Custom portraits">Retratos personalizados</span><span data-en="Graphic design &amp; layout">Diseño gráfico y maquetación</span><span data-en="Creative writing">Escritura creativa</span></div>
+        <div class="skills"><span data-en="Acrylic painting">Pintura acrílica</span><span data-en="Digital illustration">Ilustración digital</span><span data-en="Children’s books">Libro infantil</span><a href="#retratos" class="sk-link" data-en="Custom portraits">Retratos por encargo</a><span data-en="Graphic design &amp; layout">Diseño gráfico y maquetación</span><span data-en="Creative writing">Escritura creativa</span></div>
         <h3 class="tl-t" data-en="My path">Mi recorrido</h3>
         <ol class="timeline">
           <li><time>1989</time><span data-en="Born in Valencia, Venezuela.">Nace en Valencia, Venezuela.</span></li>
@@ -659,8 +686,8 @@ section.hero{padding-block:0 24px;border-top:0}
           <li><time>2013</time><span data-en="First exhibition, <i>Espiral</i>: nature, fantasy, the female figure and the harmony and contrast of colour.">Primera exposición, <i>Espiral</i>: naturaleza, fantasía, la figura femenina y la armonía del color y sus contrastes.</span></li>
           <li><time>2015</time><span data-en="Master’s in Digital Publishing in Barcelona: design, layout and illustration.">Máster en Ediciones Digitales en Barcelona: diseño, maquetación e ilustración.</span></li>
           <li><time>—</time><span data-en="Back in Venezuela, she paints saints in acrylic on wood and takes part in the 2nd Carabobo Art Biennial, devoted to the Virgen del Socorro.">De nuevo en Venezuela, pinta santos en acrílico sobre madera y participa en la II Bienal de Arte de Carabobo, dedicada a la Virgen del Socorro.</span></li>
-          <li><time>2017</time><span data-en="Settles in A Coruña, where her son Lucas is born. Starts a motherhood blog of everyday comic strips, which leads to her Etsy shop of custom illustrations.">Se instala en A Coruña, donde nace su hijo Lucas. Empieza un blog de maternidad con viñetas del día a día, que da paso a su tienda en Etsy de ilustraciones personalizadas.</span></li>
-          <li><time>2018</time><span data-en="Moves to Fuerteventura, her home. Martín is born and she goes back to painting, inspired by the island.">Llega a Fuerteventura, su hogar. Allí nace Martín y vuelve a pintar, inspirada por la isla.</span></li>
+          <li><time>2017</time><span data-en="Settles in A Coruña, where her first son is born. Starts a motherhood blog of everyday comic strips, which leads to her custom portraits and illustrations.">Se instala en A Coruña, donde nace su primer hijo. Empieza un blog de maternidad con viñetas del día a día, que da paso a sus retratos e ilustraciones personalizadas.</span></li>
+          <li><time>2018</time><span data-en="Moves to Fuerteventura, her home. her second son is born and she goes back to painting, inspired by the island.">Llega a Fuerteventura, su hogar. Allí nace su segundo hijo y vuelve a pintar, inspirada por la isla.</span></li>
           <li><time>—</time><span data-en="Honourable mention (accésit) in the 1st and 2nd Open-Air Painting Contests of Puerto del Rosario.">Accésit en el I y el II Certamen de Pintura al Aire Libre de Puerto del Rosario.</span></li>
           <li><time>2024</time><span data-en="Publishes <i>Lucas y Martín, un deseo en Fuerteventura</i> (Edigeca), which she wrote and illustrated.">Publica <i>Lucas y Martín, un deseo en Fuerteventura</i> (Edigeca), escrito e ilustrado por ella.</span></li>
           <li><time data-en="Today">Hoy</time><span data-en="Still moving forward, taking small steps towards big dreams… and working on the second book.">Sigue avanzando, dando pequeños pasos para cumplir grandes sueños… y preparando el segundo libro.</span></li>
@@ -1158,7 +1185,7 @@ $('#notesBtn').addEventListener('click', e => {
 
 
 /* ---------- páginas (como la web original) ---------- */
-const VIEW_OF = {cuadros:'arte', fuerteventura:'arte', venezuela:'arte', inicio:'inicio', mundos:'inicio', arte:'arte', tienda:'arte', prints:'arte', ilustracion:'ilustracion', libros:'libros', libro:'libros', 'sobre-mi':'sobre-mi', contacto:'sobre-mi', encargos:'sobre-mi'};
+const VIEW_OF = {retratos:'ilustracion', cuadros:'arte', fuerteventura:'arte', venezuela:'arte', inicio:'inicio', mundos:'inicio', arte:'arte', tienda:'arte', prints:'arte', ilustracion:'ilustracion', libros:'libros', libro:'libros', 'sobre-mi':'sobre-mi', contacto:'sobre-mi', encargos:'sobre-mi'};
 const VIEW_TITLE = {inicio:{es:'Mary Lu Art',en:'Mary Lu Art'}, arte:{es:'Arte y láminas',en:'Art & Prints'}, ilustracion:{es:'Ilustración',en:'Illustration'}, libros:{es:'Libros',en:'Books'}, 'sobre-mi':{es:'Sobre mí y contacto',en:'About & contact'}};
 let currentView = 'inicio';
 function route(){
