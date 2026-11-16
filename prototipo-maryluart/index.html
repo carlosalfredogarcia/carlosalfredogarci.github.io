@@ -383,6 +383,14 @@ section.hero{padding-block:0 24px;border-top:0}
 .pres .p2 img,.pres .p3 img,.pres .p4 img{height:clamp(240px,26vw,400px)}
 .pres .p3 img{object-position:60% 50%}.pres .p4 img{object-position:50% 15%}
 @media (max-width:820px){.pres{grid-template-columns:1fr 1fr;grid-template-areas:"h h" "a a" "b b" "c d"}.pres .p1 img{aspect-ratio:3/2}.pres .p2 img{height:auto;aspect-ratio:4/3}.pres .p3 img,.pres .p4 img{height:auto;aspect-ratio:4/5}}
+
+.soon-btn{background:var(--suave);color:var(--gris);border:1px dashed #bbb;cursor:default}
+.soon-btn:hover{transform:none}
+.next-book{margin-top:28px;border:1px dashed var(--tinta);border-radius:4px;padding:20px 22px;max-width:520px;position:relative}
+.nb-tag{display:inline-block;background:var(--tinta);color:#fff;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:99px}
+.nb-t{font-family:var(--mano);font-size:30px;line-height:1.1;margin:12px 0 6px}
+.next-book .small{margin:0}
+.nb-link{display:inline-block;margin-top:10px;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:4px}
 </style>
 </head>
 <body class="notes">
@@ -464,8 +472,8 @@ section.hero{padding-block:0 24px;border-top:0}
           <div class="pic"><img width="1100" height="1100" src="img/img3563.webp" srcset="img/sm/img3563.webp 600w, img/img3563.webp 1100w" sizes="(max-width:820px) 92vw, 40vw" decoding="async" loading="lazy" alt="" data-alt-es="El libro Lucas y Martín" data-alt-en="The book Lucas y Martín"></div>
           <span class="num">03</span>
           <h3 data-en="My book">Mi libro</h3>
-          <p data-en="<i>Lucas y Martín: un deseo en Fuerteventura</i>, written and illustrated by me. Available on Amazon.">
-            <i>Lucas y Martín: un deseo en Fuerteventura</i>, escrito e ilustrado por mí. Disponible en Amazon.</p>
+          <p data-en="<i>Lucas y Martín: un deseo en Fuerteventura</i>, written and illustrated by me. Coming soon to Amazon.">
+            <i>Lucas y Martín: un deseo en Fuerteventura</i>, escrito e ilustrado por mí. Muy pronto en Amazon.</p>
           <span class="go" data-en="See the book →">Ver el libro →</span>
         </a>
       </div>
@@ -574,24 +582,28 @@ section.hero{padding-block:0 24px;border-top:0}
           <span class="kicker" data-en="Illustrated book · 2024">Libro ilustrado · 2024</span>
           <h2 data-en="Lucas &amp; Martín: <em>un deseo en Fuerteventura</em>">Lucas y Martín: <em>un deseo en Fuerteventura</em></h2>
         </div>
-        <a class="btn fire amazon" href="https://www.amazon.es/s?k=Lucas+y+Mart%C3%ADn+un+deseo+en+Fuerteventura" target="_blank" rel="noopener" data-en="Buy on Amazon ↗">Comprar en Amazon ↗</a>
+        <span class="btn soon-btn" aria-disabled="true" data-en="Coming soon to Amazon">Próximamente en Amazon</span>
       </div>
       <div class="banner"><img width="1600" height="800" src="img/lucas2-hd.webp" srcset="img/sm/lucas2-hd.webp 800w, img/lucas2-hd.webp 1600w" sizes="100vw" decoding="async" loading="lazy" alt="" data-alt-es="Ilustración de Fuerteventura del libro" data-alt-en="Illustration of Fuerteventura from the book"></div>
       <div class="info">
         <div>
           <blockquote data-en="“I wanted to create something beautiful and precious for my children, filled with magic, adventure and joy.”">“Quería crear algo bonito y especial para mis hijos, lleno de magia, aventura y alegría.”</blockquote>
           <p class="small" style="margin-top:18px" data-en="Written and illustrated by María Luisa. It also holds a subtle message about wishes and the people who leave this world, but still live among the stars, watching and listening to us from above.">Escrito e ilustrado por María Luisa. Guarda también un mensaje sutil sobre los deseos y sobre las personas que se van, pero siguen viviendo entre las estrellas, mirándonos y escuchándonos desde arriba.</p>
-          <p class="mano" style="font-size:26px;color:var(--gris);margin:8px 0 0" data-en="Lucas and Martín are getting ready for their next adventure… stay tuned!">Lucas y Martín preparan su próxima aventura… ¡atentos!</p>
           <div class="buybox">
             <img width="1100" height="1100" src="img/sm/img3563.webp" alt="" loading="lazy">
             <div>
-              <b data-en="Available on Amazon">Disponible en Amazon</b>
-              <span data-en="Hardcover · in Spanish">Tapa dura · en español</span>
-              <a class="btn fire amazon" href="https://www.amazon.es/s?k=Lucas+y+Mart%C3%ADn+un+deseo+en+Fuerteventura" target="_blank" rel="noopener" data-en="Buy on Amazon ↗">Comprar en Amazon ↗</a>
+              <b data-en="Coming soon to Amazon">Próximamente en Amazon</b>
+              <span data-en="Published by Edigeca (Editorial Genealógica Canaria) · in Spanish">Publicado por Edigeca (Editorial Genealógica Canaria) · en español</span>
+              <a class="btn line" href="#contacto" data-en="Want a copy? Write to me">¿Quieres un ejemplar? Escríbeme</a>
             </div>
           </div>
-          <div class="note"><b>Falta el enlace real:</b> el botón de Amazon de momento abre una búsqueda del libro en Amazon.es. Cuando Mary Lu pase el enlace exacto de su libro, se pone aquí y en el botón de arriba.</div>
-          <span class="soon" data-en="More books coming soon!!!">¡Pronto, más libros!</span>
+          <div class="note"><b>Amazon, próximamente:</b> Mary Lu está recuperando los derechos del libro para venderlo en Amazon. Cuando esté publicado, "Próximamente" se cambia por el botón "Comprar en Amazon" con el enlace real. Mientras, el botón lleva a su contacto.</div>
+          <div class="next-book">
+            <span class="nb-tag" data-en="Book 2 · in progress">Libro 2 · en camino</span>
+            <p class="nb-t" data-en="Lucas and Martín are getting ready for their next adventure…">Lucas y Martín preparan su próxima aventura…</p>
+            <p class="small" data-en="I'm working on the second book. Follow me on Instagram so you don't miss it!">Estoy trabajando en el segundo libro. ¡Sígueme en Instagram para no perdértelo!</p>
+            <a class="nb-link" href="https://www.instagram.com/marylu.art/" target="_blank" rel="noopener">@marylu.art ↗</a>
+          </div>
         </div>
         <img width="1100" height="1096" class="foto" src="img/libro3.webp" srcset="img/sm/libro3.webp 600w, img/libro3.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa con sus hijos y el libro" data-alt-en="María Luisa with her children and the book">
       </div>
@@ -612,7 +624,7 @@ section.hero{padding-block:0 24px;border-top:0}
         <figure class="p3"><img width="1600" height="1173" src="img/pres-lector.webp" srcset="img/sm/pres-lector.webp 800w, img/pres-lector.webp 1600w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Un niño leyendo el libro" data-alt-en="A child reading the book"><figcaption data-en="Its first readers">Sus primeros lectores</figcaption></figure>
         <figure class="p4"><img width="1081" height="1600" src="img/pres-edigeca.webp" srcset="img/sm/pres-edigeca.webp 800w, img/pres-edigeca.webp 1600w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Expositor de la editorial Edigeca con el libro" data-alt-en="Edigeca publisher's display with the book"><figcaption data-en="With the publisher, Edigeca">Con la editorial Edigeca</figcaption></figure>
       </div>
-      <div class="note">Fotos de la presentación del libro. El expositor indica que la editorial es <b>Edigeca (Editorial Genealógica Canaria)</b>: si es así, se puede añadir "Publicado por Edigeca" junto al libro.</div>
+      <div class="note">Fotos de la presentación del libro. La editorial es <b>Edigeca (Editorial Genealógica Canaria)</b>, confirmado por Mary Lu.</div>
       <div class="note">Ahora salen todas las fotos de su página "Books": ella con sus hijos y el libro, la feria y el libro por dentro. También la portada, que estaba en su página de inicio, y su frase "Soon to be BOOKS!!!".</div>
     </div>
   </section>
