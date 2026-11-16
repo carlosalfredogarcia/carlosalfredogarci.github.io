@@ -368,6 +368,21 @@ section.hero{padding-block:0 24px;border-top:0}
 
 .shipinfo{list-style:none;margin:-8px 0 36px;padding:14px 18px;border:1px solid var(--linea);border-radius:4px;display:grid;gap:6px;font-size:14px;color:var(--gris)}
 .shipinfo b{color:var(--tinta)}
+
+/* presentación del libro */
+.pres{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-areas:"h h h" "a a a" "b c d";gap:22px;margin-top:72px;border-top:1px solid var(--tinta);padding-top:24px}
+.pres-head{grid-area:h;margin-bottom:6px}
+.pres-head h3{font-size:clamp(28px,3vw,40px);margin-top:12px}
+.pres-head h3 em{font-style:italic;font-weight:300}
+.pres-head p{color:var(--gris);margin:6px 0 0;max-width:40em}
+.pres figure{margin:0}
+.pres figure img{width:100%;object-fit:cover;border-radius:2px;display:block}
+.pres figcaption{font-size:14px;color:var(--gris);margin-top:8px}
+.pres .p1{grid-area:a}.pres .p2{grid-area:b}.pres .p3{grid-area:c}.pres .p4{grid-area:d}
+.pres .p1 img{aspect-ratio:3/2;object-position:50% 50%;max-height:820px}
+.pres .p2 img,.pres .p3 img,.pres .p4 img{height:clamp(240px,26vw,400px)}
+.pres .p3 img{object-position:60% 50%}.pres .p4 img{object-position:50% 15%}
+@media (max-width:820px){.pres{grid-template-columns:1fr 1fr;grid-template-areas:"h h" "a a" "b b" "c d"}.pres .p1 img{aspect-ratio:3/2}.pres .p2 img{height:auto;aspect-ratio:4/3}.pres .p3 img,.pres .p4 img{height:auto;aspect-ratio:4/5}}
 </style>
 </head>
 <body class="notes">
@@ -561,7 +576,7 @@ section.hero{padding-block:0 24px;border-top:0}
         </div>
         <a class="btn fire amazon" href="https://www.amazon.es/s?k=Lucas+y+Mart%C3%ADn+un+deseo+en+Fuerteventura" target="_blank" rel="noopener" data-en="Buy on Amazon ↗">Comprar en Amazon ↗</a>
       </div>
-      <div class="banner"><img width="1600" height="800" src="img/lucas2-hd.webp" srcset="img/sm/lucas2-hd.webp 600w, img/lucas2-hd.webp 1100w" sizes="100vw" decoding="async" loading="lazy" alt="" data-alt-es="Ilustración de Fuerteventura del libro" data-alt-en="Illustration of Fuerteventura from the book"></div>
+      <div class="banner"><img width="1600" height="800" src="img/lucas2-hd.webp" srcset="img/sm/lucas2-hd.webp 800w, img/lucas2-hd.webp 1600w" sizes="100vw" decoding="async" loading="lazy" alt="" data-alt-es="Ilustración de Fuerteventura del libro" data-alt-en="Illustration of Fuerteventura from the book"></div>
       <div class="info">
         <div>
           <blockquote data-en="“I wanted to create something beautiful and precious for my children, filled with magic, adventure and joy.”">“Quería crear algo bonito y especial para mis hijos, lleno de magia, aventura y alegría.”</blockquote>
@@ -586,6 +601,18 @@ section.hero{padding-block:0 24px;border-top:0}
         <figure><img width="1100" height="733" src="img/libro2.webp" srcset="img/sm/libro2.webp 600w, img/libro2.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""><figcaption data-en="at the book fair">en la feria</figcaption></figure>
         <figure><img width="1600" height="800" src="img/lucas5-hd.webp" srcset="img/sm/lucas5-hd.webp 800w, img/lucas5-hd.webp 1600w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""><figcaption data-en="an adventure with dinosaurs">aventura con dinosaurios</figcaption></figure>
       </div>
+      <div class="pres">
+        <div class="pres-head">
+          <span class="kicker" data-en="Book launch">Presentación del libro</span>
+          <h3 data-en="Lucas and Martín, <em>in real life</em>">Lucas y Martín, <em>en la vida real</em></h3>
+          <p data-en="The real Lucas and Martín, my children, who inspired the story, at the book launch in Fuerteventura.">Los Lucas y Martín de verdad, mis hijos, que inspiraron la historia, en la presentación del libro en Fuerteventura.</p>
+        </div>
+        <figure class="p1"><img width="1600" height="1066" src="img/pres-escenario.webp" srcset="img/sm/pres-escenario.webp 800w, img/pres-escenario.webp 1600w" sizes="(max-width:820px) 92vw, 95vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa con Lucas y Martín en el escenario de la presentación" data-alt-en="María Luisa with Lucas and Martín on stage at the launch"><figcaption data-en="On stage at the launch">En el escenario de la presentación</figcaption></figure>
+        <figure class="p2"><img width="1600" height="1224" src="img/pres-firma.webp" srcset="img/sm/pres-firma.webp 800w, img/pres-firma.webp 1600w" sizes="(max-width:820px) 92vw, 38vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa firmando libros con sus hijos" data-alt-en="María Luisa signing books with her children"><figcaption data-en="Signing books">Firmando libros</figcaption></figure>
+        <figure class="p3"><img width="1600" height="1173" src="img/pres-lector.webp" srcset="img/sm/pres-lector.webp 800w, img/pres-lector.webp 1600w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Un niño leyendo el libro" data-alt-en="A child reading the book"><figcaption data-en="Its first readers">Sus primeros lectores</figcaption></figure>
+        <figure class="p4"><img width="1081" height="1600" src="img/pres-edigeca.webp" srcset="img/sm/pres-edigeca.webp 800w, img/pres-edigeca.webp 1600w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Expositor de la editorial Edigeca con el libro" data-alt-en="Edigeca publisher's display with the book"><figcaption data-en="With the publisher, Edigeca">Con la editorial Edigeca</figcaption></figure>
+      </div>
+      <div class="note">Fotos de la presentación del libro. El expositor indica que la editorial es <b>Edigeca (Editorial Genealógica Canaria)</b>: si es así, se puede añadir "Publicado por Edigeca" junto al libro.</div>
       <div class="note">Ahora salen todas las fotos de su página "Books": ella con sus hijos y el libro, la feria y el libro por dentro. También la portada, que estaba en su página de inicio, y su frase "Soon to be BOOKS!!!".</div>
     </div>
   </section>
@@ -867,8 +894,8 @@ const eur = n => { const v = (Math.round(n*100)/100).toFixed(n % 1 ? 2 : 0); ret
 const $ = s => document.querySelector(s);
 const byId = id => PRODUCTS.find(p => p.id === id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const ss = (path, sizes) => `${wh(path)} src="${path}" srcset="${path.replace('img/','img/sm/')} 600w, ${path} 1100w" sizes="${sizes}" decoding="async"`;
-const DIM = {"lucas-noche":[1600,800],"lucas-surf":[1600,800],"osobruja":[1600,1600],"guacamayas":[1100,897],"schoolofgame":[1100,1100],"juvenil":[880,1100],"personajes":[1100,628],"lucas5-hd":[1600,800],"dtiys3":[1100,1100],"cactus":[724,1100],"lagarto":[783,1100],"dtiys2":[1100,1100],"lucas3-hd":[1600,800],"racoon":[1024,1024],"vera":[1100,1100],"peach":[1100,1100],"libro":[886,741],"jirafas-hd":[945,1330],"victoria-hd":[1600,914],"dtiys1":[1100,1100],"bocetos":[1024,1024],"hero":[1100,825],"diaynoche":[1100,690],"corralejo-hd":[1400,885],"img3563":[1100,1100],"envy":[1100,1100],"mockup-wall3":[1100,825],"chichiriviche-hd":[1273,1000],"mockup-wall2":[1100,825],"lucas2-hd":[1600,800],"home4":[825,1100],"mockup-dresser":[1100,825],"libro3":[1100,1096],"mockup-wall":[1100,825],"pulpo-taller":[1100,1100],"libro2":[1100,733],"cabra":[884,1100],"campanita":[1100,1100],"wednesday":[880,1100],"pulpo":[852,1100],"marylu":[1100,1100],"selva-hd":[1600,800],"calima":[1100,786]};
+const ss = (path, sizes) => `${wh(path)} src="${path}" srcset="${path.replace('img/','img/sm/')} ${/-hd|lucas-|osobruja/.test(path)?'800w':'600w'}, ${path} ${/-hd|lucas-|osobruja/.test(path)?'1600w':'1100w'}" sizes="${sizes}" decoding="async"`;
+const DIM = {"pres-edigeca":[1081,1600],"pres-lector":[1600,1173],"pres-firma":[1600,1224],"pres-escenario":[1600,1066],"lucas-noche":[1600,800],"lucas-surf":[1600,800],"osobruja":[1600,1600],"guacamayas":[1100,897],"schoolofgame":[1100,1100],"juvenil":[880,1100],"personajes":[1100,628],"lucas5-hd":[1600,800],"dtiys3":[1100,1100],"cactus":[724,1100],"lagarto":[783,1100],"dtiys2":[1100,1100],"lucas3-hd":[1600,800],"racoon":[1024,1024],"vera":[1100,1100],"peach":[1100,1100],"libro":[886,741],"jirafas-hd":[945,1330],"victoria-hd":[1600,914],"dtiys1":[1100,1100],"bocetos":[1024,1024],"hero":[1100,825],"diaynoche":[1100,690],"corralejo-hd":[1400,885],"img3563":[1100,1100],"envy":[1100,1100],"mockup-wall3":[1100,825],"chichiriviche-hd":[1273,1000],"mockup-wall2":[1100,825],"lucas2-hd":[1600,800],"home4":[825,1100],"mockup-dresser":[1100,825],"libro3":[1100,1096],"mockup-wall":[1100,825],"pulpo-taller":[1100,1100],"libro2":[1100,733],"cabra":[884,1100],"campanita":[1100,1100],"wednesday":[880,1100],"pulpo":[852,1100],"marylu":[1100,1100],"selva-hd":[1600,800],"calima":[1100,786]};
 const wh = path => { const d = DIM[path.split('/').pop().replace('.webp','')]; return d ? `width="${d[0]}" height="${d[1]}"` : ''; };
 const sm = path => path.replace('img/','img/sm/');
 const dots = pal => pal.map(c => `<i style="background:${c}"></i>`).join('');
