@@ -1,0 +1,5 @@
+# Carpetas que NO se publican en GitHub Pages: la tienda real vive en Cloudflare
+# (www.maryluart.com) y estas carpetas llevan textos legales a medias y código del servidor.
+exclude:
+  - maryluart-web
+  - maryluart-tools
