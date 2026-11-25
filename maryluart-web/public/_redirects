@@ -1,0 +1,13 @@
+# Direcciones antiguas de la web en WordPress -> secciones de la web nueva
+/arte            /#arte          301
+/arte/           /#arte          301
+/ilustracion     /#ilustracion   301
+/ilustracion/    /#ilustracion   301
+/libros          /#libros        301
+/libros/         /#libros        301
+/about           /#sobre-mi      301
+/about/          /#sobre-mi      301
+/productos       /#arte          301
+/productos/      /#arte          301
+/finalizar-compra   /            301
+/finalizar-compra/  /            301

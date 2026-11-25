@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mary Lu Art</title>
+<meta name="description" content="Pintora, ilustradora y diseñadora de Fuerteventura. Cuadros originales, láminas, prints digitales para descargar, ilustración infantil y juvenil, y retratos por encargo.">
+<link rel="canonical" href="https://www.maryluart.com/">
+<link rel="icon" href="img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mary Lu Art">
+<meta property="og:title" content="Mary Lu Art · Arte, ilustración e historias">
+<meta property="og:description" content="Cuadros originales, láminas, prints digitales, ilustración y retratos por encargo desde Fuerteventura.">
+<meta property="og:url" content="https://www.maryluart.com/">
+<meta property="og:image" content="https://www.maryluart.com/img/hero-wide.webp">
+<link rel="preload" as="image" href="img/hero-wide.webp" imagesrcset="img/sm/hero-wide.webp 800w, img/hero-wide.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..500&display=swap" rel="stylesheet">
+<style>
+/* Idea: una galería blanca. Paredes blancas, texto negro, líneas finas:
+   el único color de la página lo ponen sus cuadros. */
+:root{
+  color-scheme: light;
+  --noche:#101c4b;      /* el azul de sus cielos */
+  --cobalto:#1f5fbf;
+  --sol:#f4b63f;        /* el amarillo de sus soles */
+  --fuego:#e8692c;      /* naranja de Calima */
+  --magenta:#d43f7c;
+  --papel:#ffffff;
+  --tinta:#141414;
+  --gris:#6e6e6e;
+  --linea:#e9e9e9;
+  --suave:#f6f6f6;
+  --display:'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --body:'Figtree', 'Segoe UI', system-ui, sans-serif;
+  --mano:'Caveat', 'Bradley Hand', cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;font-family:var(--body);color:var(--tinta);background:var(--papel);line-height:1.6;font-size:17px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
+.wrap{max-width:1440px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0}
+.mano{font-family:var(--mano);font-weight:700}
+.kicker{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;line-height:1;color:var(--gris)}
+
+/* banner prototipo */
+
+/* ===== HERO (cielo en espiral) ===== */
+.hero{position:relative;background:var(--papel);color:var(--tinta);overflow:hidden}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;border-bottom:1px solid var(--linea)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{height:46px;width:auto}
+.brand span{font-family:var(--display);font-size:20px;letter-spacing:.18em;font-weight:500;white-space:nowrap}
+@media (max-width:480px){.brand span{font-size:16px;letter-spacing:.12em}.brand img{height:38px}.cart-btn{padding:9px 14px}}
+@media (max-width:560px){.brand span{display:none}}
+.menu{display:flex;gap:28px;font-size:15px}
+.menu a{text-decoration:none;color:var(--gris);padding-block:4px;border-bottom:1px solid transparent}
+.menu a:hover{color:var(--tinta);border-color:var(--tinta)}
+.cart-btn{background:var(--tinta);color:#fff;border:0;border-radius:99px;padding:10px 18px;font-weight:700;font-size:15px;display:flex;gap:8px;align-items:center}
+.cart-btn .n{background:#fff;color:var(--tinta);border-radius:99px;min-width:22px;height:22px;font-size:12px;display:grid;place-items:center;padding:0 6px}
+@media (max-width:820px){.menu{display:none}}
+
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-block:56px 96px}
+.hero .hola{font-family:var(--mano);font-size:32px;color:var(--gris);transform:rotate(-3deg);display:inline-block;margin-bottom:6px}
+.hero h1{font-size:clamp(46px,6.6vw,92px);line-height:.98;font-weight:400;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;font-weight:300}
+.color-word span{display:inline;font-weight:inherit;font-style:normal;color:inherit}
+.hero p.sub{font-size:19px;max-width:30em;color:var(--gris);margin:22px 0 0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{white-space:nowrap;border:0;border-radius:99px;padding:14px 24px;font-weight:700;font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s, background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.sol{background:var(--tinta);color:#fff}
+.btn.line{border:1.5px solid var(--tinta);background:transparent;color:var(--tinta)}
+.btn.dark{background:var(--tinta);color:#fff}
+.btn.fire{background:var(--tinta);color:#fff}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+/* lienzos apoyados */
+.wall{position:relative;height:clamp(460px,50vw,780px)}
+.canvas{position:absolute;margin:0;background:#fff;padding:0;box-shadow:0 1px 2px rgba(0,0,0,.12), 0 14px 34px rgba(0,0,0,.12);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.canvas img{width:100%;height:100%;object-fit:cover}
+.canvas.c1{width:36%;aspect-ratio:884/1100;right:0;top:0;transform:rotate(3deg);z-index:1}
+.canvas.c2{width:48%;aspect-ratio:1100/701;right:2%;bottom:0;transform:rotate(-2deg);z-index:1}
+.polaroid{position:absolute;width:76%;left:0;top:7%;z-index:2;background:#fff;padding:12px 12px 50px;transform:rotate(-1.5deg);box-shadow:0 1px 2px rgba(0,0,0,.12), 0 18px 44px rgba(0,0,0,.14);transition:transform .45s cubic-bezier(.2,.8,.2,1);color:var(--tinta);margin:0}
+.polaroid img{aspect-ratio:4/3;object-fit:cover;object-position:50% 40%;width:100%}
+.polaroid figcaption{font-family:var(--mano);font-size:26px;text-align:center;margin-top:8px;line-height:1}
+.wall .canvas:hover,.wall .polaroid:hover{transform:rotate(0) scale(1.03);z-index:3}
+.tape{position:absolute;width:70px;height:22px;background:rgba(0,0,0,.08);top:-10px;left:50%;transform:translateX(-50%) rotate(-4deg)}
+@media (max-width:900px){.hero-in{grid-template-columns:1fr;padding-bottom:60px}.wall{height:min(118vw,560px)}.polaroid{width:86%}}
+
+/* paleta del taller */
+.palette{display:flex;height:6px;max-width:1440px;margin:0 auto}
+.palette i{flex:1}
+.palette-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:12px;font-size:14px;color:var(--gris)}
+.palette-cap .mano{font-size:20px;color:var(--gris)}
+
+/* secciones */
+section{padding-block:clamp(64px,9vw,130px);border-top:1px solid var(--linea)}
+#mundos{border-top:0}
+.head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:36px}
+.head h2{font-size:clamp(40px,5.4vw,72px);line-height:1;letter-spacing:-.02em;margin-top:14px}
+.head h2 em{font-style:italic;font-weight:300;color:var(--tinta)}
+.head p{max-width:34em;color:var(--gris);margin:14px 0 0}
+@media (max-width:760px){.head{grid-template-columns:1fr}}
+
+/* tienda */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{border:1px solid var(--linea);background:transparent;border-radius:99px;padding:8px 16px;font-size:14px;font-weight:600}
+.tab[aria-selected="true"]{background:var(--tinta);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:56px 40px}
+@media (min-width:1100px){.grid{grid-template-columns:repeat(3,1fr);gap:72px 56px}.card h3{font-size:30px}}
+.card{display:flex;flex-direction:column;gap:14px}
+.card .ph{position:relative;aspect-ratio:4/5;padding:0;border:0;background:var(--suave);box-shadow:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;width:100%}
+.card:hover .ph{transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.10)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:12px;left:12px;font-size:11px;font-weight:600;letter-spacing:.04em;padding:5px 11px;border-radius:99px;background:#fff;color:var(--tinta)}
+.badge.dig{background:#fff}
+.badge.orig{background:#fff}
+.badge.sold{background:var(--tinta);color:#fff}
+.card h3{font-size:24px;line-height:1.15}
+.card .meta{font-size:14px;color:var(--gris)}
+.dots{display:flex;gap:5px;margin-top:2px}
+.dots i{width:14px;height:14px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.card .row{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--linea);padding-top:12px}
+.price{font-family:var(--display);font-size:22px;font-variant-numeric:tabular-nums}
+.price small{font-family:var(--body);font-size:13px;color:var(--gris)}
+.card .row .btn{padding:9px 16px;font-size:14px}
+
+/* prints digitales (el golpe de sol) */
+.digital{background:var(--papel)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:40px;counter-reset:s}
+.step{background:var(--papel);border:1px solid var(--linea);border-radius:4px;padding:24px;position:relative}
+.step b{font-family:var(--display);font-size:56px;line-height:.8;font-weight:300;font-style:italic;color:var(--tinta);display:block;margin-bottom:10px}
+.step h3{font-size:24px;margin-bottom:6px}
+.step p{margin:0;color:var(--gris);font-size:15px}
+.mocks{display:grid;grid-template-columns:repeat(6,1fr);gap:26px}
+.mock{grid-column:span 2}
+.mock:nth-child(4),.mock:nth-child(5){grid-column:span 3}
+.mock{background:var(--papel);display:flex;flex-direction:column}
+.mock img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.mock div{padding:14px 0;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.mock h3{font-size:24px}
+@media (max-width:820px){.steps,.mocks{grid-template-columns:1fr}.mock,.mock:nth-child(4),.mock:nth-child(5){grid-column:auto}}
+
+/* ilustración */
+.ilus{background:#fff}
+.reel{display:grid;grid-auto-flow:column;grid-auto-columns:max-content;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px;scrollbar-color:#bbb transparent}
+.reel figure{margin:0;scroll-snap-align:start}
+.reel img{height:clamp(300px,34vw,540px);width:auto;max-width:86vw;object-fit:cover;border-radius:2px}
+.reel figcaption{max-width:min(86vw,560px)}
+.reel figcaption{font-size:14px;color:var(--gris);margin-top:10px}
+@media (max-width:640px){.reel img{height:280px}}
+
+/* libro */
+.libro{background:var(--papel)}
+.libro .banner{border-radius:2px;overflow:hidden}
+.libro .banner img{width:100%;aspect-ratio:2/1;object-fit:cover}
+.libro .info{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:40px;align-items:start}
+.libro blockquote{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(22px,2.4vw,30px);line-height:1.3;margin:0}
+.libro .foto{border-radius:2px}
+@media (max-width:820px){.libro .info{grid-template-columns:1fr}}
+
+/* sobre mí */
+.about .in{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,80px);align-items:start}
+.blob{position:relative}
+.blob img{width:100%;height:auto;object-fit:contain}
+.blob .firma{width:84px;margin:14px 0 0 auto}
+.about h2{font-size:clamp(40px,5vw,64px);line-height:1}
+.about p{max-width:36em}
+.timeline{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:0}
+.timeline li{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--linea)}
+.timeline time{font-family:var(--display);font-size:22px;color:var(--tinta);font-variant-numeric:tabular-nums}
+@media (max-width:820px){.about .in{grid-template-columns:1fr}}
+
+/* contacto */
+.contact{background:var(--papel);color:var(--tinta);position:relative;text-align:center}
+.contact h2{font-size:clamp(42px,6vw,84px);line-height:1;font-weight:300}
+.contact h2 em{font-style:italic}
+.contact p{color:var(--gris);max-width:34em;margin:18px auto}
+.mail{font-family:var(--display);font-size:clamp(22px,3vw,36px);display:inline-block;border-bottom:1px solid var(--tinta);text-decoration:none;margin-top:10px;word-break:break-all}
+.contact .wrap{position:relative;z-index:1}
+footer{background:var(--papel);color:var(--gris);padding-block:28px;font-size:13px;border-top:1px solid var(--linea)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+.pay-logos{display:flex;gap:6px;flex-wrap:wrap}
+.pl{border:1px solid var(--linea);border-radius:4px;padding:3px 9px;font-size:11px;font-weight:600;color:var(--gris)}
+
+/* ===== modales, carrito, pago ===== */
+.scrim{position:fixed;inset:0;background:rgba(20,20,20,.45);z-index:40;display:none}
+.scrim.open{display:block}
+.modal{position:fixed;z-index:50;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1240px,94vw);max-height:92vh;overflow:auto;background:var(--papel);border-radius:6px;display:none;box-shadow:0 30px 80px rgba(0,0,0,.25)}
+.modal.open{display:block}
+.close{position:absolute;right:14px;top:12px;border:0;background:#fff;border-radius:99px;width:40px;height:40px;font-size:22px;z-index:2;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.pd{display:grid;grid-template-columns:1.05fr 1fr}
+.pd .gal{background:var(--suave);display:flex;align-items:center;justify-content:center;padding:34px;position:relative;min-height:360px}
+.pd .gal img{max-height:78vh;object-fit:contain;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.wm{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;font-family:var(--display);font-size:36px;color:rgba(255,255,255,.5);letter-spacing:.2em;transform:rotate(-24deg)}
+.pd .info{padding:38px 32px}
+.pd .kind{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gris)}
+.pd h3{font-size:38px;line-height:1.05;margin:2px 0 10px}
+.pd .dots i{width:18px;height:18px}
+.opts{display:flex;flex-direction:column;gap:10px;margin:20px 0}
+.opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--linea);border-radius:4px;padding:12px 14px;background:#fff;cursor:pointer}
+.opt:has(input:checked){border-color:var(--tinta)}
+.opt input{margin-top:5px;accent-color:var(--tinta)}
+.opt .t{flex:1}
+.opt .t b{display:block;font-size:16px}
+.opt .t span{font-size:13px;color:var(--gris)}
+.opt .p{font-family:var(--display);font-size:20px;white-space:nowrap}
+.opt.disabled{opacity:.5;cursor:not-allowed}
+.small{font-size:14px;color:var(--gris)}
+@media (max-width:760px){.pd{grid-template-columns:1fr}.pd .gal{min-height:0;padding:22px}.pd .gal img{max-height:42vh}}
+
+.drawer{position:fixed;z-index:50;top:0;right:0;height:100%;width:min(440px,100vw);background:var(--papel);transform:translateX(100%);visibility:hidden;transition:transform .3s,visibility 0s .3s;display:flex;flex-direction:column;box-shadow:-20px 0 50px rgba(0,0,0,.2)}
+.drawer.open{transform:none;visibility:visible;transition:transform .3s}
+.dhead{display:flex;justify-content:space-between;align-items:center;padding:20px 22px}
+.dhead h3{font-size:30px}
+.drawer .items{flex:1;overflow:auto;padding:0 22px}
+.li{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1.5px solid var(--linea)}
+.li img{width:64px;height:64px;object-fit:cover;border-radius:6px}
+.li b{display:block;font-size:15px}
+.li span{font-size:13px;color:var(--gris)}
+.li button{border:0;background:none;color:var(--gris);font-size:13px;text-decoration:underline;padding:0}
+.drawer .foot{padding:18px 22px;border-top:1.5px solid var(--linea)}
+.tot{display:flex;justify-content:space-between;gap:12px;font-size:15px;margin:4px 0;font-variant-numeric:tabular-nums}
+.tot.big{font-size:20px;font-weight:700;margin-top:10px}
+.empty{color:var(--gris);padding:30px 0;text-align:center}
+
+.co{display:grid;grid-template-columns:1.3fr 1fr}
+.co .main{padding:36px 32px}
+.co .side{background:var(--suave);padding:36px 28px}
+.co h3{font-size:34px;margin-bottom:4px}
+.co h4{margin:24px 0 10px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gris)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fields .full{grid-column:1/-1}
+label.f{display:flex;flex-direction:column;font-size:13px;color:var(--gris);gap:4px}
+label.f input,label.f select,label.f textarea{font:inherit;font-size:16px;color:var(--tinta);border:1px solid #d6d6d6;border-radius:4px;padding:10px 12px;background:#fff}
+label.f input:focus,label.f select:focus,label.f textarea:focus{outline:none;border-color:var(--tinta)}
+.pm{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pm .opt{padding:10px 12px;align-items:center}
+.pm .opt b{font-size:15px}
+.pm .opt span{font-size:12px}
+.card-fields{margin-top:10px;display:none}
+.card-fields.show{display:grid}
+.err{color:#b3261e;font-size:14px;margin-top:8px;min-height:1em}
+@media (max-width:760px){.co{grid-template-columns:1fr}.fields,.pm{grid-template-columns:1fr}}
+
+.succ{padding:42px 36px}
+.succ .tick{font-family:var(--mano);font-size:44px;color:var(--tinta);line-height:1}
+.succ h3{font-size:38px;margin:6px 0 8px}
+.dl{display:flex;justify-content:space-between;align-items:center;gap:12px;border:2px solid var(--linea);border-radius:14px;padding:12px 16px;background:#fff;margin:8px 0}
+.dl b{font-size:15px}
+.dl span{font-size:13px;color:var(--gris);display:block}
+.mailbox{margin-top:16px;border:1.5px solid var(--linea);border-radius:12px;background:#fff;overflow:hidden}
+.mailbox .mh{background:var(--suave);padding:10px 14px;font-size:13px;color:#444}
+.mailbox .mb{padding:14px;font-size:13.5px;white-space:pre-wrap;font-family:ui-monospace,Menlo,monospace;line-height:1.55;overflow-wrap:anywhere}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+.toast{visibility:hidden;position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(140px);background:var(--tinta);color:#fff;padding:12px 18px;border-radius:12px;font-size:15px;z-index:60;transition:transform .25s;max-width:90vw}
+.toast.show{visibility:visible;transform:translateX(-50%) translateY(0)}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important;scroll-behavior:auto !important}
+}
+
+/* idioma */
+.lang{display:flex;border:1px solid var(--linea);border-radius:99px;overflow:hidden}
+.lang button{border:0;background:transparent;color:var(--gris);padding:7px 11px;font-size:13px;font-weight:700;letter-spacing:.06em}
+.lang button[aria-pressed="true"]{background:var(--tinta);color:#fff}
+.nav-r{display:flex;gap:10px;align-items:center}
+
+/* tres mundos */
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.door{position:relative;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit}
+.door .pic{border-radius:2px;overflow:hidden;aspect-ratio:4/5;background:var(--suave)}
+.door .pic img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.door:hover .pic img{transform:scale(1.05)}
+.door h3{font-size:28px;line-height:1.1}
+.door p{margin:0;color:var(--gris);font-size:15px}
+.door .go{font-size:14px;font-weight:600;color:var(--tinta);text-decoration:underline;text-underline-offset:4px}
+@media (max-width:820px){.doors{grid-template-columns:1fr}.door .pic{aspect-ratio:16/11}}
+.welcome{display:flex;align-items:center;gap:20px;margin-top:44px;flex-wrap:wrap}
+.welcome img.sf{width:96px;height:96px;border-radius:50%;object-fit:cover}
+.welcome blockquote{margin:0;font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(22px,2.6vw,32px);line-height:1.25;max-width:30em}
+.welcome cite{display:block;font-family:var(--mano);font-style:normal;font-size:24px;color:var(--gris);margin-top:4px}
+
+/* grupos de ilustración */
+.group-t{display:flex;align-items:baseline;gap:14px;margin:40px 0 16px}
+.group-t h3{font-size:30px}
+.group-t span{font-size:13px;color:var(--gris)}
+.reel img.c{object-fit:contain;background:var(--suave)}
+
+/* libro: fotos */
+.bookpics{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px;align-items:start}
+.bookpics figure{margin:0}
+.bookpics img{border-radius:2px;aspect-ratio:1;object-fit:cover;width:100%}
+.bookpics figcaption{font-size:14px;color:var(--gris);margin-top:10px}
+.soon{display:inline-block;margin-top:26px;background:var(--tinta);color:#fff;font-family:var(--mano);font-size:28px;padding:6px 18px;border-radius:99px;transform:rotate(-2deg)}
+@media (max-width:820px){.bookpics{grid-template-columns:1fr 1fr}}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.skills a.sk-link{border:1px solid var(--tinta);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600;text-decoration:none}
+.skills span{border:1px solid var(--linea);border-radius:99px;padding:4px 12px;font-size:14px;font-weight:600}
+
+/* cabecera fija y páginas */
+.top{position:sticky;top:0;z-index:30;background:#fff}
+[id]{scroll-margin-top:120px}
+.menu a[aria-current="page"]{color:var(--tinta);border-color:var(--tinta)}
+.view[hidden]{display:none}
+.view > section:first-child{border-top:0}
+@media (max-width:820px){
+  .nav{flex-wrap:wrap;row-gap:10px;padding-block:14px}
+  .menu{display:flex;order:3;width:100%;overflow-x:auto;gap:20px;font-size:14px;white-space:nowrap;scrollbar-width:none}
+}
+.buybox{display:flex;gap:18px;align-items:center;margin-top:28px;border:1px solid var(--linea);border-radius:4px;padding:16px;max-width:520px}
+.buybox img{width:96px;height:96px;object-fit:cover;border-radius:2px}
+.buybox b{display:block;font-family:var(--display);font-size:22px;font-weight:500}
+.buybox span{display:block;font-size:14px;color:var(--gris);margin-bottom:10px}
+.buybox .btn{padding:10px 18px;font-size:15px}
+
+/* portada: tres entradas */
+.doors{grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:40px 48px}
+.door.main{grid-row:span 2}
+.door .pic{aspect-ratio:16/10}
+.door.main .pic{aspect-ratio:1}
+.door .num{font-size:12px;font-weight:600;letter-spacing:.2em;color:var(--gris)}
+.door.main h3{font-size:clamp(32px,3.4vw,44px)}
+@media (max-width:820px){.doors{grid-template-columns:1fr}.door.main{grid-row:auto}.door.main .pic{aspect-ratio:1}}
+.go-about{margin-left:auto;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:4px}
+/* arte y láminas: dos partes */
+.subnav{display:flex;gap:10px;flex-wrap:wrap}
+.subnav a{display:flex;gap:8px;align-items:baseline;border:1px solid var(--tinta);border-radius:99px;padding:10px 18px;text-decoration:none;font-weight:600;font-size:15px}
+.subnav a b{font-size:11px;letter-spacing:.15em;color:var(--gris)}
+.subnav a:hover{background:var(--tinta);color:#fff}
+.subnav a:hover b{color:#ccc}
+.part{border-top:1px solid var(--tinta);padding-top:22px;margin:8px 0 32px;display:grid;grid-template-columns:200px 1fr;gap:6px 32px;align-items:baseline}
+.part .kicker{grid-row:span 2}
+.part h3{font-size:clamp(28px,3vw,40px)}
+.part p{margin:0;color:var(--gris);max-width:40em}
+@media (max-width:760px){.part{grid-template-columns:1fr}.part .kicker{grid-row:auto}}
+#prints{padding-top:24px;border-top:0}
+#prints .head{border-top:1px solid var(--tinta);padding-top:22px}
+#tienda{padding-bottom:40px}
+.mock div{flex-wrap:wrap}
+.mock .price{margin-left:auto;margin-right:12px}
+
+/* portada: foto panorámica */
+section.hero{padding-block:0 24px;border-top:0}
+.pano{margin:0}
+.pano img{width:100%;height:clamp(300px,44vw,700px);object-fit:cover;object-position:50% 45%}
+.hero-in{grid-template-columns:1fr 1fr;align-items:end;gap:24px 64px;padding-block:48px 72px}
+.hero p.sub{margin-top:0}
+@media (max-width:900px){.pano img{height:62vw;min-height:260px}.hero-in{grid-template-columns:1fr;padding-block:32px 48px}}
+.door.book .pic img{object-position:50% 30%}
+
+/* colecciones */
+.coll{margin:8px 0 24px}
+.coll h4{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.4vw,32px);margin:0}
+.coll p{margin:4px 0 0;color:var(--gris)}
+.venezuela{margin-top:72px;background:var(--suave);padding:40px clamp(16px,3vw,40px) 48px;border-radius:4px}
+.venezuela .card .ph{background:#fff}
+.grid-ve{grid-template-columns:1fr 1fr !important;gap:48px !important}
+.grid-ve .card .ph{aspect-ratio:5/4}
+@media (max-width:760px){.grid-ve{grid-template-columns:1fr !important}}
+
+.shipinfo{list-style:none;margin:-8px 0 36px;padding:14px 18px;border:1px solid var(--linea);border-radius:4px;display:grid;gap:6px;font-size:14px;color:var(--gris)}
+.shipinfo b{color:var(--tinta)}
+
+/* presentación del libro */
+.pres{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-areas:"h h h" "a a a" "b c d";gap:22px;margin-top:72px;border-top:1px solid var(--tinta);padding-top:24px}
+.pres-head{grid-area:h;margin-bottom:6px}
+.pres-head h3{font-size:clamp(28px,3vw,40px);margin-top:12px}
+.pres-head h3 em{font-style:italic;font-weight:300}
+.pres-head p{color:var(--gris);margin:6px 0 0;max-width:40em}
+.pres figure{margin:0}
+.pres figure img{width:100%;object-fit:cover;border-radius:2px;display:block}
+.pres figcaption{font-size:14px;color:var(--gris);margin-top:8px}
+.pres .p1{grid-area:a}.pres .p2{grid-area:b}.pres .p3{grid-area:c}.pres .p4{grid-area:d}
+.pres .p1 img{aspect-ratio:3/2;object-position:50% 50%;max-height:820px}
+.pres .p2 img,.pres .p3 img,.pres .p4 img{height:clamp(240px,26vw,400px)}
+.pres .p3 img{object-position:60% 50%}.pres .p4 img{object-position:50% 15%}
+@media (max-width:820px){.pres{grid-template-columns:1fr 1fr;grid-template-areas:"h h" "a a" "b b" "c d"}.pres .p1 img{aspect-ratio:3/2}.pres .p2 img{height:auto;aspect-ratio:4/3}.pres .p3 img,.pres .p4 img{height:auto;aspect-ratio:4/5}}
+
+.soon-btn{background:var(--suave);color:var(--gris);border:1px dashed #bbb;cursor:default}
+.soon-btn:hover{transform:none}
+.next-book{margin-top:28px;border:1px dashed var(--tinta);border-radius:4px;padding:20px 22px;max-width:520px;position:relative}
+.nb-tag{display:inline-block;background:var(--tinta);color:#fff;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:99px}
+.nb-t{font-family:var(--mano);font-size:30px;line-height:1.1;margin:12px 0 6px}
+.next-book .small{margin:0}
+.nb-link{display:inline-block;margin-top:10px;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:4px}
+
+.lead-q{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(20px,2.2vw,28px);line-height:1.3;margin:14px 0 18px}
+.tl-t{font-size:24px;margin-top:32px}
+.links-me{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.links-me a{border:1px solid var(--tinta);border-radius:99px;padding:8px 16px;text-decoration:none;font-weight:600;font-size:14px}
+.links-me a:hover{background:var(--tinta);color:#fff}
+
+.retratos{margin-top:64px;border-top:1px solid var(--tinta);padding-top:24px}
+.ret-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.ret-grid figure{margin:0}.ret-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:2px}
+.ret-grid figcaption{font-size:14px;color:var(--gris);margin-top:8px}
+.ret-steps{list-style:none;padding:0;margin:28px 0 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;font-size:15px;color:var(--gris)}
+.ret-steps li{border:1px solid var(--linea);border-radius:4px;padding:14px 16px}.ret-steps b{color:var(--tinta)}
+@media (max-width:820px){.ret-grid{grid-template-columns:1fr 1fr}.ret-steps{grid-template-columns:1fr}}
+
+/* retratos y encargos dentro de Arte, láminas y tienda */
+#retratos-sec{padding-top:24px;border-top:0}
+#retratos-sec .retratos{margin-top:0}
+.encargo{margin-top:72px;border-top:1px solid var(--tinta);padding-top:24px;display:grid;grid-template-columns:1fr 1.3fr;gap:24px 56px;align-items:start}
+label.check{display:flex;flex-direction:row;gap:10px;align-items:flex-start;font-size:14px;color:var(--gris)}
+label.check input{margin-top:3px;accent-color:var(--tinta);width:18px;height:18px;flex:none}
+.enc-form .btn{margin-top:6px}
+.enc-ok{margin-top:18px;border:1px solid var(--tinta);border-radius:4px;padding:16px 18px}
+.enc-ok .mailbox{margin-top:10px}
+.enc-ok .mb{max-height:220px;overflow:auto}
+@media (max-width:900px){.encargo{grid-template-columns:1fr}}
+.check[hidden]{display:none}
+.drawer .foot .check{margin:8px 0;font-size:13px}
+.drawer .foot .check a{text-decoration:underline}
+.drawer .foot .err{margin:6px 0 0}
+footer a{text-decoration:underline;text-underline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#inicio"><img src="img/logo.png" alt=""><span>MARY LU ART</span></a>
+    <nav class="menu" aria-label="Menu">
+      <a href="#arte" data-nav="arte" data-en="Art, Prints &amp; Shop">Arte, láminas y tienda</a>
+      <a href="#ilustracion" data-nav="ilustracion" data-en="Illustration">Ilustración</a>
+      <a href="#libros" data-nav="libros" data-en="Books">Libros</a>
+      <a href="#sobre-mi" data-nav="sobre-mi" data-en="About &amp; contact">Sobre mí y contacto</a>
+    </nav>
+    <div class="nav-r">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="cart-btn" id="cartBtn"><span data-en="Cart">Carrito</span> <span class="n" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="view" data-view="inicio">
+<section class="hero">
+  <figure class="pano">
+    <img width="1600" height="700" src="img/hero-wide.webp" srcset="img/sm/hero-wide.webp 800w, img/hero-wide.webp 1600w" sizes="100vw" decoding="async" fetchpriority="high" alt="" data-alt-es="María Luisa en su taller, rodeada de sus cuadros" data-alt-en="María Luisa in her studio, surrounded by her paintings">
+  </figure>
+  <div class="wrap hero-in">
+    <div>
+      <span class="hola" data-en="Hi, I'm Mary Lu! ♡">¡Hola, soy Mary Lu! ♡</span>
+      <h1 id="h1"></h1>
+    </div>
+    <div>
+      <p class="sub" data-en="I'm María Luisa, a painter, illustrator and designer from Valencia, Venezuela, now living in Fuerteventura. On this website you can see and buy my original paintings, take home an art print or download a digital print, browse my illustration portfolio and discover my book.">Soy María Luisa, pintora, ilustradora y diseñadora de Valencia (Venezuela), y vivo en Fuerteventura. En esta web puedes ver y comprar mis cuadros originales, llevarte una lámina o descargar un print digital, recorrer mi portafolio de ilustración y conocer mi libro.</p>
+      <div class="cta">
+        <a class="btn sol" href="#arte" data-en="See paintings &amp; prints">Ver cuadros y prints</a>
+        <a class="btn line" href="#sobre-mi" data-en="Get to know me">Conóceme</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="palette" id="palette" aria-hidden="true"></div>
+<div class="wrap palette-cap"><span class="mano" data-en="↑ the palette of her studio">↑ la paleta de su taller</span><span data-en="Every colour comes from one of her paintings.">Cada color está sacado de uno de sus cuadros.</span></div>
+
+  <section id="mundos" style="padding-bottom:20px">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="kicker" data-en="What you'll find here">Lo que vas a encontrar</span>
+          <h2 data-en="A colourful world <em>inspired by nature</em>">Un mundo de color <em>inspirado en la naturaleza</em></h2>
+          <p data-en="Memories and the little things that make life special. Discover my original paintings, art prints, children's illustrations and books.">Los recuerdos y las pequeñas cosas que hacen especial la vida. Descubre mis cuadros originales, láminas, ilustraciones infantiles y libros.</p>
+        </div>
+      </div>
+      <div class="doors">
+        <a class="door main" href="#arte">
+          <div class="pic"><img width="1100" height="1100" src="img/pulpo-taller.webp" srcset="img/sm/pulpo-taller.webp 600w, img/pulpo-taller.webp 1100w" sizes="(max-width:820px) 92vw, 55vw" decoding="async" loading="lazy" alt=""></div>
+          <span class="num">01</span>
+          <h3 data-en="Paintings &amp; prints">Cuadros y prints</h3>
+          <p data-en="My hand-painted originals in acrylic on canvas, and my prints: art prints delivered to your door or digital downloads to print straight away.">Mis cuadros originales, pintados a mano en acrílico sobre lienzo, y mis prints: láminas impresas que te llegan a casa o descargas digitales para imprimir al momento.</p>
+          <span class="go" data-en="See paintings &amp; prints →">Ver cuadros y prints →</span>
+        </a>
+        <a class="door" href="#ilustracion">
+          <div class="pic"><img width="1600" height="800" src="img/selva-hd.webp" srcset="img/sm/selva-hd.webp 800w, img/selva-hd.webp 1600w" sizes="(max-width:820px) 92vw, 40vw" decoding="async" loading="lazy" alt=""></div>
+          <span class="num">02</span>
+          <h3 data-en="Illustration">Ilustración</h3>
+          <p data-en="My digital illustration portfolio: children's books, characters and young adult projects.">Mi portafolio de ilustración digital: álbumes infantiles, personajes y proyectos juveniles.</p>
+          <span class="go" data-en="See the portfolio →">Ver el portafolio →</span>
+        </a>
+        <a class="door book" href="#libros">
+          <div class="pic"><img width="1100" height="1100" src="img/img3563.webp" srcset="img/sm/img3563.webp 600w, img/img3563.webp 1100w" sizes="(max-width:820px) 92vw, 40vw" decoding="async" loading="lazy" alt="" data-alt-es="El libro Lucas y Martín" data-alt-en="The book Lucas y Martín"></div>
+          <span class="num">03</span>
+          <h3 data-en="My book">Mi libro</h3>
+          <p data-en="<i>Lucas y Martín: un deseo en Fuerteventura</i>, written and illustrated by me. Coming soon to Amazon.">
+            <i>Lucas y Martín: un deseo en Fuerteventura</i>, escrito e ilustrado por mí. Muy pronto en Amazon.</p>
+          <span class="go" data-en="See the book →">Ver el libro →</span>
+        </a>
+      </div>
+      <div class="welcome">
+        <img width="825" height="1100" class="sf" src="img/home4.webp" srcset="img/sm/home4.webp 600w, img/home4.webp 1100w" sizes="96px" decoding="async" loading="lazy" alt="">
+        <blockquote><span data-en="“Welcome to my little world of art.”">“Bienvenidos a mi pequeño mundo de arte.”</span><cite>María Luisa Jiménez R.</cite></blockquote>
+        <a class="go-about" href="#sobre-mi" data-en="More about me &amp; contact →">Más sobre mí y contacto →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="view" data-view="arte" hidden>
+  <section id="tienda">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="kicker" data-en="Art, Prints &amp; Shop">Arte, láminas y tienda</span>
+          <h2 data-en="Take a look <em>at my work!</em>">Echa un vistazo <em>a mi obra</em></h2>
+          <p data-en="See, buy and download my work: take home a hand-painted original, order an art print delivered to your door, or download a digital print and print it yourself.">Mira, compra y descarga mis obras: llévate un original pintado a mano, pide una lámina impresa que te llega a casa o descarga un print digital e imprímelo tú.</p>
+        </div>
+        <nav class="subnav" aria-label="Arte, láminas y tienda">
+          <a href="#cuadros"><b>01</b> <span>Fuerteventura</span></a>
+          <a href="#venezuela"><b>01</b> <span>Venezuela</span></a>
+          <a href="#prints"><b>02</b> <span data-en="Prints">Prints</span></a>
+          <a href="#retratos"><b>03</b> <span data-en="Portraits">Retratos</span></a>
+          <a href="#encargo"><b>04</b> <span data-en="Commissions">Encargos</span></a>
+        </nav>
+      </div>
+      <ul class="shipinfo">
+        <li data-en="<b>Prints &amp; art prints:</b> free shipping to the Canary Islands and mainland Spain.">
+          <b>Prints y láminas:</b> envío gratis a Canarias y Península.</li>
+        <li data-en="<b>Original paintings:</b> shipping is quoted separately, depending on size and destination.">
+          <b>Cuadros originales:</b> el envío se presupuesta aparte, según la medida y el destino.</li>
+        <li data-en="Paintings and prints larger than 50 × 50 cm are shipped <b>rolled in a tube</b>.">
+          Los cuadros y láminas de más de 50 × 50 cm se envían <b>enrollados en tubo</b>.</li>
+      </ul>
+      <div class="part" id="cuadros">
+        <span class="kicker" data-en="01 · Art">01 · Arte</span>
+        <h3 data-en="Original paintings">Cuadros originales</h3>
+        <p data-en="Hand-painted in acrylic on canvas. Each one is unique, and most are also available as art prints.">Pintados a mano en acrílico sobre lienzo. Cada uno es único, y de casi todos hay también láminas impresas.</p>
+      </div>
+      <div class="coll" id="fuerteventura">
+        <h4 data-en="Fuerteventura in colour">Fuerteventura en colores</h4>
+        <p data-en="Colour, nature and corners of the island that inspire me. First its animals, then its landscapes.">Color, naturaleza y rincones de la isla que me inspiran. Primero sus animales y después sus paisajes.</p>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="venezuela" id="venezuela">
+        <div class="coll">
+          <h4>Venezuela</h4>
+          <p data-en="Memories of where I come from: the Caribbean coast and the rainforest.">Recuerdos de mi tierra: la costa caribeña y la selva.</p>
+        </div>
+        <div class="grid grid-ve" id="gridVe"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prints" class="digital">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="kicker" data-en="02 · Prints · Digital illustrations">02 · Prints · Ilustraciones digitales</span>
+          <h2 data-en="Prints: buy it today, <em>hang it today.</em>">Prints: compra hoy, <em>cuélgalo hoy.</em></h2>
+          <p data-en="These are digital illustrations, drawn by me on screen. My Fuerteventura series: download it to print at home, or order it as an art print delivered to your door.">Son ilustraciones digitales, dibujadas por mí en pantalla. Mi serie de Fuerteventura: Descárgalas para imprimirlas en casa o pídelas como lámina impresa y te llegan a casa.</p>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step"><b>1</b><h3 data-en="Choose">Elige</h3><p data-en="Pick your favourite illustration and the “Digital download” option.">Escoge tu ilustración favorita y la opción "Descarga digital".</p></div>
+        <div class="step"><b>2</b><h3 data-en="Pay">Paga</h3><p data-en="By card, Apple Pay, Google Pay, PayPal or Bizum.">Con tarjeta, Apple Pay, Google Pay, PayPal o Bizum.</p></div>
+        <div class="step"><b>3</b><h3 data-en="Download">Descarga</h3><p data-en="The link appears instantly and also arrives by email. One JPG file, 30 × 40 cm at 300 dpi, ready to print.">El enlace aparece al momento y te llega también por email. Un archivo JPG de 30 × 40 cm a 300 ppp, listo para imprimir.</p></div>
+      </div>
+      <div class="mocks" id="mocks"></div>
+    </div>
+  </section>
+
+  <section id="retratos-sec">
+    <div class="wrap">
+      <div class="retratos" id="retratos">
+        <div class="coll">
+          <span class="kicker" data-en="03 · Commissions">03 · Por encargo</span>
+          <h4 data-en="Black &amp; white digital portraits">Retratos digitales en blanco y negro</h4>
+          <p data-en="Send me your favourite photo and I'll turn it into a hand-drawn line portrait: your family, your partner, your pet or that special moment. You can add a name, a date or a phrase.">Envíame tu foto favorita y la convierto en un retrato dibujado a línea: tu familia, tu pareja, tu mascota o ese momento especial. Puedes añadir un nombre, una fecha o una frase.</p>
+        </div>
+        <div class="ret-grid"><figure><img width="1200" height="1200" src="img/ret-bulldog.webp" srcset="img/sm/ret-bulldog.webp 700w, img/ret-bulldog.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: tu mascota" data-alt-en="Commissioned portrait: your pet"><figcaption data-en="Your pet">Tu mascota</figcaption></figure><figure><img width="1200" height="1200" src="img/ret-familia.webp" srcset="img/sm/ret-familia.webp 700w, img/ret-familia.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: en familia" data-alt-en="Commissioned portrait: family"><figcaption data-en="Family">En familia</figcaption></figure><figure><img width="1200" height="1200" src="img/ret-yoga.webp" srcset="img/sm/ret-yoga.webp 700w, img/ret-yoga.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: retrato individual" data-alt-en="Commissioned portrait: individual portrait"><figcaption data-en="Individual portrait">Retrato individual</figcaption></figure><figure><img width="1200" height="1200" src="img/ret-pareja.webp" srcset="img/sm/ret-pareja.webp 700w, img/ret-pareja.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: en pareja" data-alt-en="Commissioned portrait: couples"><figcaption data-en="Couples">En pareja</figcaption></figure><figure><img width="1200" height="1200" src="img/ret-mama.webp" srcset="img/sm/ret-mama.webp 700w, img/ret-mama.webp 1200w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Retrato por encargo: mamá" data-alt-en="Commissioned portrait: mum"><figcaption data-en="Mum">Mamá</figcaption></figure></div>
+        <ol class="ret-steps">
+          <li data-en="<b>1. Write to me</b> with your photo and what you'd like.">
+            <b>1. Escríbeme</b> con tu foto y lo que te gustaría.</li>
+          <li data-en="<b>2. I draw it</b> and send you a preview to adjust.">
+            <b>2. Lo dibujo</b> y te envío una prueba para ajustarlo.</li>
+          <li data-en="<b>3. You receive it</b> as a high-resolution digital file, ready to print and frame.">
+            <b>3. Lo recibes</b> en digital en alta resolución, listo para imprimir y enmarcar.</li>
+        </ol>
+        <a class="btn dark" href="#encargo" data-type="retrato" data-en="Order my portrait">Pedir mi retrato</a>
+      </div>
+      <div class="encargo" id="encargo">
+        <div class="coll">
+          <span class="kicker" data-en="04 · Custom commissions">04 · Encargos personalizados</span>
+          <h4 data-en="Have something else in mind?">¿Tienes otra idea en mente?</h4>
+          <p data-en="Tell me about your project: a custom illustration, a painting for your home, a mural, the illustrations for your book or brand… I'll reply with a quote and the next steps.">Cuéntame tu proyecto: una ilustración personalizada, un cuadro para tu casa, un mural, las ilustraciones de tu libro o de tu marca… Te respondo con un presupuesto y los siguientes pasos.</p>
+        </div>
+        <form class="enc-form" id="encargoForm" novalidate>
+          <div class="fields">
+            <label class="f" for="f-en-name"><span data-en="Your name">Tu nombre</span><input id="f-en-name" name="name" required autocomplete="name"></label>
+            <label class="f" for="f-en-email"><span data-en="Email">Email</span><input id="f-en-email" name="email" type="email" required autocomplete="email"></label>
+            <label class="f full" for="f-type"><span data-en="What do you need?">¿Qué necesitas?</span>
+              <select id="f-type" name="type">
+              <option value="retrato" data-en="Black &amp; white digital portrait">Retrato digital en blanco y negro</option>
+              <option value="ilustracion" data-en="Custom illustration">Ilustración personalizada</option>
+              <option value="cuadro" data-en="Commissioned painting">Cuadro por encargo</option>
+              <option value="libro" data-en="Illustration for a book or project">Ilustración para un libro o proyecto</option>
+              <option value="mural" data-en="Mural or decoration">Mural o decoración</option>
+              <option value="otro" data-en="Something else">Otra idea</option>
+              </select>
+            </label>
+            <label class="f" for="f-size"><span data-en="Size or format (optional)">Medidas o formato (opcional)</span><input id="f-size" name="size" placeholder="Ej.: 50 × 70 cm, A3, digital" data-en-ph="E.g. 50 × 70 cm, A3, digital"></label>
+            <label class="f" for="f-date"><span data-en="Date you need it by (optional)">Fecha en la que lo necesitas (opcional)</span><input id="f-date" name="date" type="date"></label>
+            <label class="f full" for="f-msg"><span data-en="Tell me about your idea">Cuéntame tu idea</span><textarea id="f-msg" name="msg" rows="5" required placeholder="Para qué es, a quién va dirigido, estilo, colores, referencias…" data-en-ph="What it's for, who it's for, style, colours, references…"></textarea></label>
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+            <label class="check full" for="f-priv"><input id="f-priv" name="priv" type="checkbox" required><span data-en="I agree that Mary Lu will use this information only to reply to my request.">Acepto que Mary Lu use estos datos solo para responder a mi solicitud.</span></label>
+          </div>
+          <p class="small" data-en="If you have reference photos, I'll ask you for them by email when I reply.">Si tienes fotos de referencia, te las pediré por email al responderte.</p>
+          <button class="btn dark" type="submit" data-en="Send request">Enviar solicitud</button>
+          <div class="err" id="encErr" role="alert"></div>
+          <div class="enc-ok" id="encOk" hidden></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="view" data-view="ilustracion" hidden>
+  <section id="ilustracion" class="ilus">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="kicker" data-en="Digital illustration portfolio">Portafolio de ilustración digital</span>
+          <h2 data-en="Worlds for <em>telling stories</em>">Mundos para <em>contar historias</em></h2>
+          <p data-en="Children's and young adult illustration, character design and picture books. From the pencil sketch to the final colour.">Ilustración infantil y juvenil, diseño de personajes y álbumes ilustrados. Del boceto a lápiz al color final.</p>
+        </div>
+        <a class="btn dark" href="#encargo" data-type="ilustracion" data-en="Commission an illustration">Encargar ilustración</a>
+      </div>
+      <div class="group-t"><h3 data-en="Children's book illustration">Ilustración infantil</h3><span data-en="swipe →">desliza →</span></div>
+      <div class="reel" id="reelKids" tabindex="0"></div>
+      <div class="group-t"><h3 data-en="Young adult illustration">Ilustración juvenil</h3><span data-en="swipe →">desliza →</span></div>
+      <div class="reel" id="reelYA" tabindex="0"></div>
+    </div>
+  </section>
+
+</div>
+
+<div class="view" data-view="libros" hidden>
+  <section id="libro" class="libro">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="kicker" data-en="Illustrated book · 2024">Libro ilustrado · 2024</span>
+          <h2 data-en="Lucas &amp; Martín: <em>un deseo en Fuerteventura</em>">Lucas y Martín: <em>un deseo en Fuerteventura</em></h2>
+        </div>
+        <span class="btn soon-btn" aria-disabled="true" data-en="Coming soon to Amazon">Próximamente en Amazon</span>
+      </div>
+      <div class="banner"><img width="1600" height="800" src="img/lucas2-hd.webp" srcset="img/sm/lucas2-hd.webp 800w, img/lucas2-hd.webp 1600w" sizes="100vw" decoding="async" loading="lazy" alt="" data-alt-es="Ilustración de Fuerteventura del libro" data-alt-en="Illustration of Fuerteventura from the book"></div>
+      <div class="info">
+        <div>
+          <blockquote data-en="“I wanted to create something beautiful and precious for my children, filled with magic, adventure and joy.”">“Quería crear algo bonito y especial para mis hijos, lleno de magia, aventura y alegría.”</blockquote>
+          <p class="small" style="margin-top:18px" data-en="Written and illustrated by María Luisa. It also holds a subtle message about wishes and the people who leave this world, but still live among the stars, watching and listening to us from above.">Escrito e ilustrado por María Luisa. Guarda también un mensaje sutil sobre los deseos y sobre las personas que se van, pero siguen viviendo entre las estrellas, mirándonos y escuchándonos desde arriba.</p>
+          <div class="buybox">
+            <img width="1100" height="1100" src="img/sm/img3563.webp" alt="" loading="lazy">
+            <div>
+              <b data-en="Coming soon to Amazon">Próximamente en Amazon</b>
+              <span data-en="Published by Edigeca (Editorial Genealógica Canaria) · in Spanish">Publicado por Edigeca (Editorial Genealógica Canaria) · en español</span>
+              <a class="btn line" href="#contacto" data-en="Want a copy? Write to me">¿Quieres un ejemplar? Escríbeme</a>
+            </div>
+          </div>
+          <div class="next-book">
+            <span class="nb-tag" data-en="Book 2 · in progress">Libro 2 · en camino</span>
+            <p class="nb-t" data-en="Lucas and Martín are getting ready for their next adventure…">Lucas y Martín preparan su próxima aventura…</p>
+            <p class="small" data-en="I'm working on the second book. Follow me on Instagram so you don't miss it!">Estoy trabajando en el segundo libro. ¡Sígueme en Instagram para no perdértelo!</p>
+            <a class="nb-link" href="https://www.instagram.com/marylu.art/" target="_blank" rel="noopener">@marylu.art ↗</a>
+          </div>
+        </div>
+        <img width="1100" height="1096" class="foto" src="img/libro3.webp" srcset="img/sm/libro3.webp 600w, img/libro3.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa con sus hijos y el libro" data-alt-en="María Luisa with her children and the book">
+      </div>
+      <div class="bookpics">
+        <figure><img width="1100" height="1100" src="img/img3563.webp" srcset="img/sm/img3563.webp 600w, img/img3563.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""><figcaption data-en="the cover">la portada</figcaption></figure>
+        <figure><img width="886" height="741" src="img/libro.webp" srcset="img/sm/libro.webp 600w, img/libro.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""><figcaption data-en="inside the book">por dentro</figcaption></figure>
+        <figure><img width="1100" height="733" src="img/libro2.webp" srcset="img/sm/libro2.webp 600w, img/libro2.webp 1100w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""><figcaption data-en="at the book fair">en la feria</figcaption></figure>
+        <figure><img width="1600" height="800" src="img/lucas5-hd.webp" srcset="img/sm/lucas5-hd.webp 800w, img/lucas5-hd.webp 1600w" sizes="(max-width:820px) 92vw, 33vw" decoding="async" loading="lazy" alt=""><figcaption data-en="an adventure with dinosaurs">aventura con dinosaurios</figcaption></figure>
+      </div>
+      <div class="pres">
+        <div class="pres-head">
+          <span class="kicker" data-en="Book launch">Presentación del libro</span>
+          <h3 data-en="Behind <em>the story</em>">Detrás de <em>la historia</em></h3>
+          <p data-en="My children, who inspired the story, at the book launch in Fuerteventura.">Mis hijos, que inspiraron la historia, en la presentación del libro en Fuerteventura.</p>
+        </div>
+        <figure class="p1"><img width="1600" height="1066" src="img/pres-escenario.webp" srcset="img/sm/pres-escenario.webp 800w, img/pres-escenario.webp 1600w" sizes="(max-width:820px) 92vw, 95vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa con Lucas y Martín en el escenario de la presentación" data-alt-en="María Luisa with Lucas and Martín on stage at the launch"><figcaption data-en="On stage at the launch">En el escenario de la presentación</figcaption></figure>
+        <figure class="p2"><img width="1600" height="1224" src="img/pres-firma.webp" srcset="img/sm/pres-firma.webp 800w, img/pres-firma.webp 1600w" sizes="(max-width:820px) 92vw, 38vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa firmando libros con sus hijos" data-alt-en="María Luisa signing books with her children"><figcaption data-en="Signing books">Firmando libros</figcaption></figure>
+        <figure class="p3"><img width="1600" height="1173" src="img/pres-lector.webp" srcset="img/sm/pres-lector.webp 800w, img/pres-lector.webp 1600w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Un niño leyendo el libro" data-alt-en="A child reading the book"><figcaption data-en="Its first readers">Sus primeros lectores</figcaption></figure>
+        <figure class="p4"><img width="1081" height="1600" src="img/pres-edigeca.webp" srcset="img/sm/pres-edigeca.webp 800w, img/pres-edigeca.webp 1600w" sizes="(max-width:820px) 46vw, 19vw" decoding="async" loading="lazy" alt="" data-alt-es="Expositor de la editorial Edigeca con el libro" data-alt-en="Edigeca publisher's display with the book"><figcaption data-en="With the publisher, Edigeca">Con la editorial Edigeca</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="view" data-view="sobre-mi" hidden>
+  <section id="sobre-mi" class="about">
+    <div class="wrap in">
+      <div class="blob">
+        <img width="1100" height="1100" src="img/marylu.webp" srcset="img/sm/marylu.webp 600w, img/marylu.webp 1100w" sizes="(max-width:820px) 92vw, 45vw" decoding="async" loading="lazy" alt="" data-alt-es="María Luisa dibujada por ella misma" data-alt-en="María Luisa drawn by herself">
+        <img class="firma" src="img/logo.png" alt="" data-alt-es="Firma de Mary Lu" data-alt-en="Mary Lu's signature">
+      </div>
+      <div>
+        <span class="kicker" data-en="About me">Sobre mí</span>
+        <h2>María Luisa Jiménez Rodríguez</h2>
+        <p class="lead-q" data-en="“Colour is feeling: it is joy, nostalgia, anger, exaltation. It is life.”">“El color es sentimiento: es alegría, es nostalgia, es ira, es exaltación. Es vida.”</p>
+        <p data-en="I'm a Venezuelan illustrator and artist. I've loved telling stories since I was little. For me, art is a way to communicate, to let go, to be free: painting is that magical moment when you lose track of time and simply enjoy being.">Soy ilustradora y artista venezolana. Desde pequeña me ha encantado contar historias. Para mí, el arte es una manera de comunicar, de soltar, de libertad: pintar es ese momento mágico en el que pierdes la noción del tiempo y simplemente disfrutas el ser y estar.</p>
+        <p data-en="Living from art has always been my dream. I love reading, comics, manga and cartoons, and it shows in my illustration. Today I paint in Fuerteventura, amazed by the island’s wild landscapes, and I keep drawing my family’s adventures.">Vivir del arte siempre ha sido mi sueño. Me apasionan la lectura, el cómic, el manga y los dibujos animados, y eso se nota en mi ilustración. Hoy pinto en Fuerteventura, maravillada por los paisajes salvajes de la isla, y sigo documentando con mis dibujos las aventuras de mi familia.</p>
+        <div class="skills"><span data-en="Acrylic painting">Pintura acrílica</span><span data-en="Digital illustration">Ilustración digital</span><span data-en="Children’s books">Libro infantil</span><a href="#retratos" class="sk-link" data-en="Custom portraits">Retratos por encargo</a><span data-en="Graphic design &amp; layout">Diseño gráfico y maquetación</span><span data-en="Creative writing">Escritura creativa</span></div>
+        <h3 class="tl-t" data-en="My path">Mi recorrido</h3>
+        <ol class="timeline">
+          <li><time>1989</time><span data-en="Born in Valencia, Venezuela.">Nace en Valencia, Venezuela.</span></li>
+          <li><time>2006</time><span data-en="Studies Illustration at the Instituto de Diseño de Valencia, then goes to England to study English and takes a creative writing course.">Estudia Ilustración en el Instituto de Diseño de Valencia. Después viaja a Inglaterra, donde estudia inglés y hace un curso de escritura creativa.</span></li>
+          <li><time>—</time><span data-en="Back in Venezuela, she works as a graphic designer.">De vuelta en Venezuela, trabaja como diseñadora gráfica.</span></li>
+          <li><time>2013</time><span data-en="First exhibition, <i>Espiral</i>: nature, fantasy, the female figure and the harmony and contrast of colour.">Primera exposición, <i>Espiral</i>: naturaleza, fantasía, la figura femenina y la armonía del color y sus contrastes.</span></li>
+          <li><time>2015</time><span data-en="Master’s in Digital Publishing in Barcelona: design, layout and illustration.">Máster en Ediciones Digitales en Barcelona: diseño, maquetación e ilustración.</span></li>
+          <li><time>—</time><span data-en="Back in Venezuela, she paints saints in acrylic on wood and takes part in the 2nd Carabobo Art Biennial, devoted to the Virgen del Socorro.">De nuevo en Venezuela, pinta santos en acrílico sobre madera y participa en la II Bienal de Arte de Carabobo, dedicada a la Virgen del Socorro.</span></li>
+          <li><time>2017</time><span data-en="Settles in A Coruña, where her first son is born. Starts a motherhood blog of everyday comic strips, which leads to her custom portraits and illustrations.">Se instala en A Coruña, donde nace su primer hijo. Empieza un blog de maternidad con viñetas del día a día, que da paso a sus retratos e ilustraciones personalizadas.</span></li>
+          <li><time>2018</time><span data-en="Moves to Fuerteventura, her home. her second son is born and she goes back to painting, inspired by the island.">Llega a Fuerteventura, su hogar. Allí nace su segundo hijo y vuelve a pintar, inspirada por la isla.</span></li>
+          <li><time>—</time><span data-en="Honourable mention (accésit) in the 1st and 2nd Open-Air Painting Contests of Puerto del Rosario.">Accésit en el I y el II Certamen de Pintura al Aire Libre de Puerto del Rosario.</span></li>
+          <li><time>2024</time><span data-en="Publishes <i>Lucas y Martín, un deseo en Fuerteventura</i> (Edigeca), which she wrote and illustrated.">Publica <i>Lucas y Martín, un deseo en Fuerteventura</i> (Edigeca), escrito e ilustrado por ella.</span></li>
+          <li><time data-en="Today">Hoy</time><span data-en="She keeps moving forward, taking small steps towards her dreams: new exhibitions, a new book in the works, and a new member of the family on the way, her third baby!">Sigue avanzando, dando pequeños pasos para cumplir sus sueños: consigue nuevas exposiciones, prepara un nuevo libro y celebra la llegada de un nuevo miembro a la familia, su tercer bebé.</span></li>
+        </ol>
+        <div class="links-me">
+          <a href="https://www.linkedin.com/in/maria-luisa-jimenez-rodriguez-b4b115a8/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://www.instagram.com/marylu.art/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="#contacto" data-en="Contact">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <span class="kicker" data-en="Contact">Contacto</span>
+      <h2 data-en="Let's create something <em>together.</em>">Creemos algo <em>juntos.</em></h2>
+      <p data-en="Have a project in mind, looking for an illustrator, or fallen in love with a painting? I'd love to hear from you.">¿Tienes un proyecto en mente, buscas ilustradora o te ha enamorado un cuadro? Me encantará saber de ti.</p>
+      <a class="mail" href="mailto:marylujr.art@gmail.com">marylujr.art@gmail.com</a>
+      <p class="small"><span data-en="La Oliva, Fuerteventura · Canary Islands">La Oliva, Fuerteventura · Islas Canarias</span> · <a href="https://www.instagram.com/marylu.art/">Instagram @marylu.art</a> · <a href="https://www.linkedin.com/in/maria-luisa-jimenez-rodriguez-b4b115a8/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mary Lu Art · <a href="legal/aviso-legal" data-en="Legal notice">Aviso legal</a> · <a href="legal/privacidad" data-en="Privacy">Privacidad</a> · <a href="legal/condiciones" data-en="Terms of sale &amp; returns">Condiciones de venta y devoluciones</a></span>
+    <span class="pay-logos"><span class="pl">VISA</span><span class="pl">Mastercard</span><span class="pl">Apple Pay</span><span class="pl">Google Pay</span></span>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+
+<div class="modal" id="pModal" role="dialog" aria-modal="true" aria-labelledby="pTitle">
+  <button class="close" data-close aria-label="×">×</button>
+  <div class="pd">
+    <div class="gal"><img id="pImg" alt=""><div class="wm" id="pWm">MARY LU ART</div></div>
+    <div class="info">
+      <div class="kind" id="pKind"></div>
+      <h3 id="pTitle"></h3>
+      <div class="dots" id="pDots"></div>
+      <p class="small" id="pDesc"></p>
+      <form id="pForm">
+        <div class="opts" id="pOpts"></div>
+        <button class="btn fire" id="pBtn" type="submit" style="width:100%;justify-content:center">Añadir al carrito</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<aside class="drawer" id="drawer">
+  <div class="dhead"><h3 data-en="Your cart">Tu carrito</h3><button class="close" style="position:static" data-close aria-label="×">×</button></div>
+  <div class="items" id="items"></div>
+  <div class="foot">
+    <div class="tot"><span>Subtotal</span><span id="sub">0 €</span></div>
+    <div class="tot small" id="shipHint"></div>
+    <label class="check" for="chkTerms"><input id="chkTerms" type="checkbox"><span data-en="I accept the <a href='legal/condiciones' target='_blank' rel='noopener'>terms of sale</a> and the <a href='legal/privacidad' target='_blank' rel='noopener'>privacy policy</a>.">Acepto las <a href="legal/condiciones" target="_blank" rel="noopener">condiciones de venta</a> y la <a href="legal/privacidad" target="_blank" rel="noopener">política de privacidad</a>.</span></label>
+    <label class="check" for="chkWaiver" id="waiverWrap" hidden><input id="chkWaiver" type="checkbox"><span data-en="I ask for immediate access to the digital download and accept that I lose my right of withdrawal once it has started.">Solicito el acceso inmediato a la descarga digital y acepto que, una vez iniciada, pierdo el derecho de desistimiento.</span></label>
+    <div class="err" id="cartErr" role="alert"></div>
+    <button class="btn fire" id="toCheckout" style="width:100%;justify-content:center;margin-top:12px" data-en="Pay securely">Pagar de forma segura</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ---------- idioma ---------- */
+let lang = 'es';
+try { lang = localStorage.getItem('mla-lang') || ((navigator.language || 'es').toLowerCase().startsWith('es') ? 'es' : 'en'); } catch(e) {}
+const T = {
+  es:{
+    h1:'El <span class="color-word" aria-label="color"><span>c</span><span>o</span><span>l</span><span>o</span><span>r</span></span> es el corazón de <em>mi obra.</em>',
+    from:'desde', view:'Ver opciones', see:'Ver', dlBadge:'⬇ Descarga al momento', origBadge:'Original', soldBadge:'Solo láminas',
+    download:'Descargar', printsFrom:'Láminas desde', sold:'No disponible', kinds:{digital:'ilustración digital', original:'cuadro original', book:'libro ilustrado'},
+    orig:'Cuadro original', origSub:'Pieza única · firmada · certificado de autenticidad · se envía enrollado en tubo · envío aparte', soldSub:'No disponible · sí hay láminas',
+    dl:'Descarga digital 30 × 40 cm', dlSub:'Archivo JPG de 30 × 40 cm a 300 ppp (CMYK, para imprimir) · descarga al momento · uso personal',
+    a3:'Lámina A3', l50:'Lámina 50 × 70 cm', l60:'Lámina 60 × 90 cm', printSub:'Papel mate de 300 g · envío gratis a Canarias y Península', printSubTube:'Papel mate de 300 g · enrollada en tubo · envío gratis a Canarias y Península', book:'Libro', bookSub:'Se envía en 2–4 días',
+    bookBtn:'Comprar el libro', empty:'Tu carrito está vacío', remove:'Quitar',
+    freeShip:'Envío gratis a Canarias y Península 🎉', origShip:'El envío de los cuadros originales se presupuesta aparte: te escribimos con el precio antes de enviarlo.', origShipShort:'Original: aparte', origShipMail:'El envío del cuadro original se presupuesta aparte: te escribiremos con el precio antes de enviarlo.', shipLater:n=>`El envío se calcula al pagar · gratis a partir de ${n}`, digOnly:'Solo digital: sin envío, descarga al momento',
+    introPhys:'Tu pedido incluye productos físicos, así que necesitamos una dirección de envío.', introDig:'Pedido digital: solo necesitamos tu email. Los enlaces de descarga aparecen nada más pagar.',
+    free:'Gratis', taxIn:'Impuestos (IGIC) incluidos.', taxOut:'Se envía desde Canarias: el comprador puede tener que pagar IVA de importación o gastos de aduana.',
+    pay:'Pagar', missing:'Falta rellenar: ', pays:{card:'Tarjeta (Stripe)', wallet:'Apple Pay / Google Pay (Stripe)', paypal:'PayPal', bizum:'Bizum', transfer:'Transferencia bancaria'},
+    thanks:'¡gracias! ♡', order:'Pedido n.º ', reserved:'Tu pedido está reservado. Se enviará cuando llegue la transferencia.',
+    paid:(t,p,e)=>`Pago recibido: ${t} con ${p}. Te hemos enviado el recibo a <b>${e}</b>.`, yourDl:'Tus descargas',
+    zip:'archivos en alta resolución.zip', dlInfo:'JPG 300 ppp + PDF A4/A3/4:5 · quedan 3 descargas · el enlace caduca en 7 días',
+    pickup:'listo para recoger en La Oliva. María Luisa te escribirá.', shipTo:c=>`se enviará a ${c}. Recibirás el número de seguimiento por email.`,
+    back:'Volver a la tienda', addCart:'Añadir al carrito', consult:'Consultar este cuadro', consultMsg:n => `Hola, me interesa el cuadro «${n}». ¿Está disponible? ¿Cómo sería el envío?`, payBtn:'Pagar de forma segura', redirecting:'Un momento…', needTerms:'Marca la casilla de las condiciones para continuar.', needWaiver:'Marca la casilla de la descarga digital para continuar.', checkoutErr:'No hemos podido iniciar el pago. Inténtalo de nuevo o escríbeme a marylujr.art@gmail.com.', unavailable:'Esta descarga no está disponible ahora mismo. Escríbeme y te la envío.',
+    cm:{hi:o=>`¡Hola! Gracias por tu pedido n.º ${o}.`, dl:'Descarga tus archivos:', dlb:'Descargar', valid:'(3 descargas, válido 7 días)', iban:'Haz la transferencia del total a:', ref:'Concepto', bye:'Con cariño desde Fuerteventura,'},
+    mailCust:'Email al cliente', mailTo:'Para', mailMary:'Email a Mary Lu', newOrder:'Nuevo pedido n.º'
+  },
+  en:{
+    h1:'<span class="color-word" aria-label="Colour"><span>C</span><span>o</span><span>l</span><span>o</span><span>u</span><span>r</span></span> is the heart of <em>my work.</em>',
+    from:'from', view:'See options', see:'See', dlBadge:'⬇ Instant download', origBadge:'Original', soldBadge:'Prints only',
+    download:'Download', printsFrom:'Prints from', sold:'Not available', kinds:{digital:'digital illustration', original:'original painting', book:'illustrated book'},
+    orig:'Original painting', origSub:'One of a kind · signed · certificate of authenticity · shipped rolled in a tube · shipping quoted separately', soldSub:'Not available · prints available',
+    dl:'Digital download 30 × 40 cm', dlSub:'JPG file, 30 × 40 cm at 300 dpi (CMYK, for printing) · instant download · personal use',
+    a3:'A3 art print', l50:'Art print 50 × 70 cm', l60:'Art print 60 × 90 cm', printSub:'300 g matte paper · free shipping to the Canaries and mainland Spain', printSubTube:'300 g matte paper · rolled in a tube · free shipping to the Canaries and mainland Spain', book:'Book', bookSub:'Ships in 2–4 days',
+    bookBtn:'Buy the book', empty:'Your cart is empty', remove:'Remove',
+    freeShip:'Free shipping to the Canaries and mainland Spain 🎉', origShip:'Shipping for original paintings is quoted separately: we will email you the price before shipping.', origShipShort:'Original: quoted separately', origShipMail:'Shipping for the original painting is quoted separately: we will email you the price before shipping.', shipLater:n=>`Shipping calculated at checkout · free over ${n}`, digOnly:'Digital only: no shipping, instant download',
+    introPhys:'Your order includes physical items, so we need a shipping address.', introDig:'Digital order: we only need your email. Download links appear right after payment.',
+    free:'Free', taxIn:'Taxes (IGIC) included.', taxOut:'Ships from the Canary Islands: the buyer may have to pay import VAT or customs fees.',
+    pay:'Pay', missing:'Please fill in: ', pays:{card:'Card (Stripe)', wallet:'Apple Pay / Google Pay (Stripe)', paypal:'PayPal', bizum:'Bizum', transfer:'Bank transfer'},
+    thanks:'thank you! ♡', order:'Order #', reserved:'Your order is reserved. It will ship once the bank transfer arrives.',
+    paid:(t,p,e)=>`Payment received: ${t} via ${p}. We sent the receipt to <b>${e}</b>.`, yourDl:'Your downloads',
+    zip:'high-res files.zip', dlInfo:'300 dpi JPG + PDF A4/A3/4:5 · 3 downloads left · link expires in 7 days',
+    pickup:'ready for pickup in La Oliva. María Luisa will message you.', shipTo:c=>`will be shipped to ${c}. You'll get a tracking number by email.`,
+    back:'Back to the shop', addCart:'Add to cart', consult:'Enquire about this painting', consultMsg:n => `Hi, I'm interested in the painting “${n}”. Is it available? How would shipping work?`, payBtn:'Pay securely', redirecting:'One moment…', needTerms:'Please tick the terms box to continue.', needWaiver:'Please tick the digital download box to continue.', checkoutErr:'We could not start the payment. Please try again or write to me at marylujr.art@gmail.com.', unavailable:'This download is not available right now. Write to me and I will send it to you.',
+    cm:{hi:o=>`Hi! Thank you for your order #${o}.`, dl:'Download your files:', dlb:'Download', valid:'(3 downloads, valid for 7 days)', iban:'Please transfer the total to:', ref:'Reference', bye:'With love from Fuerteventura,'},
+    mailCust:'Email to the customer', mailTo:'To', mailMary:'Email to Mary Lu', newOrder:'New order #'
+  }
+};
+const t = () => T[lang];
+const L = v => (v && typeof v === 'object' && !Array.isArray(v)) ? (v[lang] ?? v.es) : v;
+
+/* ---------- datos ---------- */
+const PRODUCTS = [
+  {id:'pulpo', img:'img/pulpo.webp', kind:'original', title:{es:'Pulpo’s Happy Hour', en:'Pulpo’s Happy Hour'}, place:{es:'Acrílico sobre lienzo · 114 × 146 cm', en:'Acrylic on canvas · 114 × 146 cm'},
+   desc:{es:'Un pulpo con gafas de sol, pintado con pinceladas gruesas y vibrantes.', en:'An octopus in sunglasses, painted with thick, vibrant brushstrokes.'},
+   pal:['#26729d','#104b83','#edbf61','#132543','#e8692c'], opts:['orig:1200','a3','l50','l60']},
+  {id:'calima', img:'img/calima.webp', kind:'digital', title:'Calima', place:{es:'Ilustración digital · El Cotillo', en:'Digital illustration · El Cotillo'},
+   desc:{es:'La calima sobre los acantilados de El Cotillo.', en:'Saharan dust haze over the cliffs of El Cotillo.'},
+   pal:['#e38747','#e4ccad','#4f3628','#a2522b','#7fb3c8'], opts:['dl','a3p']},
+  {id:'cabra', img:'img/cabra.webp', kind:'original', title:{es:'Cabra majorera', en:'Majorero Goat'}, place:{es:'Acrílico sobre lienzo · 81 × 100 cm', en:'Acrylic on canvas · 81 × 100 cm'},
+   desc:{es:'Un homenaje a la famosa cabra de Fuerteventura.', en:'A tribute to Fuerteventura’s famous goat.'},
+   pal:['#1e7bbc','#f1decd','#19101d','#1b406f','#3e2c40'], opts:['orig:1000','a3','l50','l60']},
+  {id:'corralejo', img:'img/corralejo-hd.webp', kind:'original', title:{es:'Corralejo azul', en:'Blue Corralejo'}, place:{es:'Acrílico sobre lienzo · 90 × 130 cm', en:'Acrylic on canvas · 90 × 130 cm'},
+   desc:{es:'Cielos en espiral sobre la playa y la isla de Lobos.', en:'Swirling skies over the beach and the island of Lobos.'},
+   pal:['#b5c7c3','#2075a6','#2b95bd','#e3e6cd','#d6cdba'], opts:['orig:600','a3','l50','l60']},
+  {id:'surf', img:'img/mockup-wall.webp', kind:'digital', title:'Surf is Life', place:{es:'Ilustración digital · Fuerteventura', en:'Digital illustration · Fuerteventura'},
+   desc:{es:'Surf al atardecer con los colores intensos de la isla.', en:'A sunset surf session in the island’s bold colours.'},
+   pal:['#7bc1d6','#525f8d','#c09578','#639dbb','#946382'], opts:['dl','a3p']},
+  {id:'lagarto', img:'img/lagarto.webp', kind:'original', title:{es:'Lagarto canario', en:'Canary Lizard'}, place:{es:'Acrílico sobre lienzo · 120 × 90 cm', en:'Acrylic on canvas · 120 × 90 cm'},
+   desc:{es:'Uno de los pequeños habitantes de la isla, lleno de color.', en:'One of the island’s little inhabitants, full of colour.'},
+   pal:['#c99760','#0f3f63','#44212f','#e6ddb3','#161428'], opts:['orig:700','a3','l50','l60']},
+  {id:'invierno', img:'img/mockup-wall2.webp', kind:'digital', title:{es:'Invierno', en:'Winter'}, place:{es:'Ilustración digital · Fuerteventura', en:'Digital illustration · Fuerteventura'},
+   desc:{es:'El invierno majorero: la isla se pone verde y se llena de flores moradas.', en:'Winter in Fuerteventura, when the island turns green and fills with purple flowers.'},
+   pal:['#799172','#a66497','#bec69d','#f4b63f','#85c1ab'], opts:['dl','a3p']},
+  {id:'chichiriviche', img:'img/chichiriviche-hd.webp', kind:'original', title:'Chichiriviche', place:{es:'Acrílico sobre lienzo · 80 × 100 cm', en:'Acrylic on canvas · 80 × 100 cm'},
+   desc:{es:'Un recuerdo de la costa venezolana, con barcas y palmeras.', en:'A memory of the Venezuelan coast, with boats and palm trees.'},
+   pal:['#0b6499','#a4bbbf','#08386d','#cfcfcd','#6c2429'], opts:['orig:500','a3','l50','l60'], col:'ve'},
+  {id:'guacamayas', img:'img/guacamayas.webp', kind:'original', col:'ve', title:{es:'Guacamayas', en:'Macaws'}, place:{es:'Acrílico sobre lienzo · 130 × 162 cm', en:'Acrylic on canvas · 130 × 162 cm'},
+   desc:{es:'Dos guacamayas en la selva venezolana, entre flores tropicales y una cascada.', en:'Two macaws in the Venezuelan rainforest, among tropical flowers and a waterfall.'},
+   pal:['#c0262d','#f2c230','#1f6fd1','#5bb544','#d9609b'], opts:['orig:1400','a3','l50','l60']},
+  {id:'corralejo-print', img:'img/mockup-dresser.webp', kind:'digital', title:'Corralejo', place:{es:'Ilustración digital · Corralejo', en:'Digital illustration · Corralejo'},
+   desc:{es:'Las dunas y el agua turquesa de Corralejo.', en:'The dunes and turquoise water of Corralejo.'},
+   pal:['#45a1c6','#4f809b','#4c6572','#83c4d0','#79aeb8'], opts:['dl','a3p']},
+  {id:'jirafas', img:'img/jirafas-hd.webp', kind:'original', title:{es:'Jirafas del oasis', en:'Oasis Giraffes'}, place:{es:'Acrílico sobre lienzo · 81 × 116 cm', en:'Acrylic on canvas · 81 × 116 cm'},
+   desc:{es:'Una pareja alta y alegre, pintada con mucha textura.', en:'A tall, joyful pair painted with lots of texture.'},
+   pal:['#2664a0','#0b1435','#153a7c','#d7a871','#92333c'], opts:['orig:800','a3','l50','l60']},
+  {id:'fuerteventura', img:'img/mockup-wall3.webp', kind:'digital', title:'Fuerteventura', place:{es:'Ilustración digital', en:'Digital illustration'},
+   desc:{es:'Montañas, palmeras y cactus bajo un cielo rosa en espiral.', en:'Mountains, palm trees and cacti under a swirling pink sky.'},
+   pal:['#d5608a','#e9b995','#855059','#f4b63f','#d3b7a6'], opts:['dl','a3p']},
+  {id:'diaynoche', img:'img/diaynoche.webp', kind:'original', title:{es:'Día y noche', en:'Day and Night'}, place:{es:'Díptico · 2 lienzos de 90 × 70 cm', en:'Diptych · 2 canvases, 90 × 70 cm'},
+   desc:{es:'La misma montaña bajo las estrellas y bajo el sol. Dos lienzos que se cuelgan juntos.', en:'The same mountain under the stars and under the sun. Two canvases that hang together.'},
+   pal:['#132f63','#decdaf','#8a2423','#9bbdc5','#f4b63f'], opts:['orig:700','a3','l50','l60']},
+  {id:'cactus', img:'img/cactus.webp', kind:'original', title:{es:'Cactus vibrante', en:'Vibrant Cactus'}, place:{es:'Acrílico sobre lienzo · 90 × 60 cm', en:'Acrylic on canvas · 90 × 60 cm'},
+   desc:{es:'Luz del desierto y espinas en verdes intensos.', en:'Desert light and spines in vivid greens.'},
+   pal:['#061f3f','#7c9564','#477f6e','#17505f','#d6e2a1'], opts:['orig:300','a3','l50','l60']},
+  {id:'libro', img:'img/img3563.webp', kind:'book', title:{es:'Lucas y Martín (libro)', en:'Lucas y Martín (book)'}, place:{es:'Tapa dura · en español', en:'Hardcover · in Spanish'},
+   desc:{es:'Libro infantil escrito e ilustrado por María Luisa.', en:'Children’s book written and illustrated by María Luisa.'},
+   pal:['#3cb8c4','#f4b63f','#e8692c','#1f5fbf','#8fd16a'], opts:['book'], hidden:true}
+];
+const KIDS = [
+  ['lucas2-hd',{es:'Fuerteventura, del libro Lucas y Martín',en:'Fuerteventura, from Lucas y Martín'}],
+  ['lucas-surf',{es:'Surf en Fuerteventura, de Lucas y Martín',en:'Surfing in Fuerteventura, from Lucas y Martín'}],
+  ['lucas-noche',{es:'Niños durmiendo, de Lucas y Martín',en:'Children sleeping, from Lucas y Martín'}],
+  ['lucas5-hd',{es:'Dinosaurios bajo la montaña',en:'Dinosaurs under the mountain'}],
+  ['selva-hd',{es:'Río en la selva',en:'Jungle river'}],
+  ['osobruja',{es:'El oso y la brujita',en:'The bear and the little witch'},1],
+  ['dtiys1',{es:'Viaje en pájaro de fuego · reto DTIYS',en:'Firebird ride · DTIYS challenge'}],
+  ['dtiys2',{es:'La niña y el dragón · reto DTIYS',en:'The girl and the dragon · DTIYS challenge'}],
+  ['dtiys3',{es:'Otoño en el bosque · reto DTIYS',en:'Autumn in the woods · DTIYS challenge'}],
+  ['racoon',{es:'Mapache nocturno',en:'Night raccoon'}],
+  ['bocetos',{es:'…y sus bocetos',en:'…and its sketches'},1]
+];
+const YA = [
+  ['juvenil',{es:'Personaje juvenil',en:'Teen character'}],
+  ['personajes',{es:'Diseño de personaje',en:'Character design'},1],
+  ['victoria-hd',{es:'Poses de Victoria',en:'Victoria, pose sheet'},1],
+  ['vera',{es:'Vera Voncroy',en:'Vera Voncroy'}],
+  ['schoolofgame',{es:'Reto School of Game',en:'School of Game challenge'}],
+  ['marylu',{es:'Autorretrato',en:'Self-portrait'}],
+  ['envy',{es:'Envy, versión chibi',en:'Envy, chibi version'}],
+  ['campanita',{es:'Campanilla luchadora · fan art',en:'Fighter Tinker Bell · fan art'}],
+  ['peach',{es:'Princesa Peach · fan art',en:'Princess Peach · fan art'}],
+  ['wednesday',{es:'Miércoles · fan art',en:'Wednesday · fan art'}]
+];
+const PRICE = {dl:12, a3:40, l50:60, l60:80, a3p:20, book:18};
+const SHIP = {canarias:4.95, spain:9.95, pickup:0};
+
+/* ---------- utilidades ---------- */
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem('mla-cart3') || '[]'); } catch(e) {}
+cart = cart.filter(i => i && typeof i.opt === 'string' && !i.opt.startsWith('orig') && i.opt !== 'sold');
+const save = () => { try { localStorage.setItem('mla-cart3', JSON.stringify(cart)); } catch(e) {} };
+const eur = n => { const v = (Math.round(n*100)/100).toFixed(n % 1 ? 2 : 0); return lang === 'en' ? '€' + v : v.replace('.', ',') + ' €'; };
+const $ = s => document.querySelector(s);
+const byId = id => PRODUCTS.find(p => p.id === id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ss = (path, sizes) => `${wh(path)} src="${path}" srcset="${path.replace('img/','img/sm/')} ${/-hd|lucas-|osobruja/.test(path)?'800w':'600w'}, ${path} ${/-hd|lucas-|osobruja/.test(path)?'1600w':'1100w'}" sizes="${sizes}" decoding="async"`;
+const DIM = {"pres-edigeca":[1081,1600],"pres-lector":[1600,1173],"pres-firma":[1600,1224],"pres-escenario":[1600,1066],"lucas-noche":[1600,800],"lucas-surf":[1600,800],"osobruja":[1600,1600],"guacamayas":[1100,897],"schoolofgame":[1100,1100],"juvenil":[880,1100],"personajes":[1100,628],"lucas5-hd":[1600,800],"dtiys3":[1100,1100],"cactus":[724,1100],"lagarto":[783,1100],"dtiys2":[1100,1100],"racoon":[1024,1024],"vera":[1100,1100],"peach":[1100,1100],"libro":[886,741],"jirafas-hd":[945,1330],"victoria-hd":[1600,914],"dtiys1":[1100,1100],"bocetos":[1024,1024],"hero":[1100,825],"diaynoche":[1100,690],"corralejo-hd":[1400,885],"img3563":[1100,1100],"envy":[1100,1100],"mockup-wall3":[1100,825],"chichiriviche-hd":[1273,1000],"mockup-wall2":[1100,825],"lucas2-hd":[1600,800],"home4":[825,1100],"mockup-dresser":[1100,825],"libro3":[1100,1096],"mockup-wall":[1100,825],"pulpo-taller":[1100,1100],"libro2":[1100,733],"cabra":[884,1100],"campanita":[1100,1100],"wednesday":[880,1100],"pulpo":[852,1100],"marylu":[1100,1100],"selva-hd":[1600,800],"calima":[1100,786]};
+const wh = path => { const d = DIM[path.split('/').pop().replace('.webp','')]; return d ? `width="${d[0]}" height="${d[1]}"` : ''; };
+const sm = path => path.replace('img/','img/sm/');
+const dots = pal => pal.map(c => `<i style="background:${c}"></i>`).join('');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function optInfo(code){
+  const x = t();
+  if (code.startsWith('orig:')) return {label:x.orig, sub:x.origSub, price:+code.split(':')[1], original:true};
+  if (code === 'sold') return {label:x.orig, sub:x.soldSub, price:0, sold:true};
+  if (code === 'dl') return {label:x.dl, sub:x.dlSub, price:PRICE.dl, digital:true};
+  if (code === 'a3') return {label:x.a3, sub:x.printSub, price:PRICE.a3};
+  if (code === 'l50') return {label:x.l50, sub:x.printSubTube, price:PRICE.l50};
+  if (code === 'l60') return {label:x.l60, sub:x.printSubTube, price:PRICE.l60};
+  if (code === 'a3p') return {label:x.a3, sub:x.printSub, price:PRICE.a3p};
+  if (code === 'book') return {label:x.book, sub:x.bookSub, price:PRICE.book};
+}
+const origOf = p => { const o = p.opts.find(c => c.startsWith('orig:')); return o ? +o.split(':')[1] : 0; };
+const printFrom = p => Math.min(...p.opts.filter(c => !c.startsWith('orig') && c !== 'sold' && c !== 'dl').map(c => optInfo(c).price));
+const fromPrice = p => Math.min(...p.opts.map(optInfo).filter(o => !o.sold).map(o => o.price));
+
+/* ---------- paleta del taller ---------- */
+function hue(h){ const r=parseInt(h.slice(1,3),16)/255,g=parseInt(h.slice(3,5),16)/255,b=parseInt(h.slice(5,7),16)/255;
+  const mx=Math.max(r,g,b),mn=Math.min(r,g,b),d=mx-mn; if(!d) return 400+mx; let x;
+  if(mx===r) x=((g-b)/d)%6; else if(mx===g) x=(b-r)/d+2; else x=(r-g)/d+4; return (x*60+360)%360; }
+$('#palette').innerHTML = [...new Set(PRODUCTS.filter(p=>!p.hidden).flatMap(p => p.pal))].sort((a,b) => hue(a)-hue(b)).map(c => `<i style="background:${c}"></i>`).join('');
+
+/* ---------- pintar textos según idioma ---------- */
+let filter = 'all';
+const FV_ORDER = ['pulpo','cabra','lagarto','jirafas','corralejo','diaynoche','cactus'];
+function renderGrid(){
+  const g = $('#grid'), gv = $('#gridVe'); g.innerHTML = ''; gv.innerHTML = ''; const x = t();
+  PRODUCTS.filter(p => !p.hidden && p.kind === 'original').sort((a,b) => (FV_ORDER.indexOf(a.id)+99)%99 - (FV_ORDER.indexOf(b.id)+99)%99).filter(p => {
+    if (filter === 'all') return true;
+    if (filter === 'digital') return p.opts.includes('dl');
+    if (filter === 'print') return p.opts.some(o => ['a3','l50','l60','a3p'].includes(o));
+    if (filter === 'original') return p.opts.some(o => o.startsWith('orig') || o === 'sold');
+  }).forEach(p => {
+    const sold = p.opts.includes('sold');
+    const badge = p.kind === 'digital' ? `<span class="badge dig">${x.dlBadge}</span>` : sold ? `<span class="badge sold">${x.soldBadge}</span>` : `<span class="badge orig">${x.origBadge}</span>`;
+    const el = document.createElement('article'); el.className = 'card';
+    el.innerHTML = `<button class="ph" data-open="${p.id}" aria-label="${x.see} ${esc(L(p.title))}"><img loading="lazy" ${ss(p.img, p.col === 've' ? '(max-width:820px) 92vw, 48vw' : '(max-width:820px) 92vw, 30vw')} alt="${esc(L(p.title))}">${badge}</button>
+      <div><h3>${L(p.title)}</h3><div class="meta">${L(p.place)}</div><div class="meta">${x.printsFrom} ${eur(printFrom(p))}</div><div class="dots" aria-hidden="true">${dots(p.pal)}</div></div>
+      <div class="row"><span class="price">${origOf(p) ? eur(origOf(p)) : '<small>' + x.from + '</small> ' + eur(fromPrice(p))}</span><button class="btn dark" data-open="${p.id}">${x.view}</button></div>`;
+    (p.col === 've' ? gv : g).appendChild(el);
+  });
+}
+function renderReel(el, items){
+  el.innerHTML = items.map(([f,cap,contain]) => `<figure><img loading="lazy" ${contain?'class="c"':''} ${ss('img/'+f+'.webp','(max-width:640px) 85vw, 45vw')} alt="${esc(L(cap))}"><figcaption>${L(cap)}</figcaption></figure>`).join('');
+}
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(el => {
+    if (el.dataset.es === undefined) el.dataset.es = el.innerHTML;
+    el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.es;
+  });
+  document.querySelectorAll('[data-en-ph]').forEach(el => {
+    if (el.dataset.esPh === undefined) el.dataset.esPh = el.placeholder;
+    el.placeholder = lang === 'en' ? el.dataset.enPh : el.dataset.esPh;
+  });
+  document.querySelectorAll('[data-alt-es]').forEach(el => el.alt = lang === 'en' ? el.dataset.altEn : el.dataset.altEs);
+  document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
+  $('#h1').innerHTML = t().h1;
+  $('#mocks').innerHTML = PRODUCTS.filter(p => p.kind === 'digital').map(p =>
+    `<article class="mock"><img loading="lazy" ${ss(p.img,'(max-width:820px) 92vw, 33vw')} alt="${esc(L(p.title))}"><div><h3>${L(p.title)}</h3><span class="price"><small>${t().from}</small> ${eur(PRICE.dl)}</span><button class="btn dark" data-open="${p.id}">${t().view}</button></div></article>`).join('');
+  renderReel($('#reelKids'), KIDS); renderReel($('#reelYA'), YA);
+  renderGrid();
+  if (typeof VIEW_TITLE !== 'undefined') document.title = currentView === 'inicio' ? 'Mary Lu Art' : L(VIEW_TITLE[currentView]) + ' · Mary Lu Art';
+}
+document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => {
+  lang = b.dataset.lang; try { localStorage.setItem('mla-lang', lang); } catch(e) {}
+  closeAll(); applyLang();
+}));
+
+
+/* ---------- ventanas ---------- */
+const scrim = $('#scrim');
+function closeAll(){ document.querySelectorAll('.modal.open,.drawer.open').forEach(m => m.classList.remove('open')); scrim.classList.remove('open'); document.body.classList.remove('overlay'); }
+function open(el){ closeAll(); el.classList.add('open'); scrim.classList.add('open'); document.body.classList.add('overlay'); const f = el.querySelector('.close'); f && f.focus(); }
+scrim.addEventListener('click', closeAll);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+document.addEventListener('click', e => {
+  if (e.target.closest('[data-close]')) closeAll();
+  const o = e.target.closest('[data-open]'); if (o) openProduct(o.dataset.open);
+});
+
+/* ---------- ficha ---------- */
+let current = null;
+function updPayBtn(){
+  const v = (document.querySelector('#pOpts input:checked') || {}).value || '';
+  $('#pBtn').textContent = v.startsWith('orig') ? t().consult : t().addCart;
+}
+$('#pOpts').addEventListener('change', updPayBtn);
+function openProduct(id){
+  const p = byId(id), x = t(); current = p;
+  $('#pImg').src = p.img; $('#pImg').alt = L(p.title);
+  $('#pWm').style.display = p.kind === 'book' ? 'none' : '';
+  $('#pKind').textContent = x.kinds[p.kind];
+  $('#pTitle').textContent = L(p.title);
+  $('#pDots').innerHTML = dots(p.pal);
+  $('#pDesc').textContent = L(p.desc) + ' ' + L(p.place) + '.';
+  const box = $('#pOpts'); box.innerHTML = '';
+  let first = true;
+  p.opts.forEach((code, i) => {
+    const o = optInfo(code);
+    const l = document.createElement('label');
+    l.className = 'opt' + (o.sold ? ' disabled' : ''); l.setAttribute('for', 'o-' + i);
+    l.innerHTML = `<input id="o-${i}" type="radio" name="opt" value="${code}" ${o.sold ? 'disabled' : ''} ${!o.sold && first ? 'checked' : ''}>
+      <span class="t"><b>${o.label}${o.digital ? ' ⬇' : ''}</b><span>${o.sub}</span></span><span class="p">${o.sold ? x.sold : eur(o.price)}</span>`;
+    if (!o.sold) first = false;
+    box.appendChild(l);
+  });
+  updPayBtn();
+  open($('#pModal'));
+}
+$('#pForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const code = new FormData(e.target).get('opt'); if (!code) return;
+  if (code.startsWith('orig')) {   // los originales se consultan: se responde con el envío y el pago
+    closeAll();
+    $('#f-type').value = 'cuadro';
+    const msg = $('#f-msg');
+    if (!msg.value.trim() || msg.value === window.__autoMsg) { msg.value = t().consultMsg(L(current.title)); window.__autoMsg = msg.value; }
+    if (location.hash === '#encargo') $('#encargo').scrollIntoView(); else location.hash = '#encargo';
+    return;
+  }
+  const o = optInfo(code);
+  const ex = cart.find(i => i.id === current.id && i.opt === code);
+  if (ex && !o.original && !o.digital) ex.qty++;
+  else if (!ex) cart.push({id:current.id, opt:code, qty:1});
+  save(); updateCount(); openCart();
+});
+
+/* ---------- carrito ---------- */
+const lines = () => cart.map(i => ({...i, p:byId(i.id), o:optInfo(i.opt)})).filter(l => l.p && l.o);
+const subtotal = () => lines().reduce((s,l) => s + l.o.price*l.qty, 0);
+const hasPhysical = () => lines().some(l => !l.o.digital);
+function updateCount(){ $('#cartCount').textContent = cart.reduce((s,i) => s+i.qty, 0); }
+function openCart(){
+  const box = $('#items'), x = t(); box.innerHTML = '';
+  if (!cart.length) box.innerHTML = `<p class="empty">${x.empty}</p>`;
+  lines().forEach((l, idx) => {
+    const d = document.createElement('div'); d.className = 'li';
+    d.innerHTML = `<img src="${sm(l.p.img)}" alt=""><div><b>${L(l.p.title)}</b><span>${l.o.label}${l.qty>1?' × '+l.qty:''}</span><br><button data-rm="${idx}">${x.remove}</button></div><span class="price" style="font-size:18px">${eur(l.o.price*l.qty)}</span>`;
+    box.appendChild(d);
+  });
+  $('#sub').textContent = eur(subtotal());
+  $('#shipHint').textContent = !cart.length ? '' : hasPhysical() ? x.freeShip : x.digOnly;
+  $('#waiverWrap').hidden = !lines().some(l => l.o.digital);
+  $('#cartErr').textContent = '';
+  $('#toCheckout').disabled = !cart.length;
+  open($('#drawer'));
+}
+$('#cartBtn').addEventListener('click', openCart);
+$('#items').addEventListener('click', e => {
+  const b = e.target.closest('[data-rm]'); if (!b) return;
+  cart.splice(+b.dataset.rm, 1); save(); updateCount(); openCart();
+});
+
+/* ---------- pago (Stripe Checkout) ---------- */
+$('#toCheckout').addEventListener('click', async () => {
+  const x = t(), btn = $('#toCheckout'), err = $('#cartErr');
+  err.textContent = '';
+  const digital = lines().some(l => l.o.digital);
+  if (!$('#chkTerms').checked) { err.textContent = x.needTerms; return; }
+  if (digital && !$('#chkWaiver').checked) { err.textContent = x.needWaiver; return; }
+  const label = btn.textContent; btn.disabled = true; btn.textContent = x.redirecting;
+  try {
+    const r = await fetch('/api/checkout', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ lang, terms: true, waiver: digital, items: lines().map(l => ({id: l.id, opt: l.opt, qty: l.qty})) })
+    });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok || !d.url) throw new Error(d.error || 'server');
+    location.href = d.url;
+  } catch (e) {
+    err.textContent = e.message === 'unavailable' ? x.unavailable : x.checkoutErr;
+    btn.disabled = false; btn.textContent = label;
+  }
+});
+// Si el cliente vuelve atrás desde la página de pago, el botón no debe quedarse bloqueado.
+addEventListener('pageshow', e => { if (e.persisted) { const b = $('#toCheckout'); b.disabled = !cart.length; b.textContent = t().payBtn; } });
+
+let tt;
+function toast(msg){ const el = $('#toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => el.classList.remove('show'), 2800); }
+
+
+
+/* ---------- formulario de encargos ---------- */
+const ENC = {
+  es:{missing:'Falta rellenar: ', priv:'Marca la casilla para poder enviar tu solicitud.', sending:'Enviando…', okT:'¡Solicitud enviada!', okP:'Me ha llegado tu mensaje. Te responderé lo antes posible al email que has indicado.', err:'No se ha podido enviar. Inténtalo de nuevo o escríbeme a marylujr.art@gmail.com.'},
+  en:{missing:'Please fill in: ', priv:'Please tick the box to send your request.', sending:'Sending…', okT:'Request sent!', okP:'I have received your message. I will reply as soon as I can to the email you gave me.', err:'It could not be sent. Please try again or write to me at marylujr.art@gmail.com.'}
+};
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[data-type]'); if (!a) return;
+  const sel = $('#f-type'); if (sel) sel.value = a.dataset.type;
+});
+$('#encargoForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target, x = ENC[lang], btn = f.querySelector('button[type=submit]');
+  const bad = [...f.querySelectorAll('[required]')].find(i => i.type === 'checkbox' ? !i.checked : (!i.value.trim() || !i.checkValidity()));
+  if (bad) { $('#encErr').textContent = bad.type === 'checkbox' ? x.priv : x.missing + bad.closest('label').querySelector('span').textContent.trim(); bad.focus(); return; }
+  $('#encErr').textContent = ''; $('#encOk').hidden = true;
+  const d = Object.fromEntries(new FormData(f));
+  const label = btn.textContent; btn.disabled = true; btn.textContent = x.sending;
+  try {
+    const r = await fetch('/api/encargo', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ name: d.name, email: d.email, type: d.type, size: d.size, date: d.date, msg: d.msg, priv: true, lang, website: d.website || '' })
+    });
+    if (!r.ok) throw new Error('send');
+    f.reset(); window.__autoMsg = '';
+    const ok = $('#encOk'); ok.hidden = false; ok.innerHTML = `<b>${x.okT}</b><p class="small">${x.okP}</p>`;
+    ok.scrollIntoView({block: 'nearest'});
+  } catch (_) { $('#encErr').textContent = x.err; }
+  btn.disabled = false; btn.textContent = label;
+});
+
+/* ---------- páginas (como la web original) ---------- */
+const VIEW_OF = {retratos:'arte', encargo:'arte', cuadros:'arte', fuerteventura:'arte', venezuela:'arte', inicio:'inicio', mundos:'inicio', arte:'arte', tienda:'arte', prints:'arte', ilustracion:'ilustracion', libros:'libros', libro:'libros', 'sobre-mi':'sobre-mi', contacto:'sobre-mi', encargos:'sobre-mi'};
+const VIEW_TITLE = {inicio:{es:'Mary Lu Art',en:'Mary Lu Art'}, arte:{es:'Arte, láminas y tienda',en:'Art, Prints & Shop'}, ilustracion:{es:'Ilustración',en:'Illustration'}, libros:{es:'Libros',en:'Books'}, 'sobre-mi':{es:'Sobre mí y contacto',en:'About & contact'}};
+let currentView = 'inicio';
+function route(){
+  const h = decodeURIComponent(location.hash.slice(1)) || 'inicio';
+  const v = VIEW_OF[h] || 'inicio';
+  if (v !== currentView || !document.querySelector('.view:not([hidden])')) {
+    document.querySelectorAll('.view').forEach(el => el.hidden = el.dataset.view !== v);
+    currentView = v;
+  }
+  document.querySelectorAll('[data-nav]').forEach(a => a.dataset.nav === v ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+  document.title = v === 'inicio' ? 'Mary Lu Art' : L(VIEW_TITLE[v]) + ' · Mary Lu Art';
+  closeAll();
+  const target = h !== v && document.getElementById(h);
+  if (target) target.scrollIntoView(); else scrollTo(0,0);
+}
+addEventListener('hashchange', route);
+applyLang(); updateCount(); route();
+</script>
+</body>
+</html>
